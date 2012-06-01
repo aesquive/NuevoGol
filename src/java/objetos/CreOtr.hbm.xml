@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CreOtr" table="cre_otr" >
+        <id name="creOtrId" type="int">
+            <column name="CRE_OTR_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="creOtrDes" type="string">
+            <column name="CRE_OTR_DES" length="100" />
+        </property>
+        <property name="creOtrLimInf" type="java.lang.Float">
+            <column name="CRE_OTR_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="creOtrLimSup" type="java.lang.Float">
+            <column name="CRE_OTR_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="creOtrOrdPre" type="java.lang.Integer">
+            <column name="CRE_OTR_ORD_PRE" />
+        </property>
+        <property name="creOtrPto" type="java.lang.Float">
+            <column name="CRE_OTR_PTO" precision="12" scale="0" />
+        </property>
+        <property name="creOtrWoe" type="java.lang.Float">
+            <column name="CRE_OTR_WOE" precision="12" scale="0" />
+        </property>
+        <property name="creOtrDesLar" type="string">
+            <column name="CRE_OTR_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

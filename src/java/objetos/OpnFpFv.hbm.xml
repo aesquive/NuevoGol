@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.OpnFpFv" table="opn_fp_fv" >
+        <id name="opnFpFvId" type="int">
+            <column name="OPN_FP_FV_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="opnFpFvDes" type="string">
+            <column name="OPN_FP_FV_DES" length="100" />
+        </property>
+        <property name="opnFpFvLimInf" type="java.lang.Float">
+            <column name="OPN_FP_FV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="opnFpFvLimSup" type="java.lang.Float">
+            <column name="OPN_FP_FV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="opnFpFvOrdPre" type="java.lang.Integer">
+            <column name="OPN_FP_FV_ORD_PRE" />
+        </property>
+        <property name="opnFpFvPto" type="java.lang.Float">
+            <column name="OPN_FP_FV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="opnFpFvWoe" type="java.lang.Float">
+            <column name="OPN_FP_FV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="opnFpFvDesLar" type="string">
+            <column name="OPN_FP_FV_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

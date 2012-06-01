@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ConRed" table="con_red" >
+        <id name="conRedId" type="int">
+            <column name="CON_RED_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="conRedDes" type="string">
+            <column name="CON_RED_DES" length="100" />
+        </property>
+        <property name="conRedLimInf" type="java.lang.Float">
+            <column name="CON_RED_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="conRedLimSup" type="java.lang.Float">
+            <column name="CON_RED_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="conRedOrdPre" type="java.lang.Integer">
+            <column name="CON_RED_ORD_PRE" />
+        </property>
+        <property name="conRedPto" type="java.lang.Float">
+            <column name="CON_RED_PTO" precision="12" scale="0" />
+        </property>
+        <property name="conRedWoe" type="java.lang.Float">
+            <column name="CON_RED_WOE" precision="12" scale="0" />
+        </property>
+        <property name="conRedDesLar" type="string">
+            <column name="CON_RED_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

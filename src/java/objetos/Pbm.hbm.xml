@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Pbm" table="pbm" >
+        <id name="pbmId" type="int">
+            <column name="PBM_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="pbmDes" type="string">
+            <column name="PBM_DES" length="100" />
+        </property>
+        <property name="pbmLimInf" type="java.lang.Float">
+            <column name="PBM_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="pbmLimSup" type="java.lang.Float">
+            <column name="PBM_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="pbmOrdPre" type="java.lang.Integer">
+            <column name="PBM_ORD_PRE" />
+        </property>
+        <property name="pbmPto" type="java.lang.Float">
+            <column name="PBM_PTO" precision="12" scale="0" />
+        </property>
+        <property name="pbmWoe" type="java.lang.Float">
+            <column name="PBM_WOE" precision="12" scale="0" />
+        </property>
+        <property name="pbmDesLar" type="string">
+            <column name="PBM_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

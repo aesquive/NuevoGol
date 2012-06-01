@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Srv" table="srv" >
+        <id name="srvId" type="int">
+            <column name="SRV_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="srvDes" type="string">
+            <column name="SRV_DES" length="100" />
+        </property>
+        <property name="srvLimInf" type="java.lang.Float">
+            <column name="SRV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="srvLimSup" type="java.lang.Float">
+            <column name="SRV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="srvOrdPre" type="java.lang.Integer">
+            <column name="SRV_ORD_PRE" />
+        </property>
+        <property name="srvPto" type="java.lang.Float">
+            <column name="SRV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="srvWoe" type="java.lang.Float">
+            <column name="SRV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="srvDesLar" type="string">
+            <column name="SRV_DES_LAR" length="200" />
+        </property>
+        <property name="tipEmpId" type="java.lang.Integer">
+            <column name="TIP_EMP_ID" />
+        </property>
+        <set name="ocps" inverse="true">
+            <key>
+                <column name="SRV_ID" />
+            </key>
+            <one-to-many class="objetos.Ocp" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoSerViv" table="gto_ser_viv" >
+        <id name="gtoSerVivId" type="int">
+            <column name="GTO_SER_VIV_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoSerVivDes" type="string">
+            <column name="GTO_SER_VIV_DES" length="100" />
+        </property>
+        <property name="gtoSerVivLimInf" type="java.lang.Float">
+            <column name="GTO_SER_VIV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoSerVivLimSup" type="java.lang.Float">
+            <column name="GTO_SER_VIV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoSerVivOrdPre" type="java.lang.Integer">
+            <column name="GTO_SER_VIV_ORD_PRE" />
+        </property>
+        <property name="gtoSerVivPto" type="java.lang.Float">
+            <column name="GTO_SER_VIV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoSerVivWoe" type="java.lang.Float">
+            <column name="GTO_SER_VIV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoSerVivDesLar" type="string">
+            <column name="GTO_SER_VIV_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

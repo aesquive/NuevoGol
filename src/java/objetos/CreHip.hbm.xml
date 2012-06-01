@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CreHip" table="cre_hip" >
+        <id name="creHipId" type="int">
+            <column name="CRE_HIP_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="creHipDes" type="string">
+            <column name="CRE_HIP_DES" length="100" />
+        </property>
+        <property name="creHipLimInf" type="java.lang.Float">
+            <column name="CRE_HIP_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="creHipLimSup" type="java.lang.Float">
+            <column name="CRE_HIP_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="creHipOrdPre" type="java.lang.Integer">
+            <column name="CRE_HIP_ORD_PRE" />
+        </property>
+        <property name="creHipPto" type="java.lang.Float">
+            <column name="CRE_HIP_PTO" precision="12" scale="0" />
+        </property>
+        <property name="creHipWoe" type="java.lang.Float">
+            <column name="CRE_HIP_WOE" precision="12" scale="0" />
+        </property>
+        <property name="creHipDesLar" type="string">
+            <column name="CRE_HIP_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliBur" table="cli_bur" >
+        <id name="cliBurId" type="java.lang.Integer">
+            <column name="CLI_BUR_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cliId" type="java.lang.Integer">
+            <column name="CLI_ID" />
+        </property>
+        <property name="burAntId" type="java.lang.Integer">
+            <column name="BUR_ANT_ID" />
+        </property>
+        <property name="burActId" type="java.lang.Integer">
+            <column name="BUR_ACT_ID" />
+        </property>
+        <property name="burHisId" type="java.lang.Integer">
+            <column name="BUR_HIS_ID" />
+        </property>
+        <property name="burUsoId" type="java.lang.Integer">
+            <column name="BUR_USO_ID" />
+        </property>
+        <property name="buroPagId" type="java.lang.Integer">
+            <column name="BURO_PAG_ID" />
+        </property>
+        <property name="cliBurCveMop" type="java.lang.Integer">
+            <column name="CLI_BUR_CVE_MOP" />
+        </property>
+        <property name="cliBurImpMop" type="java.lang.Float">
+            <column name="CLI_BUR_IMP_MOP" precision="12" scale="0" />
+        </property>
+        <property name="cliBurTpoMop" type="string">
+            <column name="CLI_BUR_TPO_MOP" length="100" />
+        </property>
+        <property name="cliBurPagMop" type="java.lang.Float">
+            <column name="CLI_BUR_PAG_MOP" precision="12" scale="0" />
+        </property>
+        <property name="cliBurNumAbi" type="java.lang.Integer">
+            <column name="CLI_BUR_NUM_ABI" />
+        </property>
+        <property name="cliBurMaxAbi" type="java.lang.Integer">
+            <column name="CLI_BUR_MAX_ABI" />
+        </property>
+        <property name="cliBurMonAbi" type="java.lang.Float">
+            <column name="CLI_BUR_MON_ABI" precision="12" scale="0" />
+        </property>
+        <property name="cliBurLimAbi" type="java.lang.Float">
+            <column name="CLI_BUR_LIM_ABI" precision="12" scale="0" />
+        </property>
+        <property name="cliBurSalAbi" type="java.lang.Float">
+            <column name="CLI_BUR_SAL_ABI" precision="12" scale="0" />
+        </property>
+        <property name="cliBurNumCer" type="java.lang.Integer">
+            <column name="CLI_BUR_NUM_CER" />
+        </property>
+        <property name="cliBurMaxCer" type="java.lang.Integer">
+            <column name="CLI_BUR_MAX_CER" />
+        </property>
+        <property name="cliBurMonCer" type="java.lang.Integer">
+            <column name="CLI_BUR_MON_CER" />
+        </property>
+        <property name="cliBurLimCer" type="java.lang.Float">
+            <column name="CLI_BUR_LIM_CER" precision="12" scale="0" />
+        </property>
+        <property name="cliBurSalCer" type="java.lang.Float">
+            <column name="CLI_BUR_SAL_CER" precision="12" scale="0" />
+        </property>
+        <property name="cliBurMop" type="java.lang.Integer">
+            <column name="CLI_BUR_MOP" />
+        </property>
+    </class>
+</hibernate-mapping>

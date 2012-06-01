@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ApoCon" table="apo_con" >
+        <id name="apoConId" type="int">
+            <column name="APO_CON_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="apoConDes" type="string">
+            <column name="APO_CON_DES" length="100" />
+        </property>
+        <property name="apoConLimInf" type="java.lang.Float">
+            <column name="APO_CON_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="apoConLimSup" type="java.lang.Float">
+            <column name="APO_CON_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="apoConOrdPre" type="java.lang.Integer">
+            <column name="APO_CON_ORD_PRE" />
+        </property>
+        <property name="apoConPto" type="java.lang.Float">
+            <column name="APO_CON_PTO" precision="12" scale="0" />
+        </property>
+        <property name="apoConWoe" type="java.lang.Float">
+            <column name="APO_CON_WOE" precision="12" scale="0" />
+        </property>
+        <property name="apoConDesLar" type="string">
+            <column name="APO_CON_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

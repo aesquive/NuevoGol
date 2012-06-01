@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.FreRel" table="fre_rel" >
+        <id name="freRelId" type="int">
+            <column name="FRE_REL_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="freRelDes" type="string">
+            <column name="FRE_REL_DES" length="100" />
+        </property>
+        <property name="freRelLimInf" type="java.lang.Float">
+            <column name="FRE_REL_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="freRelLimSup" type="java.lang.Float">
+            <column name="FRE_REL_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="freRelOrdPre" type="java.lang.Integer">
+            <column name="FRE_REL_ORD_PRE" />
+        </property>
+        <property name="freRelPto" type="java.lang.Float">
+            <column name="FRE_REL_PTO" precision="12" scale="0" />
+        </property>
+        <property name="freRelWoe" type="java.lang.Float">
+            <column name="FRE_REL_WOE" precision="12" scale="0" />
+        </property>
+        <property name="freRelDesLar" type="string">
+            <column name="FRE_REL_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

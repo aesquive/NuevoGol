@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.BhrAct" table="bhr_act" >
+        <id name="bhrActId" type="int">
+            <column name="BHR_ACT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="bhrActDes" type="string">
+            <column name="BHR_ACT_DES" length="100" />
+        </property>
+        <property name="bhrActLimInf" type="java.lang.Float">
+            <column name="BHR_ACT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="bhrActLimSup" type="java.lang.Float">
+            <column name="BHR_ACT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="bhrActOrdPre" type="java.lang.Integer">
+            <column name="BHR_ACT_ORD_PRE" />
+        </property>
+        <property name="bhrActPto" type="java.lang.Float">
+            <column name="BHR_ACT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="bhrActWoe" type="java.lang.Float">
+            <column name="BHR_ACT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="bhrActDesLar" type="string">
+            <column name="BHR_ACT_DES_LAR" length="200" />
+        </property>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="BHR_ACT_ID" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+    </class>
+</hibernate-mapping>

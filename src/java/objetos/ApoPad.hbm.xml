@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ApoPad" table="apo_pad" >
+        <id name="apoPadId" type="int">
+            <column name="APO_PAD_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="apoPadDes" type="string">
+            <column name="APO_PAD_DES" length="100" />
+        </property>
+        <property name="apoPadLimInf" type="java.lang.Float">
+            <column name="APO_PAD_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="apoPadLimSup" type="java.lang.Float">
+            <column name="APO_PAD_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="apoPadOrdPre" type="java.lang.Integer">
+            <column name="APO_PAD_ORD_PRE" />
+        </property>
+        <property name="apoPadPto" type="java.lang.Float">
+            <column name="APO_PAD_PTO" precision="12" scale="0" />
+        </property>
+        <property name="apoPadWoe" type="java.lang.Float">
+            <column name="APO_PAD_WOE" precision="12" scale="0" />
+        </property>
+        <property name="apoPadDesLar" type="string">
+            <column name="APO_PAD_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

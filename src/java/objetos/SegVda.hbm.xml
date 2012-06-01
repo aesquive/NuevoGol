@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.SegVda" table="seg_vda" >
+        <id name="segVdaId" type="int">
+            <column name="SEG_VDA_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="segVdaDes" type="string">
+            <column name="SEG_VDA_DES" length="100" />
+        </property>
+        <property name="segVdaLimInf" type="java.lang.Float">
+            <column name="SEG_VDA_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="segVdaLimSup" type="java.lang.Float">
+            <column name="SEG_VDA_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="segVdaOrdPre" type="java.lang.Integer">
+            <column name="SEG_VDA_ORD_PRE" />
+        </property>
+        <property name="segVdaPto" type="java.lang.Float">
+            <column name="SEG_VDA_PTO" precision="12" scale="0" />
+        </property>
+        <property name="segVdaWoe" type="java.lang.Float">
+            <column name="SEG_VDA_WOE" precision="12" scale="0" />
+        </property>
+        <property name="segVdaDesLar" type="string">
+            <column name="SEG_VDA_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

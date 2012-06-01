@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.BurAnt" table="bur_ant" >
+        <id name="burAntId" type="int">
+            <column name="BUR_ANT_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="burAntDes" type="string">
+            <column name="BUR_ANT_DES" length="100" />
+        </property>
+        <property name="burAntLimInf" type="java.lang.Float">
+            <column name="BUR_ANT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="burAntLimSup" type="java.lang.Float">
+            <column name="BUR_ANT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="burAntOrdPre" type="java.lang.Integer">
+            <column name="BUR_ANT_ORD_PRE" />
+        </property>
+        <property name="burAntPto" type="java.lang.Float">
+            <column name="BUR_ANT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="burAntWoe" type="java.lang.Float">
+            <column name="BUR_ANT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="burAntDesLar" type="string">
+            <column name="BUR_ANT_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="BUR_ANT_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

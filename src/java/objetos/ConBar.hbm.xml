@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ConBar" table="con_bar" >
+        <id name="conBarId" type="int">
+            <column name="CON_BAR_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="conBarDes" type="string">
+            <column name="CON_BAR_DES" length="100" />
+        </property>
+        <property name="conBarLimInf" type="java.lang.Float">
+            <column name="CON_BAR_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="conBarLimSup" type="java.lang.Float">
+            <column name="CON_BAR_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="conBarOrdPre" type="java.lang.Integer">
+            <column name="CON_BAR_ORD_PRE" />
+        </property>
+        <property name="conBarPto" type="java.lang.Float">
+            <column name="CON_BAR_PTO" precision="12" scale="0" />
+        </property>
+        <property name="conBarWoe" type="java.lang.Float">
+            <column name="CON_BAR_WOE" precision="12" scale="0" />
+        </property>
+        <property name="conBarDesLar" type="string">
+            <column name="CON_BAR_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

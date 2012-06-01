@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.IRnt" table="i_rnt" >
+        <id name="IRntId" type="int">
+            <column name="I_RNT_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" update="false" insert="false" fetch="select">
+            <column name="I_RNT_ID" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="IRntDes" type="string">
+            <column name="I_RNT_DES" length="100" />
+        </property>
+        <property name="IRntLimInf" type="java.lang.Float">
+            <column name="I_RNT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="IRntLimSup" type="java.lang.Float">
+            <column name="I_RNT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="IRntOrdPre" type="java.lang.Integer">
+            <column name="I_RNT_ORD_PRE" />
+        </property>
+        <property name="IRntPto" type="java.lang.Float">
+            <column name="I_RNT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="IRntWoe" type="java.lang.Float">
+            <column name="I_RNT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="IRntDesLar" type="string">
+            <column name="I_RNT_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

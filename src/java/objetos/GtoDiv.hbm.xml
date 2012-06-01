@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoDiv" table="gto_div" >
+        <id name="gtoDivId" type="int">
+            <column name="GTO_DIV_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoDivDes" type="string">
+            <column name="GTO_DIV_DES" length="100" />
+        </property>
+        <property name="gtoDivLimInf" type="java.lang.Float">
+            <column name="GTO_DIV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoDivLimSup" type="java.lang.Float">
+            <column name="GTO_DIV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoDivOrdPre" type="java.lang.Integer">
+            <column name="GTO_DIV_ORD_PRE" />
+        </property>
+        <property name="gtoDivPto" type="java.lang.Float">
+            <column name="GTO_DIV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoDivWoe" type="java.lang.Float">
+            <column name="GTO_DIV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoDivDesLar" type="string">
+            <column name="GTO_DIV_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

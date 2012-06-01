@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.RngResAct" table="rng_res_act" >
+        <id name="rngResActId" type="int">
+            <column name="RNG_RES_ACT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="rngResActDes" type="string">
+            <column name="RNG_RES_ACT_DES" length="100" />
+        </property>
+        <property name="rngResActLimInf" type="java.lang.Float">
+            <column name="RNG_RES_ACT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="rngResActLimSup" type="java.lang.Float">
+            <column name="RNG_RES_ACT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="rngResActOrdPre" type="java.lang.Integer">
+            <column name="RNG_RES_ACT_ORD_PRE" />
+        </property>
+        <property name="rngResActPto" type="java.lang.Float">
+            <column name="RNG_RES_ACT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="rngResActWoe" type="java.lang.Float">
+            <column name="RNG_RES_ACT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="rngResActDesLar" type="string">
+            <column name="RNG_RES_ACT_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

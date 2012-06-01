@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CueAbr" table="cue_abr" >
+        <id name="cueAbrId" type="int">
+            <column name="CUE_ABR_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="cueAbrDes" type="string">
+            <column name="CUE_ABR_DES" length="100" />
+        </property>
+        <property name="cueAbrLimInf" type="java.lang.Float">
+            <column name="CUE_ABR_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="cueAbrLimSup" type="java.lang.Float">
+            <column name="CUE_ABR_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="cueAbrOrdPre" type="java.lang.Integer">
+            <column name="CUE_ABR_ORD_PRE" />
+        </property>
+        <property name="cueAbrPto" type="java.lang.Float">
+            <column name="CUE_ABR_PTO" precision="12" scale="0" />
+        </property>
+        <property name="cueAbrWoe" type="java.lang.Float">
+            <column name="CUE_ABR_WOE" precision="12" scale="0" />
+        </property>
+        <property name="cueAbrDesLar" type="string">
+            <column name="CUE_ABR_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

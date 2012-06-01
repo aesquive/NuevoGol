@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ActUlt" table="act_ult" >
+        <id name="actUltId" type="int">
+            <column name="ACT_ULT_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="actUltDes" type="string">
+            <column name="ACT_ULT_DES" length="100" />
+        </property>
+        <property name="actUltLimInf" type="java.lang.Float">
+            <column name="ACT_ULT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="actUltLimSup" type="java.lang.Float">
+            <column name="ACT_ULT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="actUltOrdPre" type="java.lang.Integer">
+            <column name="ACT_ULT_ORD_PRE" />
+        </property>
+        <property name="actUltPto" type="java.lang.Float">
+            <column name="ACT_ULT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="actUltWoe" type="java.lang.Float">
+            <column name="ACT_ULT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="actUltDesLar" type="string">
+            <column name="ACT_ULT_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

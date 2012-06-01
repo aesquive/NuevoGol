@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.OpnAbf" table="opn_abf" >
+        <id name="opnAbfId" type="int">
+            <column name="OPN_ABF_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="opnAbfDes" type="string">
+            <column name="OPN_ABF_DES" length="100" />
+        </property>
+        <property name="opnAbfLimInf" type="java.lang.Float">
+            <column name="OPN_ABF_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="opnAbfLimSup" type="java.lang.Float">
+            <column name="OPN_ABF_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="opnAbfOrdPre" type="java.lang.Integer">
+            <column name="OPN_ABF_ORD_PRE" />
+        </property>
+        <property name="opnAbfPto" type="java.lang.Float">
+            <column name="OPN_ABF_PTO" precision="12" scale="0" />
+        </property>
+        <property name="opnAbfWoe" type="java.lang.Float">
+            <column name="OPN_ABF_WOE" precision="12" scale="0" />
+        </property>
+        <property name="opnAbfDesLar" type="string">
+            <column name="OPN_ABF_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

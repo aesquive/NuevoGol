@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Rld" table="rld" >
+        <id name="rldId" type="int">
+            <column name="RLD_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="rldDes" type="string">
+            <column name="RLD_DES" length="100" />
+        </property>
+        <property name="rldLimInf" type="java.lang.Float">
+            <column name="RLD_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="rldLimSup" type="java.lang.Float">
+            <column name="RLD_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="rldOrdPre" type="java.lang.Integer">
+            <column name="RLD_ORD_PRE" />
+        </property>
+        <property name="rldPto" type="java.lang.Float">
+            <column name="RLD_PTO" precision="12" scale="0" />
+        </property>
+        <property name="rldWoe" type="java.lang.Float">
+            <column name="RLD_WOE" precision="12" scale="0" />
+        </property>
+        <property name="rldDesLar" type="string">
+            <column name="RLD_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="RLD_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

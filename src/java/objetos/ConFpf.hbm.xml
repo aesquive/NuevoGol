@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ConFpf" table="con_fpf" >
+        <id name="conFpfId" type="int">
+            <column name="CON_FPF_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="conFpfDes" type="string">
+            <column name="CON_FPF_DES" length="100" />
+        </property>
+        <property name="conFpfLimInf" type="java.lang.Float">
+            <column name="CON_FPF_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="conFpfLimSup" type="java.lang.Float">
+            <column name="CON_FPF_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="conFpfOrdPre" type="java.lang.Integer">
+            <column name="CON_FPF_ORD_PRE" />
+        </property>
+        <property name="conFpfPto" type="java.lang.Float">
+            <column name="CON_FPF_PTO" precision="12" scale="0" />
+        </property>
+        <property name="conFpfWoe" type="java.lang.Float">
+            <column name="CON_FPF_WOE" precision="12" scale="0" />
+        </property>
+        <property name="conFpfDesLar" type="string">
+            <column name="CON_FPF_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

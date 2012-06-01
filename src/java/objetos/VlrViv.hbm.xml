@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.VlrViv" table="vlr_viv" >
+        <id name="vlrVivId" type="int">
+            <column name="VLR_VIV_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="vlrVivDes" type="string">
+            <column name="VLR_VIV_DES" length="100" />
+        </property>
+        <property name="vlrVivLimInf" type="java.lang.Float">
+            <column name="VLR_VIV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="vlrVivLimSup" type="java.lang.Float">
+            <column name="VLR_VIV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="vlrVivOrdPre" type="java.lang.Integer">
+            <column name="VLR_VIV_ORD_PRE" />
+        </property>
+        <property name="vlrVivPto" type="java.lang.Float">
+            <column name="VLR_VIV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="vlrVivWoe" type="java.lang.Float">
+            <column name="VLR_VIV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="vlrVivDesLar" type="string">
+            <column name="VLR_VIV_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.NivEstPap" table="niv_est_pap" >
+        <id name="nivEstPapId" type="int">
+            <column name="NIV_EST_PAP_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="nivEstPapDes" type="string">
+            <column name="NIV_EST_PAP_DES" length="100" />
+        </property>
+        <property name="nivEstPapLimInf" type="java.lang.Float">
+            <column name="NIV_EST_PAP_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="nivEstPapLimSup" type="java.lang.Float">
+            <column name="NIV_EST_PAP_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="nivEstPapOrdPre" type="java.lang.Integer">
+            <column name="NIV_EST_PAP_ORD_PRE" />
+        </property>
+        <property name="nivEstPapPto" type="java.lang.Float">
+            <column name="NIV_EST_PAP_PTO" precision="12" scale="0" />
+        </property>
+        <property name="nivEstPapWoe" type="java.lang.Float">
+            <column name="NIV_EST_PAP_WOE" precision="12" scale="0" />
+        </property>
+        <property name="nivEstPapDesLar" type="string">
+            <column name="NIV_EST_PAP_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

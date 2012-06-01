@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Ocp" table="ocp" >
+        <id name="ocpId" type="int">
+            <column name="OCP_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <many-to-one name="srv" class="objetos.Srv" fetch="select">
+            <column name="SRV_ID" />
+        </many-to-one>
+        <property name="ocpDes" type="string">
+            <column name="OCP_DES" length="100" />
+        </property>
+        <property name="ocpLimInf" type="java.lang.Float">
+            <column name="OCP_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="ocpLimSup" type="java.lang.Float">
+            <column name="OCP_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="ocpOrdPre" type="java.lang.Integer">
+            <column name="OCP_ORD_PRE" />
+        </property>
+        <property name="ocpPto" type="java.lang.Float">
+            <column name="OCP_PTO" precision="12" scale="0" />
+        </property>
+        <property name="ocpWoe" type="java.lang.Float">
+            <column name="OCP_WOE" precision="12" scale="0" />
+        </property>
+        <property name="ocpDesLar" type="string">
+            <column name="OCP_DES_LAR" length="200" />
+        </property>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="OCP_ID" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="OCP_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Edo" table="edo" >
+        <id name="edoId" type="int">
+            <column name="EDO_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="edoDes" type="string">
+            <column name="EDO_DES" length="100" />
+        </property>
+        <property name="edoOrdPre" type="java.lang.Integer">
+            <column name="EDO_ORD_PRE" />
+        </property>
+        <property name="edoWoe" type="java.lang.Float">
+            <column name="EDO_WOE" precision="12" scale="0" />
+        </property>
+        <property name="edoDesLar" type="string">
+            <column name="EDO_DES_LAR" length="200" />
+        </property>
+        <property name="edoRcg" type="java.lang.Float">
+            <column name="EDO_RCG" precision="12" scale="0" />
+        </property>
+        <set name="codPoses" inverse="true">
+            <key>
+                <column name="EDO_ID" />
+            </key>
+            <one-to-many class="objetos.CodPos" />
+        </set>
+        <set name="deses" inverse="true">
+            <key>
+                <column name="EDO_ID" />
+            </key>
+            <one-to-many class="objetos.Des" />
+        </set>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="EDO_ID" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="EDO_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

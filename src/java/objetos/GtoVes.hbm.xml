@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoVes" table="gto_ves" >
+        <id name="gtoVesId" type="int">
+            <column name="GTO_VES_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoVesDes" type="string">
+            <column name="GTO_VES_DES" length="100" />
+        </property>
+        <property name="gtoVesLimInf" type="java.lang.Float">
+            <column name="GTO_VES_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoVesLimSup" type="java.lang.Float">
+            <column name="GTO_VES_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoVesOrdPre" type="java.lang.Integer">
+            <column name="GTO_VES_ORD_PRE" />
+        </property>
+        <property name="gtoVesPto" type="java.lang.Float">
+            <column name="GTO_VES_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoVesWoe" type="java.lang.Float">
+            <column name="GTO_VES_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoVesDesLar" type="string">
+            <column name="GTO_VES_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliPso" table="cli_pso" >
+        <id name="cliPsoId" type="java.lang.Integer">
+            <column name="CLI_PSO_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cliId" type="java.lang.Integer">
+            <column name="CLI_ID" />
+        </property>
+        <property name="cliPsoNumPre" type="java.lang.Integer">
+            <column name="CLI_PSO_NUM_PRE" />
+        </property>
+        <property name="cliPsoNumRes" type="java.lang.Integer">
+            <column name="CLI_PSO_NUM_RES" />
+        </property>
+    </class>
+</hibernate-mapping>

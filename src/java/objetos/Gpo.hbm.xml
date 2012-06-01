@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Gpo" table="gpo" >
+        <id name="gpoId" type="int">
+            <column name="GPO_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="gpoNomCos" type="string">
+            <column name="GPO_NOM_COS" length="100" />
+        </property>
+        <property name="gpoTipCos" type="string">
+            <column name="GPO_TIP_COS" length="6" />
+        </property>
+        <property name="gpoStaCos" type="string">
+            <column name="GPO_STA_COS" length="2" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="GPO_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

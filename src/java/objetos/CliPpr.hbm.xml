@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliPpr" table="cli_ppr" >
+        <id name="cliMtaId" type="java.lang.Integer">
+            <column name="CLI_MTA_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cli" class="objetos.Cli" fetch="select">
+            <column name="CLI_ID" />
+        </many-to-one>
+        <many-to-one name="intPi" class="objetos.IntPi" fetch="select">
+            <column name="INT_PPR_ID" />
+        </many-to-one>
+        <many-to-one name="ftrPpr" class="objetos.FtrPpr" fetch="select">
+            <column name="FTR_PPR_ID" />
+        </many-to-one>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="cliFecNac" type="timestamp">
+            <column name="CLI_FEC_NAC" length="19" />
+        </property>
+        <property name="cliEdaId" type="java.lang.Integer">
+            <column name="CLI_EDA_ID" />
+        </property>
+        <property name="codPosId" type="string">
+            <column name="COD_POS_ID" length="5" />
+        </property>
+        <property name="ocpId" type="java.lang.Integer">
+            <column name="OCP_ID" />
+        </property>
+        <property name="edoId" type="java.lang.Integer">
+            <column name="EDO_ID" />
+        </property>
+        <property name="cliPprMes" type="string">
+            <column name="CLI_PPR_MES" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ApyEco" table="apy_eco" >
+        <id name="apyEcoId" type="int">
+            <column name="APY_ECO_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="apyEcoDes" type="string">
+            <column name="APY_ECO_DES" length="100" />
+        </property>
+        <property name="apyEcoLimInf" type="java.lang.Float">
+            <column name="APY_ECO_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="apyEcoLimSup" type="java.lang.Float">
+            <column name="APY_ECO_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="apyEcoOrdPre" type="java.lang.Integer">
+            <column name="APY_ECO_ORD_PRE" />
+        </property>
+        <property name="apyEcoPto" type="java.lang.Float">
+            <column name="APY_ECO_PTO" precision="12" scale="0" />
+        </property>
+        <property name="apyEcoWoe" type="java.lang.Float">
+            <column name="APY_ECO_WOE" precision="12" scale="0" />
+        </property>
+        <property name="apyEcoDesLar" type="string">
+            <column name="APY_ECO_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

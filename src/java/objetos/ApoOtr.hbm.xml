@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ApoOtr" table="apo_otr" >
+        <id name="apoOtrId" type="int">
+            <column name="APO_OTR_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="apoOtrDes" type="string">
+            <column name="APO_OTR_DES" length="100" />
+        </property>
+        <property name="apoOtrLimInf" type="java.lang.Float">
+            <column name="APO_OTR_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="apoOtrLimSup" type="java.lang.Float">
+            <column name="APO_OTR_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="apoOtrOrdPre" type="java.lang.Integer">
+            <column name="APO_OTR_ORD_PRE" />
+        </property>
+        <property name="apoOtrPto" type="java.lang.Float">
+            <column name="APO_OTR_PTO" precision="12" scale="0" />
+        </property>
+        <property name="apoOtrWoe" type="java.lang.Float">
+            <column name="APO_OTR_WOE" precision="12" scale="0" />
+        </property>
+        <property name="apoOtrDesLar" type="string">
+            <column name="APO_OTR_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

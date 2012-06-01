@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoCre" table="gto_cre" >
+        <id name="gtoCreId" type="int">
+            <column name="GTO_CRE_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoCreDes" type="string">
+            <column name="GTO_CRE_DES" length="100" />
+        </property>
+        <property name="gtoCreLimInf" type="java.lang.Float">
+            <column name="GTO_CRE_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoCreLimSup" type="java.lang.Float">
+            <column name="GTO_CRE_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoCreOrdPre" type="java.lang.Integer">
+            <column name="GTO_CRE_ORD_PRE" />
+        </property>
+        <property name="gtoCrePto" type="java.lang.Float">
+            <column name="GTO_CRE_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoCreWoe" type="java.lang.Float">
+            <column name="GTO_CRE_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoCreDesLar" type="string">
+            <column name="GTO_CRE_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

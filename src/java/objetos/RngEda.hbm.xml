@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.RngEda" table="rng_eda" >
+        <id name="rngEdaId" type="int">
+            <column name="RNG_EDA_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="rngEdaDes" type="string">
+            <column name="RNG_EDA_DES" length="100" />
+        </property>
+        <property name="rngEdaLimInf" type="java.lang.Float">
+            <column name="RNG_EDA_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="rngEdaLimSup" type="java.lang.Float">
+            <column name="RNG_EDA_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="rngEdaOrdPre" type="java.lang.Integer">
+            <column name="RNG_EDA_ORD_PRE" />
+        </property>
+        <property name="rngEdaPto" type="java.lang.Float">
+            <column name="RNG_EDA_PTO" precision="12" scale="0" />
+        </property>
+        <property name="rngEdaWoe" type="java.lang.Float">
+            <column name="RNG_EDA_WOE" precision="12" scale="0" />
+        </property>
+        <property name="rngEdaDesLar" type="string">
+            <column name="RNG_EDA_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="CLI_EDA_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

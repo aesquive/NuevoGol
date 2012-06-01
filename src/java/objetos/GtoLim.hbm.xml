@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoLim" table="gto_lim" >
+        <id name="gtoLimId" type="int">
+            <column name="GTO_LIM_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoLimDes" type="string">
+            <column name="GTO_LIM_DES" length="100" />
+        </property>
+        <property name="gtoLimLimInf" type="java.lang.Float">
+            <column name="GTO_LIM_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoLimLimSup" type="java.lang.Float">
+            <column name="GTO_LIM_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoLimOrdPre" type="java.lang.Integer">
+            <column name="GTO_LIM_ORD_PRE" />
+        </property>
+        <property name="gtoLimPto" type="java.lang.Float">
+            <column name="GTO_LIM_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoLimWoe" type="java.lang.Float">
+            <column name="GTO_LIM_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoLimDesLar" type="string">
+            <column name="GTO_LIM_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

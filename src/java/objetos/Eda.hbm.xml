@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Eda" table="eda" >
+        <id name="edaId" type="int">
+            <column name="EDA_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="edaDes" type="string">
+            <column name="EDA_DES" length="100" />
+        </property>
+        <property name="edaLimInf" type="java.lang.Float">
+            <column name="EDA_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="edaLimSup" type="java.lang.Float">
+            <column name="EDA_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="edaOrdPre" type="java.lang.Integer">
+            <column name="EDA_ORD_PRE" />
+        </property>
+        <property name="edaPto" type="java.lang.Float">
+            <column name="EDA_PTO" precision="12" scale="0" />
+        </property>
+        <property name="edaWoe" type="java.lang.Float">
+            <column name="EDA_WOE" precision="12" scale="0" />
+        </property>
+        <property name="edaDesLar" type="string">
+            <column name="EDA_DES_LAR" length="200" />
+        </property>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="EDA_ID" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+    </class>
+</hibernate-mapping>

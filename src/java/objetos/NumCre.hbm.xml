@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.NumCre" table="num_cre" >
+        <id name="numCreId" type="int">
+            <column name="NUM_CRE_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="numCreDes" type="string">
+            <column name="NUM_CRE_DES" length="100" />
+        </property>
+        <property name="numCreLimInf" type="java.lang.Float">
+            <column name="NUM_CRE_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="numCreLimSup" type="java.lang.Float">
+            <column name="NUM_CRE_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="numCreOrdPre" type="java.lang.Integer">
+            <column name="NUM_CRE_ORD_PRE" />
+        </property>
+        <property name="numCrePto" type="java.lang.Float">
+            <column name="NUM_CRE_PTO" precision="12" scale="0" />
+        </property>
+        <property name="numCreWoe" type="java.lang.Float">
+            <column name="NUM_CRE_WOE" precision="12" scale="0" />
+        </property>
+        <property name="numCreDesLar" type="string">
+            <column name="NUM_CRE_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

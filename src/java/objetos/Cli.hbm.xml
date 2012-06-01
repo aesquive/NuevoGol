@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Cli" table="cli" >
+        <id name="cliId" type="java.lang.Integer">
+            <column name="CLI_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="cliApePat" type="string">
+            <column name="CLI_APE_PAT" length="100" />
+        </property>
+        <property name="cliApeMat" type="string">
+            <column name="CLI_APE_MAT" length="100" />
+        </property>
+        <property name="cliNom" type="string">
+            <column name="CLI_NOM" length="80" />
+        </property>
+        <property name="cliFecNac" type="timestamp">
+            <column name="CLI_FEC_NAC" length="19" />
+        </property>
+        <property name="cliDomCal" type="string">
+            <column name="CLI_DOM_CAL" length="100" />
+        </property>
+        <property name="cliDomNumExt" type="string">
+            <column name="CLI_DOM_NUM_EXT" length="10" />
+        </property>
+        <property name="cliDomNumInt" type="string">
+            <column name="CLI_DOM_NUM_INT" length="10" />
+        </property>
+        <property name="cliDomCol" type="string">
+            <column name="CLI_DOM_COL" length="100" />
+        </property>
+        <property name="codPosId" type="string">
+            <column name="COD_POS_ID" length="5" />
+        </property>
+        <property name="cliRfc" type="string">
+            <column name="CLI_RFC" length="15" />
+        </property>
+        <property name="cliEdad" type="string">
+            <column name="CLI_EDAD" length="10" />
+        </property>
+        <property name="cliEdo" type="string">
+            <column name="CLI_EDO" length="30" />
+        </property>
+        <property name="cliMun" type="string">
+            <column name="CLI_MUN" length="30" />
+        </property>
+        <property name="cliEdocivil" type="string">
+            <column name="CLI_EDOCIVIL" length="10" />
+        </property>
+        <property name="cliDependientes" type="string">
+            <column name="CLI_DEPENDIENTES" length="5" />
+        </property>
+        <property name="cliIngreso" type="string">
+            <column name="CLI_INGRESO" length="5" />
+        </property>
+        <property name="cliTipoAct" type="string">
+            <column name="CLI_TIPO_ACT" length="5" />
+        </property>
+        <property name="cliSector" type="string">
+            <column name="CLI_SECTOR" length="5" />
+        </property>
+        <property name="cliSubsector" type="string">
+            <column name="CLI_SUBSECTOR" length="5" />
+        </property>
+        <property name="cliOcupacion" type="string">
+            <column name="CLI_OCUPACION" length="100" />
+        </property>
+        <property name="cliRol" type="string">
+            <column name="CLI_ROL" length="5" />
+        </property>
+        <property name="cliUbicacion" type="string">
+            <column name="CLI_UBICACION" length="5" />
+        </property>
+        <property name="cliDesarrollo" type="string">
+            <column name="CLI_DESARROLLO" length="5" />
+        </property>
+        <property name="cliValor" type="string">
+            <column name="CLI_VALOR" length="10" />
+        </property>
+        <property name="cliMensualidad" type="string">
+            <column name="CLI_MENSUALIDAD" length="10" />
+        </property>
+        <set name="cliMta2s" inverse="true">
+            <key>
+                <column name="CLI_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta2" />
+        </set>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="CLI_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+        <set name="cliPprs" inverse="true">
+            <key>
+                <column name="CLI_ID" />
+            </key>
+            <one-to-many class="objetos.CliPpr" />
+        </set>
+    </class>
+</hibernate-mapping>

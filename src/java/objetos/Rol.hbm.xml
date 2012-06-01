@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Rol" table="rol" >
+        <id name="rolId" type="int">
+            <column name="ROL_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="rolDes" type="string">
+            <column name="ROL_DES" length="100" />
+        </property>
+        <property name="rolLimInf" type="java.lang.Float">
+            <column name="ROL_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="rolLimSup" type="java.lang.Float">
+            <column name="ROL_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="rolOrdPre" type="java.lang.Integer">
+            <column name="ROL_ORD_PRE" />
+        </property>
+        <property name="rolPto" type="java.lang.Float">
+            <column name="ROL_PTO" precision="12" scale="0" />
+        </property>
+        <property name="rolWoe" type="java.lang.Float">
+            <column name="ROL_WOE" precision="12" scale="0" />
+        </property>
+        <property name="rolDesLar" type="string">
+            <column name="ROL_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="ROL_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

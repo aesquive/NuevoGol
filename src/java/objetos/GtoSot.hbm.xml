@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.GtoSot" table="gto_sot" >
+        <id name="gtoSotId" type="int">
+            <column name="GTO_SOT_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="gtoSotDes" type="string">
+            <column name="GTO_SOT_DES" length="100" />
+        </property>
+        <property name="gtoSotLimInf" type="java.lang.Float">
+            <column name="GTO_SOT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="gtoSotLimSup" type="java.lang.Float">
+            <column name="GTO_SOT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="gtoSotOrdPre" type="java.lang.Integer">
+            <column name="GTO_SOT_ORD_PRE" />
+        </property>
+        <property name="gtoSotPto" type="java.lang.Float">
+            <column name="GTO_SOT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="gtoSotWoe" type="java.lang.Float">
+            <column name="GTO_SOT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="gtoSotDesLar" type="string">
+            <column name="GTO_SOT_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Mig" table="mig" >
+        <id name="migId" type="int">
+            <column name="MIG_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="migDes" type="string">
+            <column name="MIG_DES" length="100" />
+        </property>
+        <property name="migLimInf" type="java.lang.Float">
+            <column name="MIG_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="migLimSup" type="java.lang.Float">
+            <column name="MIG_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="migOrdPre" type="java.lang.Integer">
+            <column name="MIG_ORD_PRE" />
+        </property>
+        <property name="migPto" type="java.lang.Float">
+            <column name="MIG_PTO" precision="12" scale="0" />
+        </property>
+        <property name="migWoe" type="java.lang.Float">
+            <column name="MIG_WOE" precision="12" scale="0" />
+        </property>
+        <property name="migDesLar" type="string">
+            <column name="MIG_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="MIG_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

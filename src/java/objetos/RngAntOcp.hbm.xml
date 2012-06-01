@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.RngAntOcp" table="rng_ant_ocp" >
+        <id name="rngAntOcpId" type="int">
+            <column name="RNG_ANT_OCP_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="rngAntOcpDes" type="string">
+            <column name="RNG_ANT_OCP_DES" length="100" />
+        </property>
+        <property name="rngAntOcpLimInf" type="java.lang.Float">
+            <column name="RNG_ANT_OCP_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="rngAntOcpLimSup" type="java.lang.Float">
+            <column name="RNG_ANT_OCP_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="rngAntOcpOrdPre" type="java.lang.Integer">
+            <column name="RNG_ANT_OCP_ORD_PRE" />
+        </property>
+        <property name="rngAntOcpPto" type="java.lang.Float">
+            <column name="RNG_ANT_OCP_PTO" precision="12" scale="0" />
+        </property>
+        <property name="rngAntOcpWoe" type="java.lang.Float">
+            <column name="RNG_ANT_OCP_WOE" precision="12" scale="0" />
+        </property>
+        <property name="rngAntOcpDesLar" type="string">
+            <column name="RNG_ANT_OCP_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ProAnoGto" table="pro_ano_gto" >
+        <id name="proAnoGtoId" type="int">
+            <column name="PRO_ANO_GTO_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="proAnoGtoDes" type="string">
+            <column name="PRO_ANO_GTO_DES" length="100" />
+        </property>
+        <property name="proAnoGtoLimInf" type="java.lang.Float">
+            <column name="PRO_ANO_GTO_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="proAnoGtoLimSup" type="java.lang.Float">
+            <column name="PRO_ANO_GTO_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="proAnoGtoOrdPre" type="java.lang.Integer">
+            <column name="PRO_ANO_GTO_ORD_PRE" />
+        </property>
+        <property name="proAnoGtoPto" type="java.lang.Float">
+            <column name="PRO_ANO_GTO_PTO" precision="12" scale="0" />
+        </property>
+        <property name="proAnoGtoWoe" type="java.lang.Float">
+            <column name="PRO_ANO_GTO_WOE" precision="12" scale="0" />
+        </property>
+        <property name="proAnoGtoDesLar" type="string">
+            <column name="PRO_ANO_GTO_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="PRO_ANO_GTO_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

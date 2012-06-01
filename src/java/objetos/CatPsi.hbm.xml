@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CatPsi" table="cat_psi" >
+        <id name="catPsiId" type="int">
+            <column name="CAT_PSI_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="catPsiDes" type="string">
+            <column name="CAT_PSI_DES" length="200" />
+        </property>
+        <set name="relPsiSocs" inverse="true">
+            <key>
+                <column name="CAT_PSI_ID" />
+            </key>
+            <one-to-many class="objetos.RelPsiSoc" />
+        </set>
+    </class>
+</hibernate-mapping>

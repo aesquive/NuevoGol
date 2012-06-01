@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.IPsi" table="i_psi" >
+        <id name="IPsiId" type="int">
+            <column name="I_PSI_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="IPsiDes" type="string">
+            <column name="I_PSI_DES" length="100" />
+        </property>
+        <property name="IPsiLimInf" type="java.lang.Float">
+            <column name="I_PSI_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="IPsiLimSup" type="java.lang.Float">
+            <column name="I_PSI_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="IPsiOrdPre" type="java.lang.Integer">
+            <column name="I_PSI_ORD_PRE" />
+        </property>
+        <property name="IPsiPto" type="java.lang.Float">
+            <column name="I_PSI_PTO" precision="12" scale="0" />
+        </property>
+        <property name="IPsiWoe" type="java.lang.Float">
+            <column name="I_PSI_WOE" precision="12" scale="0" />
+        </property>
+        <property name="IPsiDesLar" type="string">
+            <column name="I_PSI_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

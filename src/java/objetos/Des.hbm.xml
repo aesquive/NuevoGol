@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Des" table="des" >
+        <id name="desId" type="int">
+            <column name="DES_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <many-to-one name="edo" class="objetos.Edo" fetch="select">
+            <column name="EDO_ID" />
+        </many-to-one>
+        <property name="desDes" type="string">
+            <column name="DES_DES" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliMta" table="cli_mta" >
+        <id name="cliMtaId" type="java.lang.Integer">
+            <column name="CLI_MTA_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="opnBar" class="objetos.OpnBar" fetch="select">
+            <column name="OPN_BAR_ID" />
+        </many-to-one>
+        <many-to-one name="burAnt" class="objetos.BurAnt" fetch="select">
+            <column name="BUR_ANT_ID" />
+        </many-to-one>
+        <many-to-one name="edo" class="objetos.Edo" fetch="select">
+            <column name="EDO_ID" />
+        </many-to-one>
+        <many-to-one name="sex" class="objetos.Sex" fetch="select">
+            <column name="SEX_ID" />
+        </many-to-one>
+        <many-to-one name="rol" class="objetos.Rol" fetch="select">
+            <column name="ROL_ID" />
+        </many-to-one>
+        <many-to-one name="asoPar" class="objetos.AsoPar" fetch="select">
+            <column name="ASO_PAR_ID" />
+        </many-to-one>
+        <many-to-one name="rngEda" class="objetos.RngEda" fetch="select">
+            <column name="CLI_EDA_ID" />
+        </many-to-one>
+        <many-to-one name="burAct" class="objetos.BurAct" fetch="select">
+            <column name="BUR_ACT_ID" />
+        </many-to-one>
+        <many-to-one name="rel" class="objetos.Rel" fetch="select">
+            <column name="REL_ID" />
+        </many-to-one>
+        <many-to-one name="burUso" class="objetos.BurUso" fetch="select">
+            <column name="BURO_USO_ID" />
+        </many-to-one>
+        <many-to-one name="gpo" class="objetos.Gpo" fetch="select">
+            <column name="GPO_ID" />
+        </many-to-one>
+        <many-to-one name="banPorUso" class="objetos.BanPorUso" fetch="select">
+            <column name="BAR_POR_USO_ID" />
+        </many-to-one>
+        <many-to-one name="tipRes" class="objetos.TipRes" fetch="select">
+            <column name="TIP_RES_ID" />
+        </many-to-one>
+        <many-to-one name="banPorPag" class="objetos.BanPorPag" fetch="select">
+            <column name="BAN_POR_PAG_ID" />
+        </many-to-one>
+        <many-to-one name="actExt" class="objetos.ActExt" fetch="select">
+            <column name="ACT_EXT_ID" />
+        </many-to-one>
+        <many-to-one name="ocp" class="objetos.Ocp" fetch="select">
+            <column name="OCP_ID" />
+        </many-to-one>
+        <many-to-one name="ing" class="objetos.Ing" fetch="select">
+            <column name="ING_ID" />
+        </many-to-one>
+        <many-to-one name="cli" class="objetos.Cli" fetch="select">
+            <column name="CLI_ID" />
+        </many-to-one>
+        <many-to-one name="mig" class="objetos.Mig" fetch="select">
+            <column name="MIG_ID" />
+        </many-to-one>
+        <many-to-one name="parPlt" class="objetos.ParPlt" fetch="select">
+            <column name="PAR_PLT_ID" />
+        </many-to-one>
+        <many-to-one name="ptm" class="objetos.Ptm" fetch="select">
+            <column name="PTM_ID" />
+        </many-to-one>
+        <many-to-one name="depEco" class="objetos.DepEco" fetch="select">
+            <column name="DEP_ECO_ID" />
+        </many-to-one>
+        <many-to-one name="nivEst" class="objetos.NivEst" fetch="select">
+            <column name="NIV_EST_ID" />
+        </many-to-one>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <many-to-one name="dinExt" class="objetos.DinExt" fetch="select">
+            <column name="DIN_EXT_ID" />
+        </many-to-one>
+        <many-to-one name="edoCvl" class="objetos.EdoCvl" fetch="select">
+            <column name="EDO_CVL_ID" />
+        </many-to-one>
+        <many-to-one name="proAnoGto" class="objetos.ProAnoGto" fetch="select">
+            <column name="PRO_ANO_GTO_ID" />
+        </many-to-one>
+        <many-to-one name="burHis" class="objetos.BurHis" fetch="select">
+            <column name="BUR_HIS_ID" />
+        </many-to-one>
+        <many-to-one name="tipEmp" class="objetos.TipEmp" fetch="select">
+            <column name="TIP_EMP_ID" />
+        </many-to-one>
+        <many-to-one name="rld" class="objetos.Rld" fetch="select">
+            <column name="RLD_ID" />
+        </many-to-one>
+        <many-to-one name="burPag" class="objetos.BurPag" fetch="select">
+            <column name="BUR_PAG_ID" />
+        </many-to-one>
+        <property name="cliFecNac" type="timestamp">
+            <column name="CLI_FEC_NAC" length="19" />
+        </property>
+        <property name="codPosId" type="string">
+            <column name="COD_POS_ID" length="5" />
+        </property>
+        <property name="cliAntRes" type="java.lang.Float">
+            <column name="CLI_ANT_RES" precision="12" scale="0" />
+        </property>
+        <property name="cliAntEmp" type="java.lang.Float">
+            <column name="CLI_ANT_EMP" precision="12" scale="0" />
+        </property>
+        <property name="banCmpId" type="java.lang.Integer">
+            <column name="BAN_CMP_ID" />
+        </property>
+        <property name="cliIndTarCre" type="java.lang.Character">
+            <column name="CLI_IND_TAR_CRE" length="1" />
+        </property>
+        <property name="cliIndBurCre" type="java.lang.Character">
+            <column name="CLI_IND_BUR_CRE" length="1" />
+        </property>
+        <property name="cliDesOcu" type="string">
+            <column name="CLI_DES_OCU" length="100" />
+        </property>
+        <property name="cliIngMen" type="java.lang.Integer">
+            <column name="CLI_ING_MEN" />
+        </property>
+        <property name="desId" type="java.lang.Integer">
+            <column name="DES_ID" />
+        </property>
+        <property name="cliValViv" type="java.lang.Integer">
+            <column name="CLI_VAL_VIV" />
+        </property>
+        <property name="cliValMen" type="java.lang.Integer">
+            <column name="CLI_VAL_MEN" />
+        </property>
+    </class>
+</hibernate-mapping>

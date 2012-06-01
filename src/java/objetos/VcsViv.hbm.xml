@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.VcsViv" table="vcs_viv" >
+        <id name="vcsVivId" type="int">
+            <column name="VCS_VIV_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="vcsVivDes" type="string">
+            <column name="VCS_VIV_DES" length="100" />
+        </property>
+        <property name="vcsVivLimInf" type="java.lang.Float">
+            <column name="VCS_VIV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="vcsVivLimSup" type="java.lang.Float">
+            <column name="VCS_VIV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="vcsVivOrdPre" type="java.lang.Integer">
+            <column name="VCS_VIV_ORD_PRE" />
+        </property>
+        <property name="vcsVivPto" type="java.lang.Float">
+            <column name="VCS_VIV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="vcsVivWoe" type="java.lang.Float">
+            <column name="VCS_VIV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="vcsVivDesLar" type="string">
+            <column name="VCS_VIV_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

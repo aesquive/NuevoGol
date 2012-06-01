@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliMta2" table="cli_mta2" >
+        <id name="cliMta2Id" type="java.lang.Integer">
+            <column name="CLI_MTA2_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cli" class="objetos.Cli" fetch="select">
+            <column name="CLI_ID" />
+        </many-to-one>
+        <property name="cliFecNac" type="timestamp">
+            <column name="CLI_FEC_NAC" length="19" />
+        </property>
+        <property name="cliEdaId" type="java.lang.Integer">
+            <column name="CLI_EDA_ID" />
+        </property>
+        <property name="codPosId" type="string">
+            <column name="COD_POS_ID" length="5" />
+        </property>
+        <property name="cliAntRes" type="java.lang.Float">
+            <column name="CLI_ANT_RES" precision="12" scale="0" />
+        </property>
+        <property name="cliAntEmp" type="java.lang.Float">
+            <column name="CLI_ANT_EMP" precision="12" scale="0" />
+        </property>
+        <property name="actExtId" type="java.lang.Integer">
+            <column name="ACT_EXT_ID" />
+        </property>
+        <property name="asoParId" type="java.lang.Integer">
+            <column name="ASO_PAR_ID" />
+        </property>
+        <property name="banCmpId" type="java.lang.Integer">
+            <column name="BAN_CMP_ID" />
+        </property>
+        <property name="banPorPagId" type="java.lang.Integer">
+            <column name="BAN_POR_PAG_ID" />
+        </property>
+        <property name="barPorUsoId" type="java.lang.Integer">
+            <column name="BAR_POR_USO_ID" />
+        </property>
+        <property name="opnBarId" type="java.lang.Integer">
+            <column name="OPN_BAR_ID" />
+        </property>
+        <property name="burActId" type="java.lang.Integer">
+            <column name="BUR_ACT_ID" />
+        </property>
+        <property name="burAntId" type="java.lang.Integer">
+            <column name="BUR_ANT_ID" />
+        </property>
+        <property name="burHisId" type="java.lang.Integer">
+            <column name="BUR_HIS_ID" />
+        </property>
+        <property name="burPagId" type="java.lang.Integer">
+            <column name="BUR_PAG_ID" />
+        </property>
+        <property name="buroUsoId" type="java.lang.Integer">
+            <column name="BURO_USO_ID" />
+        </property>
+        <property name="parPltId" type="java.lang.Integer">
+            <column name="PAR_PLT_ID" />
+        </property>
+        <property name="depEcoId" type="java.lang.Integer">
+            <column name="DEP_ECO_ID" />
+        </property>
+        <property name="dinExtId" type="java.lang.Integer">
+            <column name="DIN_EXT_ID" />
+        </property>
+        <property name="edoCvlId" type="java.lang.Integer">
+            <column name="EDO_CVL_ID" />
+        </property>
+        <property name="nivEstId" type="java.lang.Integer">
+            <column name="NIV_EST_ID" />
+        </property>
+        <property name="cliIndTarCre" type="java.lang.Character">
+            <column name="CLI_IND_TAR_CRE" length="1" />
+        </property>
+        <property name="cliIndBurCre" type="java.lang.Character">
+            <column name="CLI_IND_BUR_CRE" length="1" />
+        </property>
+        <property name="ingId" type="java.lang.Integer">
+            <column name="ING_ID" />
+        </property>
+        <property name="migId" type="java.lang.Integer">
+            <column name="MIG_ID" />
+        </property>
+        <property name="proAnoGtoId" type="java.lang.Integer">
+            <column name="PRO_ANO_GTO_ID" />
+        </property>
+        <property name="ptmId" type="java.lang.Integer">
+            <column name="PTM_ID" />
+        </property>
+        <property name="relId" type="java.lang.Integer">
+            <column name="REL_ID" />
+        </property>
+        <property name="rldId" type="java.lang.Integer">
+            <column name="RLD_ID" />
+        </property>
+        <property name="sexId" type="java.lang.Integer">
+            <column name="SEX_ID" />
+        </property>
+        <property name="tipResId" type="java.lang.Integer">
+            <column name="TIP_RES_ID" />
+        </property>
+        <property name="tipEmpId" type="java.lang.Integer">
+            <column name="TIP_EMP_ID" />
+        </property>
+        <property name="ocpId" type="java.lang.Integer">
+            <column name="OCP_ID" />
+        </property>
+        <property name="cliDesOcu" type="string">
+            <column name="CLI_DES_OCU" length="100" />
+        </property>
+        <property name="rolId" type="java.lang.Integer">
+            <column name="ROL_ID" />
+        </property>
+        <property name="cliIngMen" type="java.lang.Integer">
+            <column name="CLI_ING_MEN" />
+        </property>
+        <property name="desId" type="java.lang.Integer">
+            <column name="DES_ID" />
+        </property>
+        <property name="edoId" type="java.lang.Integer">
+            <column name="EDO_ID" />
+        </property>
+        <property name="cliValViv" type="java.lang.Integer">
+            <column name="CLI_VAL_VIV" />
+        </property>
+        <property name="cliValMen" type="java.lang.Integer">
+            <column name="CLI_VAL_MEN" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.BanPorUso" table="ban_por_uso" >
+        <id name="banPorUsoId" type="int">
+            <column name="BAN_POR_USO_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="banPorUsoDes" type="string">
+            <column name="BAN_POR_USO_DES" length="100" />
+        </property>
+        <property name="banPorUsoLimInf" type="java.lang.Float">
+            <column name="BAN_POR_USO_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="banPorUsoLimSup" type="java.lang.Float">
+            <column name="BAN_POR_USO_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="banPorUsoOrdPre" type="java.lang.Integer">
+            <column name="BAN_POR_USO_ORD_PRE" />
+        </property>
+        <property name="banPorUsoPto" type="java.lang.Float">
+            <column name="BAN_POR_USO_PTO" precision="12" scale="0" />
+        </property>
+        <property name="banPorUsoWoe" type="java.lang.Float">
+            <column name="BAN_POR_USO_WOE" precision="12" scale="0" />
+        </property>
+        <property name="banPorUsoDesLar" type="string">
+            <column name="BAN_POR_USO_DES_LAR" length="200" />
+        </property>
+        <set name="cliMtas" inverse="true">
+            <key>
+                <column name="BAR_POR_USO_ID" />
+            </key>
+            <one-to-many class="objetos.CliMta" />
+        </set>
+    </class>
+</hibernate-mapping>

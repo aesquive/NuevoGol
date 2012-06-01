@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.BhrIngViv" table="bhr_ing_viv" >
+        <id name="bhrIngVivCntId" type="int">
+            <column name="BHR_ING_VIV_CNT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="bhrIngVivDes" type="string">
+            <column name="BHR_ING_VIV_DES" length="100" />
+        </property>
+        <property name="bhrIngVivLimInf" type="java.lang.Float">
+            <column name="BHR_ING_VIV_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="bhrIngVivLimSup" type="java.lang.Float">
+            <column name="BHR_ING_VIV_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="bhrIngVivOrdPre" type="java.lang.Integer">
+            <column name="BHR_ING_VIV_ORD_PRE" />
+        </property>
+        <property name="bhrIngVivPto" type="java.lang.Float">
+            <column name="BHR_ING_VIV_PTO" precision="12" scale="0" />
+        </property>
+        <property name="bhrIngVivWoe" type="java.lang.Float">
+            <column name="BHR_ING_VIV_WOE" precision="12" scale="0" />
+        </property>
+        <property name="bhrIngVivDesLar" type="string">
+            <column name="BHR_ING_VIV_DES_LAR" length="200" />
+        </property>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="BHR_ING_VIV_ID" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+    </class>
+</hibernate-mapping>

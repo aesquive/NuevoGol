@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.PagRnt" table="pag_rnt" >
+        <id name="pagRntId" type="int">
+            <column name="PAG_RNT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="pagRntDes" type="string">
+            <column name="PAG_RNT_DES" length="100" />
+        </property>
+        <property name="pagRntLimInf" type="java.lang.Float">
+            <column name="PAG_RNT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="pagRntLimSup" type="java.lang.Float">
+            <column name="PAG_RNT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="pagRntOrdPre" type="java.lang.Integer">
+            <column name="PAG_RNT_ORD_PRE" />
+        </property>
+        <property name="pagRntPto" type="java.lang.Float">
+            <column name="PAG_RNT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="pagRntWoe" type="java.lang.Float">
+            <column name="PAG_RNT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="pagRntDesLar" type="string">
+            <column name="PAG_RNT_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliGol" table="cli_gol" >
+        <id name="cliGolId" type="java.lang.Integer">
+            <column name="CLI_GOL_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cliId" type="java.lang.Integer">
+            <column name="CLI_ID" />
+        </property>
+        <property name="servIndId" type="java.lang.Integer">
+            <column name="SERV_IND_ID" />
+        </property>
+        <property name="pbmId" type="java.lang.Integer">
+            <column name="PBM_ID" />
+        </property>
+        <property name="sitActId" type="java.lang.Integer">
+            <column name="SIT_ACT_ID" />
+        </property>
+        <property name="sitPrxAnId" type="java.lang.Integer">
+            <column name="SIT_PRX_AN_ID" />
+        </property>
+        <property name="cliGolSitPor" type="string">
+            <column name="CLI_GOL_SIT_POR" length="100" />
+        </property>
+        <property name="cliGolDeuPre" type="string">
+            <column name="CLI_GOL_DEU_PRE" length="100" />
+        </property>
+        <property name="apyEcoId" type="java.lang.Integer">
+            <column name="APY_ECO_ID" />
+        </property>
+        <property name="dinExtId" type="java.lang.Integer">
+            <column name="DIN_EXT_ID" />
+        </property>
+        <property name="gtoAlmId" type="java.lang.Integer">
+            <column name="GTO_ALM_ID" />
+        </property>
+        <property name="gtoPerId" type="java.lang.Integer">
+            <column name="GTO_PER_ID" />
+        </property>
+        <property name="gtoDeuId" type="java.lang.Integer">
+            <column name="GTO_DEU_ID" />
+        </property>
+        <property name="gtoOtrId" type="java.lang.Integer">
+            <column name="GTO_OTR_ID" />
+        </property>
+        <property name="relFamId" type="java.lang.Integer">
+            <column name="REL_FAM_ID" />
+        </property>
+        <property name="cliGolRelFamOtr" type="string">
+            <column name="CLI_GOL_REL_FAM_OTR" length="100" />
+        </property>
+        <property name="relId" type="java.lang.Integer">
+            <column name="REL_ID" />
+        </property>
+        <property name="cliGolRelOtr" type="string">
+            <column name="CLI_GOL_REL_OTR" length="100" />
+        </property>
+        <property name="freRelId" type="java.lang.Integer">
+            <column name="FRE_REL_ID" />
+        </property>
+        <property name="cliGolRelDec" type="string">
+            <column name="CLI_GOL_REL_DEC" length="100" />
+        </property>
+        <property name="cliGolMotCas" type="string">
+            <column name="CLI_GOL_MOT_CAS" length="100" />
+        </property>
+        <property name="cliGolMotCam" type="string">
+            <column name="CLI_GOL_MOT_CAM" length="100" />
+        </property>
+        <property name="cliGolResAct" type="java.lang.Integer">
+            <column name="CLI_GOL_RES_ACT" />
+        </property>
+        <property name="actUltId" type="java.lang.Integer">
+            <column name="ACT_ULT_ID" />
+        </property>
+        <property name="cliGolActPor" type="string">
+            <column name="CLI_GOL_ACT_POR" length="100" />
+        </property>
+        <property name="tipEmpId" type="java.lang.Integer">
+            <column name="TIP_EMP_ID" />
+        </property>
+        <property name="srvId" type="java.lang.Integer">
+            <column name="SRV_ID" />
+        </property>
+        <property name="ocpId" type="java.lang.Integer">
+            <column name="OCP_ID" />
+        </property>
+        <property name="cliGolOcuAct" type="string">
+            <column name="CLI_GOL_OCU_ACT" length="100" />
+        </property>
+        <property name="rolId" type="java.lang.Integer">
+            <column name="ROL_ID" />
+        </property>
+        <property name="cliGolEmpAct" type="java.lang.Integer">
+            <column name="CLI_GOL_EMP_ACT" />
+        </property>
+        <property name="estId" type="java.lang.Integer">
+            <column name="EST_ID" />
+        </property>
+        <property name="nivEstId" type="java.lang.Integer">
+            <column name="NIV_EST_ID" />
+        </property>
+        <property name="cliGolEstCli" type="java.lang.Integer">
+            <column name="CLI_GOL_EST_CLI" />
+        </property>
+        <property name="nivEstPapId" type="java.lang.Integer">
+            <column name="NIV_EST_PAP_ID" />
+        </property>
+        <property name="cliGolEstPad" type="java.lang.Integer">
+            <column name="CLI_GOL_EST_PAD" />
+        </property>
+        <property name="nivEstMamId" type="java.lang.Integer">
+            <column name="NIV_EST_MAM_ID" />
+        </property>
+        <property name="cliGolEstMad" type="java.lang.Integer">
+            <column name="CLI_GOL_EST_MAD" />
+        </property>
+        <property name="cliGolResCri" type="string">
+            <column name="CLI_GOL_RES_CRI" length="100" />
+        </property>
+        <property name="movId" type="java.lang.Integer">
+            <column name="MOV_ID" />
+        </property>
+        <property name="proAnoGtoId" type="java.lang.Integer">
+            <column name="PRO_ANO_GTO_ID" />
+        </property>
+        <property name="vivActId" type="java.lang.Integer">
+            <column name="VIV_ACT_ID" />
+        </property>
+        <property name="cliGolNumDep" type="java.lang.Integer">
+            <column name="CLI_GOL_NUM_DEP" />
+        </property>
+        <property name="cliGolDesIng" type="string">
+            <column name="CLI_GOL_DES_ING" length="100" />
+        </property>
+        <property name="apoConId" type="java.lang.Integer">
+            <column name="APO_CON_ID" />
+        </property>
+        <property name="apoHijId" type="java.lang.Integer">
+            <column name="APO_HIJ_ID" />
+        </property>
+        <property name="apoPadId" type="java.lang.Integer">
+            <column name="APO_PAD_ID" />
+        </property>
+        <property name="apoOtrId" type="java.lang.Integer">
+            <column name="APO_OTR_ID" />
+        </property>
+        <property name="gtoAlmHId" type="java.lang.Integer">
+            <column name="GTO_ALM_H_ID" />
+        </property>
+        <property name="gtoVesId" type="java.lang.Integer">
+            <column name="GTO_VES_ID" />
+        </property>
+        <property name="gtoSrvVivId" type="java.lang.Integer">
+            <column name="GTO_SRV_VIV_ID" />
+        </property>
+        <property name="gtoLimId" type="java.lang.Integer">
+            <column name="GTO_LIM_ID" />
+        </property>
+        <property name="gtoSldId" type="java.lang.Integer">
+            <column name="GTO_SLD_ID" />
+        </property>
+        <property name="gtoTrnId" type="java.lang.Integer">
+            <column name="GTO_TRN_ID" />
+        </property>
+        <property name="gtoEduId" type="java.lang.Integer">
+            <column name="GTO_EDU_ID" />
+        </property>
+        <property name="gtoDivId" type="java.lang.Integer">
+            <column name="GTO_DIV_ID" />
+        </property>
+        <property name="gtoDeuHId" type="java.lang.Integer">
+            <column name="GTO_DEU_H_ID" />
+        </property>
+        <property name="gtoRenHId" type="java.lang.Integer">
+            <column name="GTO_REN_H_ID" />
+        </property>
+        <property name="cliGolGasGas" type="string">
+            <column name="CLI_GOL_GAS_GAS" length="100" />
+        </property>
+        <property name="gtoOtrHId" type="java.lang.Integer">
+            <column name="GTO_OTR_H_ID" />
+        </property>
+        <property name="ptmId" type="java.lang.Integer">
+            <column name="PTM_ID" />
+        </property>
+        <property name="solCreId" type="java.lang.Integer">
+            <column name="SOL_CRE_ID" />
+        </property>
+        <property name="tipCreId" type="java.lang.Integer">
+            <column name="TIP_CRE_ID" />
+        </property>
+        <property name="cliGolAnoCre" type="java.lang.Integer">
+            <column name="CLI_GOL_ANO_CRE" />
+        </property>
+        <property name="cliGolMesCre" type="java.lang.Integer">
+            <column name="CLI_GOL_MES_CRE" />
+        </property>
+        <property name="cliGolPagAno" type="java.lang.Integer">
+            <column name="CLI_GOL_PAG_ANO" />
+        </property>
+        <property name="cliGolPagMes" type="java.lang.Integer">
+            <column name="CLI_GOL_PAG_MES" />
+        </property>
+        <property name="dinExtHId" type="string">
+            <column name="DIN_EXT_H_ID" length="100" />
+        </property>
+        <property name="cliGolDinExt" type="java.lang.Integer">
+            <column name="CLI_GOL_DIN_EXT" />
+        </property>
+        <property name="freDinId" type="java.lang.Integer">
+            <column name="FRE_DIN_ID" />
+        </property>
+        <property name="pagRntId" type="java.lang.Integer">
+            <column name="PAG_RNT_ID" />
+        </property>
+        <property name="cliGolTarCre" type="java.lang.Character">
+            <column name="CLI_GOL_TAR_CRE" length="1" />
+        </property>
+        <property name="cliGolNumTar" type="java.lang.Integer">
+            <column name="CLI_GOL_NUM_TAR" />
+        </property>
+        <property name="cliGolTarDeb" type="java.lang.Character">
+            <column name="CLI_GOL_TAR_DEB" length="1" />
+        </property>
+        <property name="cliGolCtaChe" type="java.lang.Character">
+            <column name="CLI_GOL_CTA_CHE" length="1" />
+        </property>
+        <property name="cliGolCrePer" type="java.lang.Character">
+            <column name="CLI_GOL_CRE_PER" length="1" />
+        </property>
+        <property name="cliGolCreAut" type="java.lang.Character">
+            <column name="CLI_GOL_CRE_AUT" length="1" />
+        </property>
+        <property name="cliGolCreHip" type="java.lang.Character">
+            <column name="CLI_GOL_CRE_HIP" length="1" />
+        </property>
+        <property name="cliGolSegVid" type="java.lang.Character">
+            <column name="CLI_GOL_SEG_VID" length="1" />
+        </property>
+        <property name="cliGolSegGmm" type="java.lang.Character">
+            <column name="CLI_GOL_SEG_GMM" length="1" />
+        </property>
+        <property name="cliGolOtrCre" type="java.lang.Character">
+            <column name="CLI_GOL_OTR_CRE" length="1" />
+        </property>
+        <property name="cliGolDesCre" type="string">
+            <column name="CLI_GOL_DES_CRE" length="100" />
+        </property>
+        <property name="cliGolGasOtr" type="string">
+            <column name="CLI_GOL_GAS_OTR" length="65535" />
+        </property>
+        <property name="cliGolImpExt" type="java.lang.Float">
+            <column name="CLI_GOL_IMP_EXT" precision="12" scale="0" />
+        </property>
+        <property name="cliGolImpRen" type="java.lang.Float">
+            <column name="CLI_GOL_IMP_REN" precision="12" scale="0" />
+        </property>
+        <property name="cliGolParCon" type="java.lang.Float">
+            <column name="CLI_GOL_PAR_CON" precision="12" scale="0" />
+        </property>
+        <property name="cliGolParHij" type="java.lang.Float">
+            <column name="CLI_GOL_PAR_HIJ" precision="12" scale="0" />
+        </property>
+        <property name="cliGolParPad" type="java.lang.Float">
+            <column name="CLI_GOL_PAR_PAD" precision="12" scale="0" />
+        </property>
+        <property name="cliGolParOtr" type="java.lang.Float">
+            <column name="CLI_GOL_PAR_OTR" precision="12" scale="0" />
+        </property>
+        <property name="cliGolDesAdi" type="string">
+            <column name="CLI_GOL_DES_ADI" length="100" />
+        </property>
+        <property name="cliGolIng" type="java.lang.Float">
+            <column name="CLI_GOL_ING" precision="12" scale="0" />
+        </property>
+        <property name="ipPsiId" type="java.lang.Integer">
+            <column name="IP_PSI_ID" />
+        </property>
+        <property name="vlrVivId" type="java.lang.Integer">
+            <column name="VLR_VIV_ID" />
+        </property>
+        <property name="numCreId" type="java.lang.Integer">
+            <column name="NUM_CRE_ID" />
+        </property>
+        <property name="cueAbrId" type="java.lang.Integer">
+            <column name="CUE_ABR_ID" />
+        </property>
+        <property name="burUso" type="java.lang.Integer">
+            <column name="BUR_USO" />
+        </property>
+        <property name="vcsVivId" type="java.lang.Integer">
+            <column name="VCS_VIV_ID" />
+        </property>
+        <property name="sexId" type="java.lang.Integer">
+            <column name="SEX_ID" />
+        </property>
+        <property name="cliGolP1" type="string">
+            <column name="CLI_GOL_P1" length="2" />
+        </property>
+        <property name="cliGolP2" type="string">
+            <column name="CLI_GOL_P2" length="2" />
+        </property>
+        <property name="cliGolP3" type="string">
+            <column name="CLI_GOL_P3" length="2" />
+        </property>
+        <property name="cliGolP4" type="string">
+            <column name="CLI_GOL_P4" length="2" />
+        </property>
+        <property name="cliGolP5" type="string">
+            <column name="CLI_GOL_P5" length="2" />
+        </property>
+        <property name="cliGolP6" type="string">
+            <column name="CLI_GOL_P6" length="2" />
+        </property>
+        <property name="cliGolP7" type="string">
+            <column name="CLI_GOL_P7" length="2" />
+        </property>
+        <property name="cliGolP8" type="string">
+            <column name="CLI_GOL_P8" length="2" />
+        </property>
+        <property name="cliGolP9" type="string">
+            <column name="CLI_GOL_P9" length="2" />
+        </property>
+        <property name="cliGolP10" type="string">
+            <column name="CLI_GOL_P10" length="2" />
+        </property>
+        <property name="cliGolP11" type="string">
+            <column name="CLI_GOL_P11" length="2" />
+        </property>
+        <property name="cliGolP12" type="string">
+            <column name="CLI_GOL_P12" length="2" />
+        </property>
+        <property name="cliGolP13" type="string">
+            <column name="CLI_GOL_P13" length="2" />
+        </property>
+        <property name="cliGolP14" type="string">
+            <column name="CLI_GOL_P14" length="2" />
+        </property>
+        <property name="cliGolP15" type="string">
+            <column name="CLI_GOL_P15" length="2" />
+        </property>
+        <property name="cliGolP16" type="string">
+            <column name="CLI_GOL_P16" length="2" />
+        </property>
+        <property name="cliGolP17" type="string">
+            <column name="CLI_GOL_P17" length="2" />
+        </property>
+        <property name="cliGolP18" type="string">
+            <column name="CLI_GOL_P18" length="2" />
+        </property>
+        <property name="cliGolP19" type="string">
+            <column name="CLI_GOL_P19" length="2" />
+        </property>
+        <property name="cliGolP20" type="string">
+            <column name="CLI_GOL_P20" length="2" />
+        </property>
+        <property name="cliGolP21" type="string">
+            <column name="CLI_GOL_P21" length="2" />
+        </property>
+        <property name="cliGolP22" type="string">
+            <column name="CLI_GOL_P22" length="2" />
+        </property>
+        <property name="cliGolP23" type="string">
+            <column name="CLI_GOL_P23" length="2" />
+        </property>
+        <property name="cliGolP24" type="string">
+            <column name="CLI_GOL_P24" length="2" />
+        </property>
+        <property name="cliGolP25" type="string">
+            <column name="CLI_GOL_P25" length="2" />
+        </property>
+        <property name="cliPagaRenta" type="java.lang.Float">
+            <column name="CLI_PAGA_RENTA" precision="12" scale="0" />
+        </property>
+        <property name="cliGtoOtro" type="string">
+            <column name="CLI_GTO_OTRO" length="100" />
+        </property>
+        <property name="cliGolDetIng" type="string">
+            <column name="CLI_GOL_DET_ING" length="100" />
+        </property>
+        <property name="cliGolActAdi" type="string">
+            <column name="CLI_GOL_ACT_ADI" length="100" />
+        </property>
+        <property name="cliGolApoCon" type="java.lang.Long">
+            <column name="CLI_GOL_APO_CON" precision="10" scale="0" />
+        </property>
+        <property name="cliGolApoHij" type="java.lang.Long">
+            <column name="CLI_GOL_APO_HIJ" precision="10" scale="0" />
+        </property>
+        <property name="cliGolApoPad" type="java.lang.Long">
+            <column name="CLI_GOL_APO_PAD" precision="10" scale="0" />
+        </property>
+        <property name="cliGolApoOtr" type="java.lang.Long">
+            <column name="CLI_GOL_APO_OTR" precision="10" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.RelPsiSoc" table="rel_psi_soc" >
+        <id name="relPsiSocId" type="int">
+            <column name="REL_PSI_SOC_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="catPsi" class="objetos.CatPsi" fetch="select">
+            <column name="CAT_PSI_ID" />
+        </many-to-one>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="relPsiSocDes" type="string">
+            <column name="REL_PSI_SOC_DES" length="100" />
+        </property>
+        <property name="relPsiSocNumRes" type="java.lang.Integer">
+            <column name="REL_PSI_SOC_NUM_RES" />
+        </property>
+        <property name="relPsiSocPto" type="java.lang.Float">
+            <column name="REL_PSI_SOC_PTO" precision="12" scale="0" />
+        </property>
+        <property name="relPsiSocWoe" type="java.lang.Float">
+            <column name="REL_PSI_SOC_WOE" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

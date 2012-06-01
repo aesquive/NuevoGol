@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.BhrPagPtlCnt" table="bhr_pag_ptl_cnt" >
+        <id name="bhrPagPtlCntId" type="int">
+            <column name="BHR_PAG_PTL_CNT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="bhrPagPtlCntDes" type="string">
+            <column name="BHR_PAG_PTL_CNT_DES" length="100" />
+        </property>
+        <property name="bhrPagPtlCntLimInf" type="java.lang.Float">
+            <column name="BHR_PAG_PTL_CNT_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="bhrPagPtlCntLimSup" type="java.lang.Float">
+            <column name="BHR_PAG_PTL_CNT_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="bhrPagPtlCntOrdPre" type="java.lang.Integer">
+            <column name="BHR_PAG_PTL_CNT_ORD_PRE" />
+        </property>
+        <property name="bhrPagPtlCntPto" type="java.lang.Float">
+            <column name="BHR_PAG_PTL_CNT_PTO" precision="12" scale="0" />
+        </property>
+        <property name="bhrPagPtlCntWoe" type="java.lang.Float">
+            <column name="BHR_PAG_PTL_CNT_WOE" precision="12" scale="0" />
+        </property>
+        <property name="bhrPagPtlCntDesLar" type="string">
+            <column name="BHR_PAG_PTL_CNT_DES_LAR" length="200" />
+        </property>
+        <set name="cliBhrs" inverse="true">
+            <key>
+                <column name="BHR_PAG_PTL_CNT" />
+            </key>
+            <one-to-many class="objetos.CliBhr" />
+        </set>
+    </class>
+</hibernate-mapping>

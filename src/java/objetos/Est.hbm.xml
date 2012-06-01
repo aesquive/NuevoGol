@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Est" table="est" >
+        <id name="estId" type="int">
+            <column name="EST_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cal" class="objetos.Cal" fetch="select">
+            <column name="CAL_ID" />
+        </many-to-one>
+        <property name="estDes" type="string">
+            <column name="EST_DES" length="100" />
+        </property>
+        <property name="estLimInf" type="java.lang.Float">
+            <column name="EST_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="estLimSup" type="java.lang.Float">
+            <column name="EST_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="estOrdPre" type="java.lang.Integer">
+            <column name="EST_ORD_PRE" />
+        </property>
+        <property name="estPto" type="java.lang.Float">
+            <column name="EST_PTO" precision="12" scale="0" />
+        </property>
+        <property name="estWoe" type="java.lang.Float">
+            <column name="EST_WOE" precision="12" scale="0" />
+        </property>
+        <property name="estDesLar" type="string">
+            <column name="EST_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

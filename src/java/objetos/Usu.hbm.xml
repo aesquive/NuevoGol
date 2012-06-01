@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.Usu" table="usu" >
+        <id name="usuId" type="int">
+            <column name="USU_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="usuDes" type="string">
+            <column name="USU_DES" length="100" />
+        </property>
+        <property name="usuLimInf" type="java.lang.Float">
+            <column name="USU_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="usuLimSup" type="java.lang.Float">
+            <column name="USU_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="usuOrdPre" type="java.lang.Integer">
+            <column name="USU_ORD_PRE" />
+        </property>
+        <property name="usuPto" type="java.lang.Float">
+            <column name="USU_PTO" precision="12" scale="0" />
+        </property>
+        <property name="usuWoe" type="java.lang.Float">
+            <column name="USU_WOE" precision="12" scale="0" />
+        </property>
+        <property name="usuDesLar" type="string">
+            <column name="USU_DES_LAR" length="200" />
+        </property>
+        <property name="usuClave" type="string">
+            <column name="USU_CLAVE" length="20" />
+        </property>
+        <property name="usuNombre" type="string">
+            <column name="USU_NOMBRE" length="20" />
+        </property>
+        <property name="usuPassword" type="string">
+            <column name="USU_PASSWORD" length="15" />
+        </property>
+        <property name="usuPerfil" type="string">
+            <column name="USU_PERFIL" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

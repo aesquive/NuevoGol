@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.SitPrxAn" table="sit_prx_an" >
+        <id name="sitPrxAnId" type="int">
+            <column name="SIT_PRX_AN_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="sitPrxAnDes" type="string">
+            <column name="SIT_PRX_AN_DES" length="100" />
+        </property>
+        <property name="sitPrxAnLimInf" type="java.lang.Float">
+            <column name="SIT_PRX_AN_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="sitPrxAnLimSup" type="java.lang.Float">
+            <column name="SIT_PRX_AN_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="sitPrxAnOrdPre" type="java.lang.Integer">
+            <column name="SIT_PRX_AN_ORD_PRE" />
+        </property>
+        <property name="sitPrxAnPto" type="java.lang.Float">
+            <column name="SIT_PRX_AN_PTO" precision="12" scale="0" />
+        </property>
+        <property name="sitPrxAnWoe" type="java.lang.Float">
+            <column name="SIT_PRX_AN_WOE" precision="12" scale="0" />
+        </property>
+        <property name="sitPrxAnDesLar" type="string">
+            <column name="SIT_PRX_AN_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

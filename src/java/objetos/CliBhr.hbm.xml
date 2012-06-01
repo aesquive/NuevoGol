@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.CliBhr" table="cli_bhr" >
+        <id name="cliBhrId" type="java.lang.Integer">
+            <column name="CLI_BHR_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="edo" class="objetos.Edo" fetch="select">
+            <column name="EDO_ID" />
+        </many-to-one>
+        <many-to-one name="bhrCtaPurRie" class="objetos.BhrCtaPurRie" fetch="select">
+            <column name="BHR_CTA_PUR_RIE_ID" />
+        </many-to-one>
+        <many-to-one name="bhrAct" class="objetos.BhrAct" fetch="select">
+            <column name="BHR_ACT_ID" />
+        </many-to-one>
+        <many-to-one name="eda" class="objetos.Eda" fetch="select">
+            <column name="EDA_ID" />
+        </many-to-one>
+        <many-to-one name="ocp" class="objetos.Ocp" fetch="select">
+            <column name="OCP_ID" />
+        </many-to-one>
+        <many-to-one name="bhrMenIng" class="objetos.BhrMenIng" fetch="select">
+            <column name="BHR_MEN_ING" />
+        </many-to-one>
+        <many-to-one name="bhrPagPtlCnt" class="objetos.BhrPagPtlCnt" fetch="select">
+            <column name="BHR_PAG_PTL_CNT" />
+        </many-to-one>
+        <many-to-one name="bhrEfi" class="objetos.BhrEfi" fetch="select">
+            <column name="BHR_EFI_ID" />
+        </many-to-one>
+        <many-to-one name="bhrIngViv" class="objetos.BhrIngViv" fetch="select">
+            <column name="BHR_ING_VIV_ID" />
+        </many-to-one>
+        <property name="ciId" type="java.lang.Integer">
+            <column name="CI_ID" />
+        </property>
+        <property name="ftrPprId" type="java.lang.Integer">
+            <column name="FTR_PPR_ID" />
+        </property>
+        <property name="intPiId" type="java.lang.Integer">
+            <column name="INT_PI_ID" />
+        </property>
+        <set name="pagCliBhrs" inverse="true">
+            <key>
+                <column name="CLI_BHR_ID" />
+            </key>
+            <one-to-many class="objetos.PagCliBhr" />
+        </set>
+    </class>
+</hibernate-mapping>

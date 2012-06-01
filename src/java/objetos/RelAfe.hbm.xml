@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-may-2011 8:17:33 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.RelAfe" table="rel_afe" >
+        <id name="relAfeId" type="int">
+            <column name="REL_AFE_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="calId" type="java.lang.Integer">
+            <column name="CAL_ID" />
+        </property>
+        <property name="relAfeDes" type="string">
+            <column name="REL_AFE_DES" length="100" />
+        </property>
+        <property name="relAfeLimInf" type="java.lang.Float">
+            <column name="REL_AFE_LIM_INF" precision="12" scale="0" />
+        </property>
+        <property name="relAfeLimSup" type="java.lang.Float">
+            <column name="REL_AFE_LIM_SUP" precision="12" scale="0" />
+        </property>
+        <property name="relAfeOrdPre" type="java.lang.Integer">
+            <column name="REL_AFE_ORD_PRE" />
+        </property>
+        <property name="relAfePto" type="java.lang.Float">
+            <column name="REL_AFE_PTO" precision="12" scale="0" />
+        </property>
+        <property name="relAfeWoe" type="java.lang.Float">
+            <column name="REL_AFE_WOE" precision="12" scale="0" />
+        </property>
+        <property name="relAfeDesLar" type="string">
+            <column name="REL_AFE_DES_LAR" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
