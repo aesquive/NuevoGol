@@ -1,0 +1,86 @@
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+#contenedor {
+	width: 1000px;
+	height: 768px;
+}
+
+#encabezado {
+	width: 954px;
+	height: 381px;
+}
+
+#borde_iz {
+	background-image: url(../images/home_03.png);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 131px;
+	float: left;
+}
+
+#logo {
+	background-image: url(../images/home_04.png);
+	background-repeat: no-repeat;
+	width: 412px;
+	height: 131px;
+	float: left;
+	vertical-align: top;
+}
+
+#relleno {
+	background-image: url(../images/home_05.png);
+	background-repeat: repeat-x;
+	height: 131px;
+	width: 501px;
+	float: left;
+}
+
+#login { /*position:absolute;*/
+	width: 415px;
+	height: 58px;
+	left: 515px;
+	top: 31px;
+	float: right;
+	padding-top: 33px;
+}
+
+#borde_der {
+	background-image: url(../images/home_07.png);
+	background-repeat: no-repeat;
+	width: 21px;
+	height: 131px;
+	float: right;
+}
+
+#centro {
+	background-image: url(../images/home_09.png);
+	background-repeat: no-repeat;
+	width: 956px;
+	height: 251px;
+	float: left;
+}
+
+#botones { /*position:absolute;*/
+	width: 825px;
+	height: 114px;
+	float: left;
+	left: 76px;
+	top: 184px;
+	/*padding-left:78px;
+	padding-right:78px;*/
+	padding: 42px 78px 0px 78px;
+}

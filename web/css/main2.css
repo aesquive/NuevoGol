@@ -1,0 +1,91 @@
+#contenedor
+{
+width:1000px;
+}
+#encabezado
+{
+    width:954px;
+	height:381px;
+}
+#borde_iz
+{   
+    background-image:url(../images/home_03.png);
+    background-repeat:no-repeat;
+	width:20px;
+	height:131px;
+	float:left;
+}
+#logo
+{
+    background-image:url(../images/logo_ch.png);
+	background-repeat:no-repeat;
+	width:272px;
+	height:131px;
+	float:left;
+	vertical-align:top;
+}
+#data
+{
+    width:272px;
+	height:60px;
+	margin-top:65px;
+	/*float:left;*/
+}
+#relleno
+{
+    background-image:url(../images/home_05.png);
+	background-repeat:repeat-x;
+	height:131px;
+	width:641px;
+	float:left;
+}
+
+#borde_der
+{
+    background-image:url(../images/home_07.png);
+    background-repeat:no-repeat;
+	width:21px;
+	height:131px;
+	float:right;	
+}
+#contenido
+{
+    background-image:url(../images/pixel_h.png);
+    background-repeat:repeat-y;
+	width:956px;
+	float:left;
+}
+#capa_enc{
+	float:right;	
+	padding-left:78px;
+}
+#pie_pag{
+background-image:url(../images/pie_pag.png);
+    background-repeat:no-repeat;
+	width: 956px;
+	height:103px;
+	float:left;	
+
+}
+#table{
+}
+
+.fsdwidth{
+    width: 867px;
+}
+.contenidoErrol{
+    background-image: url(../images/pixel_h.png);
+    background-repeat: repeat-y;
+}
+.anchoEstandardSelectDown{
+    width:300px;
+}
+.anchoEstandardSelect{
+    width: 135px;
+}
+.anchoEstandardSelectColumnaDerecha{
+    width: 80px;
+}
+#select{
+    
+}

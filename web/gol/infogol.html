@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+<meta http-equiv="Content-Type" content="text/ht&ml; charset=iso-8859-1" />
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/funciones.js"></script>
+<script language="JavaScript" src="../js/funcGol.js"></script>
+<script language="JavaScript" src="../js/golVal.js"></script>
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+
+
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+<script>
+     $(document).ready(function s(){
+     
+     
+            cargaCombos();
+
+        autollenado();
+
+        muestraAnio();
+
+        muestraDias();
+
+        
+
+    });
+</script>
+
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+
+
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+</head>
+    <body onload="crearJson();calcular_edad();activarGastosOtrosInfo();MM_preloadImages('../images/acceso/activos_guardar.png','../images/acceso/activos_exit.png','../images/acceso/activos_add.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_28.png','../images/accesos_down/aplicacion-2_22.png')">
+<form id="infogol" name="infogol" method="get" action="../ProcesadorServlet"
+	onsubmit="return validate_form(this)">
+
+  
+      
+    <center>
+<div id="contenedor">
+<div id="encabezado">
+<div id="borde_iz"></div>
+<div id="logo"></div>
+<div id="relleno">
+<div id="capa_enc">
+</div>
+</div>
+<div id="borde_der"></div>
+<div id="contenido">
+
+<table width="910" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td height="7" colspan="19">
+		<fieldset>
+		<table width="855" height="416" border="0" align="left"
+			cellpadding="0" cellspacing="0">
+			<tr>
+				<td colspan="5"> </td>
+			</tr>
+			<tr>
+				<td colspan="4" valign="top">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Nombre</legend>
+				<table width="468" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="149" align="left" class="blackText1">Apellido
+						Paterno</td>
+						<td width="15">&nbsp;</td>
+						<td width="144" align="left" class="blackText1">Apellido
+						Materno</td>
+						<td width="16">&nbsp;</td>
+						<td width="144" align="left" class="blackText1">Nombre</td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left"><input type="text"
+                                                        id="cliApePat" maxlength="100" name="cliApePat" value=""
+							onkeypress="aceptaMayusculasSinCaracteres();"
+                                                        onblur=""
+                                                        
+							class="mayus"
+							tabindex="1"/></td>
+						<td class="blackText1">&nbsp;</td>
+						<td class="blackText1" align="left"><input type="text"
+							id="cliApeMat" maxlength="100" name="cliApeMat" value=""
+							onkeypress="aceptaMayusculasSinCaracteres()"
+							class="mayus"
+                                                        onblur=""
+							tabindex="2"/></td>
+						<td class="blackText1">&nbsp;</td>
+						<td class="blackText1" align="left"><input type="text"
+							id="cliNom" maxlength="100" name="cliNom" value=""
+							onkeypress="aceptaMayusculasSinCaracteres()"
+							class="mayus"
+                                                        onblur=""
+							tabindex="3"/></td>
+					</tr>
+				</table>
+                    		</fieldset>				</td>
+				<td width="300" valign="top">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Fecha de Nacimiento</legend>
+				<table width="300" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td class="blackText1" align="left">A&ntilde;o</td>
+						<td class="blackText1" align="left">Mes</td>
+						<td class="blackText1" align="left">D&iacute;a*</td>
+						<td class="blackText1" align="left">Edad</td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left">
+							<select id="anio"
+									name="anio" onchange="deshabilitarFecNac()"
+									class="combo_60" tabindex="4">
+								<option value="-1">-A&ntilde;o-</option>
+
+								
+
+							</select>						</td>
+						<td class="blackText1" align="left"><select id="mes"
+							name="mes" onchange="muestraDias();"
+							class="combo_80" tabindex="5">
+							<option value="-1">-Mes-</option>
+							<option value="01" >ENERO</option>
+							<option value="02" >FEBRERO</option>
+							<option value="03" >MARZO</option>
+							<option value="04" >ABRIL</option>
+							<option value="05" >MAYO</option>
+							<option value="06" >JUNIO</option>
+							<option value="07" >JULIO</option>
+							<option value="08" >AGOSTO</option>
+							<option value="09" >SEPTIEMBRE</option>
+							<option value="10"
+								>OCTUBRE</option>
+							<option value="11"
+								>NOVIEMBRE</option>
+							<option value="12"
+								>DICIEMBRE</option>
+						</select></td>
+						<td class="blackText1" align="left"><select id="dia"
+							name="dia" onchange="calcular_edad();"
+                                                        onblur="crearFecNac();generaRfc();"
+							class="combo_60" tabindex="6">
+							<option value="-1">-D&iacute;a-</option>
+
+							<option value="" ></option>
+
+						</select></td>
+						<td class="blackText1" align="left"><input  id="cliEdad" class="combo_20"
+							name="cliEdad" type="text" value="" readonly />						</td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td colspan="5">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Domicilio</legend>
+				<table width="834" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="148" align="left" class="blackText1">Calle</td>
+						<td width="64" align="left" class="blackText1">No.Exterior</td>
+						<td width="4" rowspan="2" align="left" class="blackText1">&nbsp;</td>
+						<td width="73" align="left" class="blackText1">No.Interior</td>
+						<td width="144" align="left" class="blackText1">Colonia</td>
+						<td colspan="2" rowspan="2" align="left" class="blackText1">&nbsp;</td>
+						<td width="90" align="left" class="blackText1">C&oacute;digo
+						Postal</td>
+						<td colspan="2" rowspan="2" align="left" class="blackText1">&nbsp;</td>
+						<td width="148" align="left" class="blackText1">Estado</td>
+						<td width="163" align="left" class="blackText1">Delegaci&oacute;n/
+						Municipio</td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1"><input type="text"
+							id="cliDomCal" maxlength="100" name="cliDomCal" value=""
+							class="mayus"
+                                                        
+							tabindex="7"/></td>
+						<td align="left" class="blackText1"><input name="cliDomNumExt"
+							id="cliDomNumExt" maxlength="5" value="" type="text" size="8" class="mayus"
+                                                        
+							tabindex="8"/></td>
+						<td align="left" class="blackText1"><input name="cliDomNumInt"
+							id="cliDomNumInt" maxlength="5" type="text" value="" size="8"  class="mayus"
+                                                        
+							tabindex="9"/></td>
+						<td align="left" class="blackText1"><input name="cliDomCol"
+							id="cliDomCol" maxlength="100" type="text" value="" id="colonia" class="mayus"
+							tabindex="10"/></td>
+						<td align="left" class="blackText1"><input name="codPosId" id="codPosId"
+							type="text" size="5" value=""
+							onblur="cargaCp(this)"
+							maxlength="5"
+							onkeypress="AceptaNumerico();"
+							tabindex="11"/></td>
+						<td align="left" class="blackText1"><input type="text"
+							id="cliEdo" maxlength="100" name="cliEdo" value="" readonly="readonly"/></td>
+						<td align="left" class="blackText1"><input type="text"
+							id="cliMun" name="cliMun" value="" readonly="readonly"/></td>
+					</tr>
+				</table>
+				</fieldset>				</td>
+			</tr>
+			<tr>
+				<td colspan="5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="5"></td>
+			</tr>
+			<tr>
+				<td width="276" rowspan="2">
+					<fieldset>
+					<table width="274" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="120" class="blackText1" align="left" valign="top">&iquest;Cu&aacute;l
+								es su sexo?</td>
+							<td width="154" class="blackText1" align="left" valign="top">&iquest;Cu&aacute;l
+								es su estado civil?</td>
+						</tr>   
+						<tr>
+							<td align="left" class="blackText1" valign="top">
+								<select id="sexId" name="sex" class="combo_100" tabindex="12">
+									<option value="-1">-Seleccione-</option>
+                                                                       
+								</select>							</td>
+							<td valign="top" class="blackText1" align="left">
+								<select name="CliEdocivil" id="edoCvlId" class="combo_100"
+										tabindex="13">
+										<option value="-1">-Seleccione-</option>
+                                              
+
+								</select>							</td>
+						</tr>
+					</table>
+					</fieldset>				</td>
+				<td width="11" rowspan="2" align="center" valign="top"
+					class="blackText1">&nbsp;</td>
+				<td width="250" height="36" align="left" valign="top"
+					class="blackText1">&iquest;Qu&eacute; comercio o servicio cree
+				que es<br/>
+				indispensable tener cerca de su hogar?</td>
+				<td width="4" align="center" valign="top" class="blackText1">&nbsp;</td>
+				<td width="314" align="left" valign="top" class="blackText1">&iquest;Cu&aacute;l
+				es el principal problema que<br />
+				tiene hoy en d&iacute;a?</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"><select
+					name="servInd"  id="srvId" class="combo_140"
+					tabindex="14">
+					<option value="-1">-Seleccione-</option>
+                 
+				</select></td>
+				<td colspan="2" align="left" valign="top" class="blackText1"><select
+					name="pbm" id="pbmId" class="combo_140"
+					tabindex="15">
+					<option value="-1">-Seleccione-</option>
+                                 
+				</select></td>
+			</tr>
+			<tr>
+				<td height="19" colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td height="58" colspan="4" valign="top">
+					<table width="550" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<fieldset>
+							<table width="550" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="33%" valign="top" align="left" class="blackText1">Comparado
+										con el a&ntilde;o anterior,<br />
+										¿c&oacute;mo es su situaci&oacute;n econ&oacute;mica actual?</td>
+									<td width="2%" rowspan="2" align="left" valign="top"
+										class="blackText1">&nbsp;</td>
+									<td width="33%" valign="top" align="left" class="blackText1">&iquest;C&oacute;mo
+										considera que ser&aacute; su situaci&oacute;n econ&oacute;mica el
+										pr&oacute;ximo a&ntilde;o?</td>
+									<td width="2%" rowspan="2" align="left" valign="top"
+										class="blackText1">&nbsp;</td>
+									<td width="30%" rowspan="2" align="left" valign="bottom"
+										class="blackText1">&iquest;Por qu&eacute; ?<br />
+									<textarea name="cliGolSitPor" maxlength="100"  id="cliGolSitPor"
+												class="mayus"
+                                                                                                onkeypress="aceptaMayusculasSinCaracteres()"
+                                                                                                tabindex="18"></textarea></td>
+								</tr>
+								<tr>
+									<td align="left" valign="top" class="blackText1"><select
+										name="sitAct" id="sitActId" class="combo_140"
+										tabindex="16">
+										<option value="-1">-Seleccione-</option>
+                                                                        
+										</select>									</td>
+									<td align="left" valign="top" class="blackText1"><select
+										name="sitPrxAn" id="sitPrxAnId"
+										tabindex="17">
+										<option value="-1">-Seleccione-</option>
+                                                                    
+										</select>									</td>
+								</tr>
+							</table>
+							</fieldset>						</td>
+					</tr>
+					</table>				</td>
+				<td	rowspan="4" valign="top">
+					<fieldset>
+						<legend class="blackText1" align="top">Que tanto le ha afectado la crisis econ&oacute;mica en:</legend>
+						<table width="300" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td colspan="2" align="left" class="blackText1">
+									1. Cubrir los gastos de alimentos de su familia								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="left">
+									<select id="gtoAlmId" name="gtoAlm" class="combo_100"
+											tabindex="22">
+										<option value="-1">-Seleccione-</option>
+                                                             
+									</select>								</td>
+							</tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<tr>
+								<td colspan="2" align="left" class="blackText1">
+									2. Cubrir los gastos personales b&aacute;sicos								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="left">
+									<select id="gtoPerId" name="gtoPer" class="combo_100"
+											tabindex="23">
+										<option value="-1">-Seleccione-</option>
+                                                  
+									</select>								</td>
+							</tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<tr>
+								<td colspan="2" align="left" class="blackText1">
+									3. Pagar deudas								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="left">
+									<select id="gtoDeuId"  name="gtoDeu" class="combo_100"
+											tabindex="24">
+										<option value="-1">-Seleccione-</option>
+						
+									</select>								</td>
+							</tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+							<tr>
+								<td colspan="2" align="left" class="blackText1">
+									4. Otros,&iquest;Cu&aacute;l?								</td>
+							</tr>
+							<tr>
+								<td align="left">
+									<input
+										type="text"  name="cliGolGasOtr" id="cliGolGasOtr"
+										value=""
+                                                                                maxlength="20"
+										class="mayus"
+                                                                                onmouseover="document.getElementById('cliGolGasOtr').focus();"
+										onkeypress="aceptaMayusculasSinCaracteres()"
+                                                                                onkeyup="activarGastosOtrosInfo();"
+                                                                                
+                                                                                tabindex="25"</input> 							</td>
+								<td align="left">
+                                                                    <select  id="gtoOtrId" name="gtoOtr" disabled class="combo_100"
+											 tabindex="26">
+
+										<option value="-1">-Seleccione-</option>
+					
+									</select>								</td>
+							</tr>
+						</table>
+					</fieldset>				</td>
+			</tr>
+			<tr>
+				<td height="14" colspan="4" valign="top">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="39" width="550" colspan="5" valign="top">
+					<table width="550" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<fieldset>
+								<table width="550" border="0" cellspacing="0" cellpadding="0">
+			 						<tr>
+										<td width="33%" valign="bottom" align="left" class="blackText1">¿Cu&aacute;l
+											es la deuda que<br />
+											m&aacute;s le preocupa?</td>
+										<td width="2%" rowspan="2" align="left" valign="top"
+											class="blackText1">&nbsp;</td>
+										<td width="33%" valign="top" align="left" class="blackText1">&iquest;Alguna
+											vez ha solicitado apoyo econ&oacute;mico a alguna
+											instituci&oacute;n para tratar de solucionar sus problemas ?</td>
+										<td width="2%" rowspan="2" align="left" valign="top"
+											class="blackText1">&nbsp;</td>
+										<td width="30%" align="left" valign="bottom" class="blackText1">&iquest;Qu&eacute;
+											har&iacute;a si tuviera dinero extra?</td>
+									</tr>
+									<tr>
+										<td align="left" valign="top" class="blackText1"><input
+										type="text" maxlength="100" name="cliGolDeuPre"
+                                                                                onkeypress="aceptaMayusculasSinCaracteres()"
+                                                                                id="cliGolDeuPre"
+										value=""
+										class="mayus"
+										tabindex="19"/>										</td>
+										<td align="left" valign="top" class="blackText1"><select
+										name="apyEco" id="apyEcoId"
+										tabindex="20">
+										<option value="-1">-Seleccione-</option>
+                                                      
+										</select></td>
+										<td width="217" align="left" valign="bottom" class="blackText1">
+										<select id="dinExtId" name="dinExt" class="combo_140"
+												tabindex="21">
+											<option value="-1">-Seleccione-</option>
+									
+											</select>										</td>
+									</tr>
+								</table>
+								</fieldset>							</td>
+						</tr>
+					</table>				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		</fieldset>		</td>
+	</tr>
+
+	<tr>
+		<td width="331">&nbsp;</td>
+		<td width="42" align="center">&nbsp;</td>
+		<td width="8">&nbsp;</td>
+		<td width="51" align="center">&nbsp;</td>
+		<td width="7">&nbsp;</td>
+		<td width="47" align="center"></td>
+		<td width="8" align="center">&nbsp;</td>
+		<td width="48" align="center">&nbsp;</td>
+		<td width="7" align="center"></td>
+		<td width="44" align="center"></td>
+		<td width="8">&nbsp;</td>
+		<td width="36" align="center"></td>
+		<td width="11">&nbsp;</td>
+		<td width="34" align="center"><a
+			href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('salir2','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="salir2"
+			width="32" height="32" border="0" id="salir2" /></a></td>
+	  <td width="16" align="center">
+              </td>
+
+		<td width="15" align="right" valign="middle"><a
+
+			onclick="window.location.href='golindex.html'"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image14','','../images/accesos_down/aplicacion-2_36.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_36.png" name="Image14"
+			width="32" height="32" border="0" id="Image14" /></a><a href="#"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('derecha','','../images/accesos_down/aplicacion-2_38.png',1)"></a></td>
+	  <td width="74" align="center"><a
+			
+                  onclick="validacionPagina('infogol');"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('siguiente', '', '../images/accesos_down/aplicacion-2_41.png',1);"><img
+			src="../images/accesos_down/aplicacion-23_41.png" name="siguiente"
+			width="31" height="32" border="0" id="siguiente" /></a></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td align="center" class="blueText"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText">Salir</td>
+		<td align="center" class="blueText">&nbsp;</td>
+		<td><span class="blueText">Anterior</span></td>
+		<td align="center" class="blueText">
+			Siguiente</td>
+	</tr>
+</table>
+</div>
+<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+                                                                                        
+</form>
+</body>
+</html>

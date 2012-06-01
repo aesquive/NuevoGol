@@ -1,0 +1,583 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script language="javascript" src="../js/funciones.js"></script>
+<script language="JavaScript" src="../js/funcGol.js"></script>
+<script language="JavaScript" src="../js/golVal.js"></script>
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+
+<script>
+   
+   seguridad();
+</script>
+
+<script>
+    $(document).ready(function s(){
+
+        cargaCombos();
+
+        autollenado();
+
+
+        autoLlenadoRadios();
+
+        muestraAnios();
+
+    });
+</script>
+
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+</head>
+<body
+
+    onload="actualizarPagina();pagaRent();dineroExtraChange();solicitudCred();activarTarjeta('cliGolTarCre','cliGolNumTar');MM_preloadImages('../images/acceso/activos_add.png','../images/acceso/activos_exit.png','../images/acceso/activos_guardar.png','../images/buscar_activo.png','../images/acceso/activos_salir.png','../images/acceso/inactivo-blanco_salir.png','../images/acceso/activos_left.png','../images/acceso/activos_right.png','../images/accesos_down/aplicacion-2_28.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_36.png','../images/accesos_down/aplicacion-2_41.png')">
+<form id="Historialgol" name="Historialgol" method="get"
+	action="../ProcesadorServlet" onsubmit="return validate_form(this)">
+
+<center>
+<div id="contenedor">
+<div id="encabezado">
+<div id="borde_iz"></div>
+<div id="logo"></div>
+<div id="relleno">
+<div id="capa_enc">
+
+</div>
+</div>
+<div id="borde_der"></div>
+<div id="contenido">
+
+<table width="785" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td colspan="15" align="center">
+		<fieldset>
+		<table width="779" height="438" border="0" align="left"
+			cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="14" colspan="5"> </td>
+			</tr>
+			<tr>
+				<td width="180" valign="top"></td>
+				<td width="193" valign="top"></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+			<tr>
+				<td height="30" align="left" valign="top" class="blackText1">&iquest;Tiene
+				alguna actividad<br />
+				adicional remunerada?*</td>
+				<td colspan="4" rowspan="5" valign="top">
+				<table width="559" height="88" border="0" cellpadding="00"
+					cellspacing="0">
+					<tr>
+						<td width="341" valign="top">
+						<fieldset>
+						<table width="339" height="87" border="0" cellpadding="00"
+							cellspacing="0">
+							<tr>
+								<td width="194" align="left" valign="top" class="blackText1">&nbsp;&iquest;Recibe
+								alg&uacute;n dinero extra?*</td>
+								<td width="152" align="left" valign="top" class="blackText1">Concepto*</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1">&nbsp;
+									<select name="cliGolDinExt" id="cliGolDinExt" tabindex="1" onchange="dineroExtraChange();">
+								     <option value="-1"
+										>---</option>
+                                                                            <option value="1"
+										>SI</option>
+										<option value="2"
+										>NO</option>
+									</select>
+								</td>
+								<td align="left" valign="top" class="blackText1">
+                                                                    <input name="cliGolDesAdi"  	type="text" id="cliGolDinExtDes" tabindex="2"
+											class="mayus"
+                                                                                        onkeypress="aceptaMayusculasSinCaracteres()"
+											value=""
+											maxlength="20"/></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1">&nbsp;&iquest;Cu&aacute;nto?*</td>
+								<td align="left" valign="top" class="blackText1">Frecuencia*</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1">&nbsp;<input
+                                                                        name="dinExtH" type="text" id="cliGolImpExt" tabindex="3"
+									onkeypress="AceptaNumerico();"
+									value=" " size="8"
+									maxlength="8"/>
+								</td>
+								<td align="left" valign="top" class="blackText1"><select
+                                                                        name="freDinId"  class="combo_140" id="freDinId" tabindex="4">
+									<option value="-1">-Seleccione-</option>
+          
+								</select></td>
+							</tr>
+						</table>
+						</fieldset>
+						 </td>
+						<td width="15" valign="top">&nbsp;</td>
+						<td width="203" valign="top">
+						<fieldset>
+						<table width="174" border="0" cellpadding="00" cellspacing="0">
+							<tr>
+								<td alig    n="left" valign="top" class="blackText1">&iquest;Paga
+								renta actualmente?*</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1"><select
+									name="pagRnt" id="pagRnt" tabindex="5" onchange="pagaRent();">
+									<option value="-1"
+										>---</option>
+                                                                        <option value="1"
+										>SI</option>
+									<option value="2"
+										>NO</option>
+								</select></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1">&iquest;Cu&aacute;nto?*</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="blackText1"><input
+                                                                        name="cliPagaRenta" type="text" value="" id="cliGolImpRen" tabindex="6"
+									onkeypress="AceptaNumerico();"
+									value="" size="8"
+									onblur="rentaGto('cliGolImpExt');"
+									maxlength="8" /></td>
+							</tr>
+						</table>
+						</fieldset>
+						 </td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="24" align="left" valign="top" class="blackText1"><input name="cliGolActAdi"
+					type="text" id="cliGolActAdi" tabindex="7"
+                                        onkeypress="aceptaMayusculasSinCaracteres()"
+					class="mayus"
+					value=""/></td>
+			</tr>
+			<tr>
+				<td height="12" valign="top"></td>
+			</tr>
+			<tr>
+				<td height="6" align="left" valign="top" class="blackText1">Si
+				lo necesita,<br />
+				&iquest;a qui&eacute;n solicita un pr&eacute;stamo?*</td>
+			</tr>
+			<tr>
+				<td height="17" align="left" valign="top" class="blackText1"><select
+                                        name="ptmId" class="combo_140" onchange=""  onblur=""  id="ptmId" tabindex="8">
+					<option value="-1">-Seleccione-</option>
+                                       
+				</select></td>
+			</tr>
+			<tr>
+				<td height="14" align="right" valign="top"></td>
+				<td height="14" align="right" valign="top"></td>
+				<td height="14" align="right" valign="top"></td>
+				<td width="400" colspan="2" valign="top">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2" valign="top">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Créditos</legend>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<table width="355" border="0" cellpadding="00" cellspacing="0">
+					<tr>
+						<td width="165" valign="top" align="left" class="blackText1">&iquest;Alguna
+						vez ha solicitado<br />
+						alg&uacute;n tipo de cr&eacute;dito?*</td>
+						<td width="206" colspan="2" rowspan="3" align="left" valign="top"
+							class="blackText1">
+						<fieldset><legend class="blackText1"
+							style="font-weight: bold">¿Cuándo?</legend>
+						<table width="151" border="0" cellpadding="00" cellspacing="0">
+							<tr>
+								<td width="89" align="left" valign="top" class="blackText1">&nbsp;A&ntilde;o*</td>
+								<td width="62" align="left" valign="top" class="blackText1">Mes*</td>
+							</tr>
+							<tr>
+								<td valign="top" align="left" class="blackText1">
+                                                                    <select id="cliGolAnoCre" 
+											name="cliGolAnoCre"
+											class="combo_60" tabindex="10">
+										<option value="-1">-A&ntilde;o-</option>
+										
+										
+									</select>
+								</td>
+								<td valign="top" align="left" class="blackText1">
+                                                                    <select name="cliGolMesCre"  class="combo_80" id="cliGolMesCre" tabindex="11">
+								    <option value="-1">-Mes-</option>
+										<option value="01" >ENERO</option>
+										<option value="02" >FEBRERO</option>
+										<option value="03" >MARZO</option>
+										<option value="04" >ABRIL</option>
+										<option value="05" >MAYO</option>
+										<option value="06" >JUNIO</option>
+										<option value="07" >JULIO</option>
+										<option value="08" >AGOSTO</option>
+										<option value="09" >SEPTIEMBRE</option>
+										<option value="10" >OCTUBRE</option>
+										<option value="11" >NOVIEMBRE</option>
+										<option value="12" >DICIEMBRE</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+						</fieldset>
+						 </td>
+					</tr>
+					<tr>
+						<td height="24" align="left" valign="top" class="blackText1">
+						<select name="solCre" id="solCre"  tabindex="9"
+								onchange="solicitudCred(); ">
+							<option value="-1" selected="selected">-Seleccione-</option>
+							<option value="1"
+								>SI</option>
+							<option value="2"
+								>NO</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&iquest;Qu&eacute;
+						tipo de<br />
+						cr&eacute;dito solict&oacute;?*</td>
+						<td colspan="2" valign="top" align="left" class="blackText1">&iquest;Cu&aacute;nto
+						tiempo tard&oacute; en pagar<br />
+						el &uacute;ltimo cr&eacute;dito que solicit&oacute;?*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="tipCreId"  id="tipCreId" tabindex="12">
+							<option value="-1">-Seleccione-</option>
+                               
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliGolPagAno" type="text"  id="cliGolPagAno" tabindex="13"
+							onblur="validaInputHistoria('cliGolPagAno');"
+							onkeypress="AceptaNumerico();" value="" size="5"
+							maxlength="2"/>
+						A&ntilde;os</td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliGolPagMes" type="text"  id="cliGolPagMes" tabindex="14"
+							onblur="validaInputHistoria('cliGolPagMes');"
+							onkeypress="AceptaNumerico();" value="" size="5"
+							maxlength="2"/>
+						Meses</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+				<td width="6" colspan="-1" valign="top"></td>
+				<td colspan="2" align="center" valign="bottom">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Actualmente utiliza alguno de
+				los siguientes servicios bancarios</legend>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<table width="375" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+						<table width="375" border="0" cellpadding="00" cellspacing="0">
+							<tr>
+								<td colspan="5" valign="top" align="left" id="preguntaTarjetaC" class="blackText1"><strong>1.</strong>
+								Tarjeta de cr&eacute;dito, &iquest;Cu&aacute;ntas?</td>
+								<td colspan="4" valign="top" align="left" id="preguntaCreditoHipo" class="blackText1"><strong>6.</strong>
+								Cr&eacute;dito hipotecario</td>
+							</tr>
+							<tr>
+								<td width="20" valign="middle" align="right" class="blackText1">
+								<input name="cliGolTarCre" type="radio" id="cliGolTarCre" tabindex="15"
+										onclick="activarTarjeta('cliGolTarCre','cliGolNumTar')" value="1"
+										/>
+								</td>
+								<td width="25" valign="bottom" align="left" class="blackText1">Si</td>
+								<td width="20" valign="middle" align="right" class="blackText1">
+								<input name="cliGolTarCre" type="radio" value="2" id="cliGolTarCre"
+									onclick="activarTarjeta('cliGolTarCre','cliGolNumTar')"
+									 /></td>
+								<td width="48" valign="bottom" align="left" class="blackText1">No</td>
+								<td width="61" valign="middle" align="left" class="blackText1">
+									<input 	name="cliGolNumTar"  type="text"
+											
+											id="cliGolNumTar" tabindex="16"
+											onblur="validaInputHistoria('cliGolNumTar');"
+											onkeypress="AceptaNumerico();"
+											value="" size="5"
+											maxlength="2"/>
+								</td>
+								<td width="20" valign="middle" align="right" class="blackText1">
+								<input name="cliGolCreHip" type="radio" id="cliGolCreHip" tabindex="21" value="1"/>
+								</td>
+								<td width="25" valign="bottom" align="left" class="blackText1">Si</td>
+								<td width="20" valign="middle" align="right" class="blackText1">
+								<input name="cliGolCreHip" type="radio" id="cliGolCreHip" tabindex="21" value="2"/>
+								</td>
+								<td width="102" valign="bottom" align="left" class="blackText1">No</td>
+							</tr>
+							<tr>
+								<td colspan="5">&nbsp;</td>
+								<td colspan="4">&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="5" valign="top" align="left" id="preguntaTarjetaD" class="blackText1"><strong>2.</strong>
+								Tarjeta de d&eacute;bito</td>
+								<td colspan="4" valign="top" align="left" id="preguntaSeguroVida" class="blackText1"><strong>7.</strong>
+								Seguro de vida</td>
+							</tr>
+							<tr>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input name="cliGolTarDeb" type="radio" id="cliGolTarDeb" tabindex="17" value="1"
+									 /></td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input name="cliGolTarDeb" type="radio"  id="cliGolTarDeb" value="2"
+									 /></td>
+								<td colspan="2" valign="bottom" align="left" class="blackText1">No</td>
+								<td valign="middle" align="right" class="blackText1"><input
+									name="cliGolSegVid" type="radio" id="cliGolSegVid" tabindex="22" value="1"
+									 />
+								</td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td valign="middle" align="right" class="blackText1"><input
+									name="cliGolSegVid" type="radio" id="cliGolSegVid" value="2"
+									 /></td>
+								<td valign="bottom" align="left" class="blackText1">No</td>
+							</tr>
+							<tr>
+								<td colspan="5">&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="5" valign="top" align="left" id="preguntaCuentaCheques" class="blackText1"><strong>3.</strong>
+								Cuenta de cheques</td>
+								<td colspan="4" valign="top" align="left" id="preguntaSeguroMedico" class="blackText1"><strong>8.</strong>
+								Seguro de gastos m&eacute;dicos</td>
+							</tr>
+							<tr>
+								<td align="right" valign="middle"><span class="blackText1">
+								<input name="cliGolCtaChe" type="radio"  id="cliGolCtaChe" tabindex="18" value="1"
+									 />
+								</span></td>
+								<td align="left" valign="bottom"><span class="blackText1">Si</span></td>
+								<td align="right" valign="middle"><span class="blackText1">
+								<input name="cliGolCtaChe" type="radio" id="cliGolCtaChe" value="2"
+									 /> </span></td>
+								<td colspan="2" align="left" valign="bottom"><span
+									class="blackText1">No</span></td>
+								<td valign="middle" align="right" class="blackText1"><input
+									name="cliGolSegGmm" type="radio" id="cliGolSegGmm" tabindex="23" value="1"
+									/>
+								</td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td valign="middle" align="right" class="blackText1"><input
+									name="cliGolSegGmm" type="radio" id="cliGolSegGmm" value="2"
+									 /></td>
+								<td valign="bottom" align="left" class="blackText1">No</td>
+							</tr>
+							<tr>
+								<td colspan="5">&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="5" valign="top" align="left" id="preguntaCreditoPersonal" class="blackText1"><strong>4.</strong>
+								Cr&eacute;dito personal</td>
+								<td colspan="4" valign="top" align="left" class="blackText1"><strong>9.</strong>
+								Otros</td>
+							</tr>
+							<tr>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input name="cliGolCrePer" type="radio" id="cliGolCrePer" tabindex="19" value="1"
+									 />
+								</td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input name="cliGolCrePer" type="radio" id="cliGolCrePer" value="2"
+									 /></td>
+								<td colspan="2" valign="bottom" align="left" class="blackText1">No</td>
+								<td valign="middle" align="right" class="blackText1"><input
+									name="cliGolOtrCre" type="radio" id="cliGolOtrCre" tabindex="24"
+									onclick="activarTarjeta('cliGolOtrCre','cliGolDesCre')" value="1"
+								 />
+								</td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td valign="middle" align="right" class="blackText1">
+									<input 	name="cliGolOtrCre" type="radio" value="2"
+											id="cliGolOtrCre" onclick="activarTarjeta('cliGolOtrCre','cliGolDesCre')"
+											 />
+								</td>
+								<td valign="bottom" align="left" class="blackText1">No</td>
+							</tr>
+							<tr>
+								<td colspan="5">&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="5" valign="top" align="left" id="preguntaCreditoAuto" class="blackText1"><strong>5.</strong>
+								Cr&eacute;dito automotriz</td>
+								<td colspan="4" valign="top" align="left" class="blackText1">&iquest;Cu&aacute;l?</td>
+							</tr>
+							<tr>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input name="cliGolCreAut" type="radio" id="cliGolCreAut" tabindex="20" value="1"
+									 />
+								</td>
+								<td valign="bottom" align="left" class="blackText1">Si</td>
+								<td width="20" align="right" valign="middle" class="blackText1">
+								<input id="cliGolCreAut" name="cliGolCreAut" type="radio" value="2"
+									 /></td>
+								<td colspan="2" valign="bottom" align="left" class="blackText1">No</td>
+								<td colspan="4" valign="top" align="left" class="blackText1">
+								<input name="cliGolDesCre" type="text"
+                                                                       onkeypress="aceptaMayusculasSinCaracteres()"
+									 id="cliGolDesCre" tabindex="25"
+									class="mayus"
+									value="" size="20" maxlength="15"/></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+			<tr>
+				<td valign="top"></td>
+				<td valign="top"></td>
+			</tr>
+		</table>
+		</fieldset>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="4">&nbsp;</td>
+		<td width="48" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="51" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="52" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="98" align="center"><a
+			href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image8','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="Image8"
+			width="32" height="32" border="0" id="Image8" /></a></td>
+		<td width="12">&nbsp;</td>
+		<td width="47" align="center"><a 
+			
+			onclick="window.location.href='ingresosgol.html'"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image6','','../images/accesos_down/aplicacion-2_36.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_36.png" name="Image6"
+			width="32" height="32" border="0" id="Image6" /></a></td>
+		<td width="9" align="center">&nbsp;</td>
+		<td width="64" align="center"><a
+			
+                        onclick="validacionPagina('historiagol');"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image12','','../images/accesos_down/aplicacion-2_41.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_41.png" name="Image12"
+			width="31" height="32" border="0" id="Image12" /></a></td>
+	</tr>
+	<tr>
+		<td width="76">&nbsp;</td>
+		<td width="9">&nbsp;</td>
+		<td width="9">&nbsp;</td>
+		<td width="292">&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top">Salir </td>
+		<td>&nbsp;</td>
+		<td align="center" valign="top" class="blueText">Anterior</td>
+		<td align="center" valign="top" class="blueText">&nbsp;</td>
+		<td class="blueText" align="center">Siguiente</td>
+	</tr>
+</table>
+</div>
+<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+
+</form>
+</body>
+</html>

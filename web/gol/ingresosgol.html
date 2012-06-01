@@ -1,0 +1,695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/funciones.js"></script>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script language="JavaScript" src="../js/golVal.js"></script>
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+<script language="JavaScript" src="../js/funcGol.js"></script>
+
+<script>
+ //  seguridad();
+</script>
+
+<script >
+    $(document).ready(function s(){
+
+        cargaCombos();
+
+        autollenado();
+
+        autoLlenadoRadios();
+
+        autoLlenadoCheckBox();
+
+
+
+    });
+</script>
+
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body
+
+    
+
+	onload=" actualizarPagina();checarIngresos();MM_preloadImages('../images/acceso/activos_add.png','../images/acceso/activos_exit.png','../images/acceso/activos_guardar.png','../images/buscar_activo.png','../images/acceso/activos_salir.png','../images/acceso/inactivo-blanco_salir.png','../images/accesos_down/aplicacion-2_41.png','../images/accesos_down/aplicacion-2_36.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_28.png')">
+<form id="Ingresogol" name="Ingresogol" method="post" action="../ProcesadorServlet"
+	onsubmit="return validate_form(this)">
+<center>
+<div id="contenedor">
+<div id="encabezado">
+<div id="borde_iz"></div>
+<div id="logo"></div>
+<div id="relleno">
+<div id="capa_enc">
+</div>
+</div>
+<div id="borde_der"></div>
+<div id="contenido">
+
+<table width="851" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td height="7" colspan="14">
+		<fieldset>
+		<table width="834" height="554" border="0" align="left"
+			cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="14" colspan="6"> </td>
+			</tr>
+
+			<tr>
+				<td colspan="5" valign="top"></td>
+				<td width="358" rowspan="11" valign="top">
+				<fieldset>
+				<table width="354" height="132" border="0" cellpadding="0"
+					cellspacing="0">
+					<tr>
+						<td width="226" align="left" class="blackText1">&iquest;Qu&eacute;
+						gasto importante tiene<br />
+						planeado para el pr&oacute;ximo a&ntilde;o?*</td>
+						<td width="206" align="left" class="blackText1">&iquest;Con
+						qui&eacute;n vive actualmente?*</td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1"><select tabindex="3"
+							name="proAnoGtoId" class="combo_140" id="proAnoGtoId">
+							<option value="-1">-Seleccione-</option>
+                            
+						</select></td>
+						<td align="left" class="blackText1"><select name="vivActId"
+							class="combo_140" id="vivActId"
+							tabindex="4">
+							<option value="-1">-Seleccione-</option>
+                            
+						</select></td>
+					</tr>
+					<tr>
+						<td height="18" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center" class="blackText1">&iquest;Cu&aacute;ntas
+						personas son sus dependientes econ&oacute;micos?</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center" valign="top" class="blackText1">
+						
+						<input name="CliDependientes"  id="cliGolNumDep" type="text" size="2"
+							value="" onkeypress="AceptaNumerico();"
+							onblur="validaDendientes();"
+							tabindex="5"
+							maxlength="2" /></td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td width="451" height="147" colspan="3" align="center" valign="top">
+				<table width="447" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+
+                                            <td width="831" align="left" valign="top">
+						<fieldset>
+						<table width="447" height="132" border="0" cellpadding="0"
+							cellspacing="0">
+							<tr>
+								<td width="250" height="34">&nbsp;</td>
+								<td width="24">&nbsp;</td>
+								<td width="173" align="center" valign="top">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="37" align="center" valign="top"><span
+									class="blackText1">&iquest;Qui&eacute;n o qui&eacute;nes
+								considera que son<br />
+								responsables de la crisis econ&oacute;mica?*</span></td>
+								<td>&nbsp;</td>
+								<td align="center" valign="top"><span class="blackText1">En
+								los &uacute;ltimos 5 a&ntilde;os<br />
+								ha vivido en:*</span></td>
+							</tr>
+							<tr>
+								<td align="center" valign="top"><span class="blackText1">
+                                                                        <input 	type="text" maxlength="20"
+                                                                                name="cliGolResCri" id="cliGolResCri"
+                                                                                onkeypress="aceptaMayusculasSinCaracteres()"
+											value="" 
+											tabindex="1"
+											class="mayus"/>
+								</span>
+								</td>
+								<td>&nbsp;</td>
+								<td align="center" valign="top"><span class="blackText1">
+								<select name="movId"  id="movId" tabindex="2">
+									<option value="-1">-Seleccione-</option>
+                                    
+								</select> </span></td>
+							</tr>
+						</table>
+						</fieldset>
+						 </td>
+					</tr>
+				</table>
+				</td>
+				<td width="4" colspan="2" align="left" valign="top"
+					class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td colspan="5" valign="top"></td>
+			</tr>
+			<tr>
+				<td height="2" colspan="5" valign="top"></td>
+			</tr>
+
+
+			<tr>
+				<td height="16" colspan="3" align="left" valign="top"
+					class="blackText1">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Ingresos</legend>
+				<table width="445" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<table width="444" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td colspan="5" align="left" valign="top" class="blackText1">&iquest;A
+						cu&aacute;nto asciende su<br />
+						ingreso mensual?*</td>
+						<td width="154" align="left" valign="top" class="blackText1">&iquest;Qui&eacute;n
+						decide el destino<br />
+						del ingreso familiar?*</td>
+					</tr>
+					<tr>
+						<td colspan="5" align="left" valign="top" class="blackText1">
+							<input 	type="text" name="cliIngreso" id="cliGolIng"
+									value=""
+									onkeypress="AceptaNumerico();" 
+									onblur="ingMensual('cliGolIng');"
+									tabindex="6"/>
+						</td>
+						<td align="left" valign="top" class="blackText1">
+							<input 	type="text" name="cliGolDetIng" id="cliGolDesIng"
+                                                                onkeypress="aceptaMayusculasSinCaracteres()"
+                                                                maxlength="20"
+									value="" 
+									class="mayus"
+									tabindex="7"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="6">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center" valign="top" class="blackText1">Adem&aacute;s
+						de usted,<br />
+						&iquest;qui&eacute;n recibe un ingreso<br />
+						en su familia?</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td width="93" align="left" valign="middle" class="blackText1">Ingreso
+						mensual</td>
+						<td width="20" align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td align="center" valign="middle" class="blackText1">&iquest;Cu&aacute;nto
+						aportan<br />
+						al gasto familiar?</td>
+					</tr>
+
+					<tr>
+						<td valign="middle" align="right" class="blackText1">&nbsp;</td>
+						<td valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td valign="top" align="left" class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="46" valign="middle" align="right" class="blackText1">
+							<input 	type="checkbox" name="cliGolApoCon" id="cliGolApoCon" value="1"
+									onclick="checkIng('cliGolApoCon','cliGolParCon','apoConId');"
+									tabindex="8"/>
+						</td>
+						<td width="108" valign="middle" align="left" class="blackText1">C&oacute;nyuge</td>
+						<td width="23" valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">
+							<input 	name="cliGolParCon" id="cliGolParCon" type="text" size="12" 
+									value="" disabled="disabled"
+									onkeypress="AceptaNumerico();"
+									onblur="ingMensual('cliGolParCon');"/>
+						</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td valign="top" align="center" class="blackText1">
+							<select name="apoConId" id="apoConId" disabled="disabled">
+							<option value="-1">-Seleccione-</option>
+                                                    
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="middle" align="right" class="blackText1">
+							<input 	type="checkbox" name="cliGolApoHij" id="cliGolApoHij" value="1"
+									onclick="checkIng('cliGolApoHij','cliGolParHij','apoHijId');"
+									tabindex="9"/>
+						</td>
+						<td valign="middle" align="left" class="blackText1">Hijos</td>
+						<td valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">
+							<input 	name="cliGolParHij" id="cliGolParHij" type="text" size="12" 
+									value="" disabled="disabled"
+									onkeypress="AceptaNumerico();"
+									onblur="ingMensual('cliGolParHij');"/></td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td valign="top" align="center" class="blackText1">
+							<select name="apoHijId" id="apoHijId" disabled="disabled">
+							<option value="-1">-Seleccione-</option>
+                                                   
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="middle" align="right" class="blackText1">
+							<input 	type="checkbox" name="cliGolApoPad" id="cliGolApoPad" value="1"
+									onclick="checkIng('cliGolApoPad','cliGolParPad','apoPadId');"
+									tabindex="10"/></td>
+						<td valign="middle" align="left" class="blackText1">Padres</td>
+						<td valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">
+							<input 	name="cliGolParPad" id="cliGolParPad" type="text" size="12" 
+									value="" disabled="disabled"
+									onkeypress="AceptaNumerico();"
+									onblur="ingMensual('cliGolParPad');"/>
+						</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td valign="top" align="center" class="blackText1">
+							<select name="apoPadId" id="apoPadId" disabled="disabled">
+							<option value="-1">-Seleccione-</option>
+                                                    
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="middle" align="right" class="blackText1">
+							<input 	type="checkbox" name="cliGolApoOtr" id="cliGolApoOtr" value="1"
+									onclick="checkIng('cliGolApoOtr','cliGolParOtr','apoOtrId');"
+									tabindex="11"/>
+						</td>
+						<td valign="middle" align="left" class="blackText1">Otros</td>
+						<td valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">
+							<input 	name="cliGolParOtr" id="cliGolParOtr" type="text" size="12" 
+									value="" disabled="disabled"
+									onkeypress="AceptaNumerico();"
+									onblur="ingMensual('cliGolParOtr');"/>
+						</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td valign="top" align="center" class="blackText1">
+							 <select name="apoOtrId" id="apoOtrId" disabled="disabled">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="2">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+				<td width="21" align="left" valign="top" class="blackText1">&nbsp;</td>
+				<td height="16" colspan="2" align="left" valign="top"
+					class="blackText1">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Cuánto dinero gasta mensualmente
+				en:</legend>
+				<table width="372" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="5">&nbsp;</td>
+					</tr>
+				</table>
+				<table width="373" height="336" border="0" cellpadding="0"
+					cellspacing="0">
+					<tr>
+						<td width="174" valign="top" align="left" class="blackText1">&nbsp;<strong>1.</strong>
+						Alimentos y bebidas*</td>
+						<td width="190" valign="top" align="left" class="blackText1"><strong>7.</strong>
+						Educaci&oacute;n*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp; <select
+							name="gtoAlmHId" id="gtoAlmHId"
+							tabindex="12">
+							<option value="-1">-Seleccione-</option>
+							<option value="1"
+								>0%</option>
+							<option value="2"
+								>DEL
+							1% AL 10%</option>
+							<option value="3"
+								>DEL
+							11% AL 20%</option>
+							<option value="4"
+								>DEL
+							21% AL 30%</option>
+							<option value="5"
+								>DEL
+							31% AL 40%</option>
+							<option value="6"
+								>DEL
+							41% AL 50%</option>
+							<option value="7"
+								>DEL
+							51% AL 60%</option>
+							<option value="8"
+								>DEL
+							61% AL 70%</option>
+							<option value="9"
+								>DEL
+							71% AL 80%</option>
+							<option value="10"
+								>DEL
+							81% AL 90%</option>
+							<option value="11"
+								>DEL
+							91% AL 100%</option>
+							<option value="12"
+								>MÁS
+							DEL 100%</option>
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><select
+							name="gtoEduId" id="gtoEduId"
+							tabindex="18">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;<strong>2.</strong>
+						Vestido*</td>
+						<td valign="top" align="left" class="blackText1"><strong>8.</strong>
+						Diversiones*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp; <select
+							name="gtoVesId" id="gtoVesId"
+							tabindex="13">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+						<td><select name="gtoDivId" id="gtoDivId" tabindex="19">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;<strong>3.</strong>
+						Servicios para la vivienda*</td>
+						<td valign="top" align="left" class="blackText1"><strong>9.</strong>
+						Pago de deudas o cr&eacute;ditos*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp; <select
+							name="gtoSrvViv" id="gtoSerVivId"
+							tabindex="14">
+                                                        <option value="-1">-Seleccione-</option>
+						</select></td>
+						<td><select name="gtoDeuH" id="gtoDeuH" tabindex="20">
+							<option value="-1">-Seleccione-</option>
+							<option value="1"
+								>0%</option>
+							<option value="2"
+								>DEL
+							1% AL 10%</option>
+							<option value="3"
+								>DEL
+							11% AL 20%</option>
+							<option value="4"
+								>DEL
+							21% AL 30%</option>
+							<option value="5"
+								>DEL
+							31% AL 40%</option>
+							<option value="6"
+								>DEL
+							41% AL 50%</option>
+							<option value="7"
+								>DEL
+							51% AL 60%</option>
+							<option value="8"
+								>DEL
+							61% AL 70%</option>
+							<option value="9"
+								>DEL
+							71% AL 80%</option>
+							<option value="10"
+								>DEL
+							81% AL 90%</option>
+							<option value="11"
+								>DEL
+							91% AL 100%</option>
+							<option value="12"
+								>MÁS
+							DEL 100%</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;<strong>4.</strong>
+						Limpieza y enseres*</td>
+						<td valign="top" align="left" class="blackText1"><strong>10.</strong>
+						Renta*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp; <select
+							name="gtoLimId" id="gtoLimId" tabindex="15">
+							<option value="-1">-Seleccione-</option>
+
+						</select></td>
+						<td><select name="gtoRenH" id="gtoRenId" tabindex="21">
+                                                        <option value="-1">-Seleccione-</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;<strong>5.</strong>
+						Salud*</td>
+						<td valign="top" align="left" class="blackText1"><strong>11.</strong>
+						Otros</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp; <select
+                                                        name="gtoSldId"  id="gtoSldId" tabindex="16">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+                                                <td><input 	name="cliGolGasGas" maxlength="15" type="text" id="cliGolGasGas" tabindex="22"
+									
+                                                                        onkeypress="activarGastosOtros();aceptaMayusculasSinCaracteres()"
+                                                                        class="mayus"
+                                                               
+
+									value="" size="10"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;<strong>6.</strong>
+						Transporte*</td>
+                                                            
+
+
+						<td valign="top" align="left" class="blackText1">&iquest;Cu&aacute;nto
+						gasta?</td>
+					</tr>
+					<tr>
+						<td height="23" align="left" valign="top" class="blackText1">
+						<select name="gtoTrn" id="gtoTrnId" tabindex="17">
+							<option value="-1">-Seleccione-</option>
+						</select></td>
+						<td valign="top"><select name="gtoOtrHId" disabled id="gtoOtrHId" tabindex="23">
+							<option value="-1">-Seleccione-</option>
+							<option value="1"
+								>0%</option>
+							<option value="2"
+								>DEL
+							1% AL 10%</option>
+							<option value="3"
+								>DEL
+							11% AL 20%</option>
+							<option value="4"
+								>DEL
+							21% AL 30%</option>
+							<option value="5"
+								>DEL
+							31% AL 40%</option>
+							<option value="6"
+                                                                >DEL
+							41% AL 50%</option>
+							<option value="7"
+								>DEL
+							51% AL 60%</option>
+							<option value="8"
+								>DEL
+							61% AL 70%</option>
+							<option value="9"
+								>DEL
+							71% AL 80%</option>
+							<option value="10"
+								>DEL
+							81% AL 90%</option>
+							<option value="11"
+								>DEL
+							91% AL 100%</option>
+							<option value="12"
+								>MÁS
+							DEL 100%</option>
+						</select></td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td height="2" colspan="6"></td>
+			</tr>
+		</table>
+		</fieldset>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="3">&nbsp;</td>
+		<td width="55" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="44" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="47" align="center"></td>
+		<td width="9">&nbsp;</td>
+		<td width="97" align="center"><a
+			href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('salir2','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="salir2"
+			width="32" height="32" border="0" id="salir2" /></a></td>
+		<td width="12">&nbsp;</td>
+		<td width="47" align="center"><a 
+			
+			onclick="window.location.href='infogol_2.html'"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image6','','../images/accesos_down/aplicacion-2_36.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_36.png" name="Image6"
+			width="32" height="32" border="0" id="Image6" /></a></td>
+		<td width="9">&nbsp;</td>
+		<td width="66" align="center"><a
+			
+                        onclick="validacionPagina('ingresosgol')"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image12','','../images/accesos_down/aplicacion-2_41.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_41.png" name="Image12"
+			width="31" height="32" border="0" id="Image12" /></a></td>
+	</tr>
+	<tr>
+		<td width="8">&nbsp;</td>
+		<td width="8">&nbsp;</td>
+		<td width="433">&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top">Salir </td>
+		<td>&nbsp;</td>
+		<td align="center" valign="top" class="blueText">Anterior</td>
+		<td>&nbsp;</td>
+		<td class="blueText" align="center">Siguiente</td>
+	</tr>
+</table>
+</div>
+<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+</form>
+</body>
+</html>

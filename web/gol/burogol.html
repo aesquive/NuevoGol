@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/funciones.js"></script>
+<script language="javascript" src="../js/funcGol.js"></script>
+<script language="javascript" src="../js/golVal.js"></script>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+
+<script>
+   //seguridad();
+</script>
+
+<script >
+    $(document).ready(function s(){
+
+        cargaCombos();
+
+        autollenado();
+
+        autoLlenadoRadios();
+
+
+        selBuroReg();
+    });
+</script>
+
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+</head>
+    <body onload="actualizarPagina();MM_preloadImages('../images/acceso/activos_add.png','../images/acceso/activos_exit.png','../images/acceso/activos_guardar.png','../images/buscar_activo.png','../images/acceso/activos_salir.png','../images/acceso/inactivo-blanco_salir.png','../images/acceso/activos_left.png','../images/acceso/activos_right.png','../images/accesos_down/aplicacion-2_36.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_28.png')">
+<form name="buro" id="buro" method="get" action="../ProcesadorServlet" onsubmit="return validate_form(this)">
+
+<center>
+<div id="contenedor">
+<div id="encabezado">
+<div id="borde_iz"></div>
+<div id="logo"></div>
+<div id="relleno">
+<div id="capa_enc">
+
+</div>
+                        </div>
+<div id="borde_der"></div>
+<div id="contenido">
+
+<table width="760" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td height="7" colspan="13" valign="top" align="center"
+			class="blackText1">
+		<fieldset>
+		<table width="709" height="346" border="0" cellpadding="00"
+			cellspacing="0">
+			<tr>
+				<td height="18" colspan="3" valign="top" align="left"
+					class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="40" colspan="3" valign="top" align="left"
+					class="blackText1">
+				<fieldset>
+				<table width="551" border="0" cellpadding="00" cellspacing="0">
+					<tr>
+						<td colspan="5" valign="top" id="preguntaBuro" align="left" class="blackText1">&iquest;Se
+						encontr&oacute; el registro del cliente en el Bur&oacute; Nacional
+						de Cr&eacute;dito?</td>
+					</tr>
+					<tr>
+						<td width="13" valign="middle" align="left" class="blackText1">&nbsp;</td>
+						<td width="20" valign="middle" align="right" class="blackText1">
+                                                    <input 	name="cliGolBurCre" checked="true" id="cliGolBurCre"
+									type="radio" value="1"
+									onclick="selBuroReg();"
+									 />
+						</td>
+						<td width="54" valign="bottom" align="left" class="blackText1">Si</td>
+						<td width="21" valign="middle" align="right" class="blackText1">
+                                                    <input 	name="cliGolBurCre"  id="cliGolBurCre" type="radio" value="2"
+									
+									onclick="selBuroReg();"/>
+							
+						</td>
+						<td width="443" valign="bottom" align="left" class="blackText1">No</td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td height="18" colspan="3" valign="top" align="left"
+					class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="319" height="126" align="left" valign="top">
+				<fieldset>
+				<table width="450" height="108" border="0" cellpadding="00"
+					cellspacing="0" class="blackText1">
+					<tr>
+						<td colspan="3" align="center" valign="top" class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="150" align="left" valign="top" class="blackText1">ANT</td>
+						<td width="150" align="left" valign="top" class="blackText1">ACT</td>
+						<td width="150" align="left" valign="top" class="blackText1">HIST</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="burAntId" disabled id="burAntId">
+                            <option value="-1">-Seleccione-</option>
+                            
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="burActId" disabled id="burActId" class="combo_100">
+							<option value="-1">-Seleccione-</option>
+							
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="burHisId" disabled id="burHisId" class="combo_100">
+							<option value="-1">-Seleccione-</option>
+							
+						</select></td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">USO</td>
+						<td valign="top" align="left" class="blackText1">PAGO</td>
+						<td valign="top" align="left" class="blackText1">MOP</td>
+					</tr>
+					<tr>
+						<td align="left"><select name="burUsoId" id="burUsoId" class="combo_140">
+							<option value="-1">-Seleccione-</option>
+                                                       
+							
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="buroPagId" disabled id="burPagId">
+							<option value="-1">-Seleccione-</option>
+							
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliBurMop" id="cliBurCveMop" disabled type="text" size="8" value=""
+							onblur="buroRangos('cliBurCveMop');"
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+				<td width="57" valign="top" align="left" class="blackText1">&nbsp;</td>
+				<td width="407" height="126" align="left" valign="top" class="blackText1">
+				<fieldset>
+					<legend class="blackText1" style="font-weight: bold">Cuentas abiertas</legend>
+					<table width="400" height="108" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td valign="top" align="left" class="blackText1" width="150">Cuentas
+						abiertas</td>
+						<td valign="top" align="left" class="blackText1" width="150">M&aacute;ximo
+						abiertas</td>
+						<td valign="top" align="left" class="blackText1" width="100">Monto
+						abiertas</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1"><select
+                                                        name="cliBurNumAbi" disabled id="burAbtId" class="combo_140">
+							<option value="-1">-Seleccione-</option>
+                                                        
+
+						</select></td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliBurMaxAbi" disabled id="cliBurMaxAbi" type="text" size="8" value=""
+							onblur="buroRangos('cliBurMaxAbi');"
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliBurMonAbi" disabled id="cliBurMonAbi" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+					<tr>
+						<td height="18" colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">L&iacute;mite
+						abiertas</td>
+						<td valign="top" align="left" class="blackText1">Saldo
+						actual abiertas</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td align="left" valign="top" class="blackText1"><input
+                                                        name="cliBurLimAbi" disabled id="cliBurLimAbi" type="text"     size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="left" class="blackText1"><input
+                                                        name="cliBurSalAbi" disabled id="cliBurSalAbi" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td height="18" colspan="2" align="left" valign="top"
+					class="blackText1">&nbsp;</td>
+				<td valign="top" align="left" class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Cuentas cerradas</legend>
+				<table width="345" height="108" border="0" cellpadding="00"
+					cellspacing="0">
+					<tr>
+						<td valign="top" align="center" class="blackText1">Cuentas
+						cerradas</td>
+						<td valign="top" align="center" class="blackText1">M&aacute;ximo
+						cerradas</td>
+						<td valign="top" align="center" class="blackText1">Monto
+						cerradas</td>
+					</tr>
+					<tr>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurNumCer" disabled id="cliBurNumCer" type="text" size="8" value=""
+							onblur="buroRangos('cliBurNumCer');"
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurMaxCer" disabled id="cliBurMaxCer" type="text" size="8" value=""
+							onblur="buroRangos('cliBurMaxCer');"
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurMonCer" disabled id="cliBurMonCer" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center" valign="top" class="blackText1">&nbsp;</td>
+						<td align="center" valign="top" class="blackText1">L&iacute;mite
+						cerradas</td>
+						<td valign="top" align="center" class="blackText1">Saldo
+						actual cerradas</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td align="center" valign="top" class="blackText1"><input
+                                                        name="cliBurLimCer" disabled id="cliBurLimCer" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurSalCer" disabled id="cliBurSalCer" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+				<td valign="top" align="left" class="blackText1">&nbsp;</td>
+				<td valign="bottom" align="left" class="blackText1">
+				<fieldset>
+				<table width="345" height="118" border="0" cellpadding="00"
+					cellspacing="0">
+					<tr>
+						<td height="10" colspan="3" align="center" valign="top"
+							class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="center" class="blackText1">Importe
+						del MOP</td>
+						<td valign="top" align="center" class="blackText1">Tipo de
+						cr&eacute;dito</td>
+						<td valign="top" align="center" class="blackText1">Pago a
+						realizar</td>
+					</tr>
+					<tr>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurImpMop" disabled id="cliBurImpMop" type="text" size="8" value=""
+							onkeypress="AceptaNumerico();"/></td>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurTpoMop" disabled id="cliBurTpoMop" type="text" size="8"
+							value="" /></td>
+						<td valign="top" align="center" class="blackText1"><input
+                                                        name="cliBurPagMop" disabled id="cliBurPagMop" type="text" size="8"
+							value="" 
+							onkeypress="AceptaNumerico();"/></td>
+					</tr>
+					<tr>
+						<td height="18" colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center" valign="top" class="blackText1">&nbsp;</td>
+						<td align="center" valign="top" class="blackText1">Mensualidad*</td>
+						<td valign="top" align="center" class="blackText1">Valor de
+						vivienda*</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td align="center" valign="top" class="blackText1"><input
+							name="cliMensualidad" id="cliBurMens" type="text" size="8"
+							value="" 
+							onkeypress="AceptaNumerico();"
+							onblur="valMensu();valIngMens();"/></td>
+						<td valign="top" align="center" class="blackText1"><input
+							name="cliValor" id="cliBurValr" type="text" size="8"
+							value="" 
+							onkeypress="AceptaNumerico();"
+							onblur="valVivienda();"/></td>
+					</tr>
+
+				</table>
+				</fieldset>
+				</td>
+			</tr>
+		</table>
+		</fieldset>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="4">&nbsp;</td>
+		<td width="57" align="center"></td>
+		<td width="8">&nbsp;</td>
+		<td width="48" align="center"></td>
+		<td width="7">&nbsp;</td>
+		<td width="45" align="center"><a
+
+                        onclick="validacionBuro()"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image9','','../images/accesos_down/aplicacion-2_30.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_30.png" name="Image9"
+			width="33" height="32" border="0" id="Image9" /></a></td>
+		<td width="7">&nbsp;</td>
+		<td width="97" align="center"><a href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image8','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="Image8"
+			width="32" height="32" border="0" id="Image8" /></a></td>
+		<td width="10">&nbsp;</td>
+		<td align="center"><a href='#'		
+			onclick="window.location='psicogol_2.html'"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image6', '', '../images/accesos_down/aplicacion-2_36.png', 1);"><img
+			src="../images/accesos_down/aplicacion-23_36.png" name="Image6"
+			width="32" height="32" border="0" id="Image6" /></a></td>
+	</tr>
+	<tr>
+		<td width="314">&nbsp;</td>
+		<td width="9">&nbsp;</td>
+		<td width="9">&nbsp;</td>
+		<td width="67">&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top"></td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top">Guardar</td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText" valign="top">Salir </td>
+		<td>&nbsp;</td>
+		<td align="center" valign="top" class="blueText">Anterior</td>
+	</tr>
+</table>
+</div>
+<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+</form>
+</body>
+
+</html>

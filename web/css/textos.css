@@ -1,0 +1,344 @@
+HTML {
+	SCROLLBAR-FACE-COLOR: #000000;
+	SCROLLBAR-HIGHLIGHT-COLOR: #333333;
+	SCROLLBAR-SHADOW-COLOR: #666666;
+	SCROLLBAR-3DLIGHT-COLOR: #666666;
+	SCROLLBAR-ARROW-COLOR: #FFFFFF;
+	SCROLLBAR-TRACK-COLOR: #F2F2F2;
+	SCROLLBAR-DARKSHADOW-COLOR: #000000
+}
+
+BODY {
+	SCROLLBAR-FACE-COLOR: #999999;
+	SCROLLBAR-HIGHLIGHT-COLOR: #999999;
+	SCROLLBAR-SHADOW-COLOR: #000000;
+	SCROLLBAR-3DLIGHT-COLOR: #CCCCCC;
+	SCROLLBAR-ARROW-COLOR: #FFFFFF;
+	SCROLLBAR-TRACK-COLOR: #F2F2F2;
+	SCROLLBAR-DARKSHADOW-COLOR: #000000;
+	BACKGROUND: #FFFFFF;
+	MARGIN-LEFT: 0px;
+	MARGIN-TOP: 0px;
+	MARGIN-RIGHT: 0px;
+	MARGIN-BOTTOM: 0px
+}
+
+.rowOver {
+	background-color: #F8F8F8
+}
+
+.rowOut {
+	background-color: #DDDDDD
+}
+
+.pageBreak {
+	page-break-after: always
+}
+
+/* Links */
+.link1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none
+}
+
+.link1:link {
+	color: #CCCCCC
+}
+
+.link1:visited {
+	color: #CCCCCC
+}
+
+.link1:hover {
+	color: #FF0000
+}
+
+.link2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none
+}
+
+.link2:link {
+	color: #333333
+}
+
+.link2:visited {
+	color: #333333
+}
+
+.link2:hover {
+	color: #FFFFFF
+}
+
+.link3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none
+}
+
+.link3:link {
+	color: #CC0000
+}
+
+.link3:visited {
+	color: #CC0000
+}
+
+.link3:hover {
+	color: #666666;
+	text-decoration: underline
+}
+
+.link4 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none
+}
+
+.link4:link {
+	color: #999999
+}
+
+.link4:visited {
+	color: #999999
+}
+
+.link4:hover {
+	color: #CC0000
+}
+
+.link5 {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none
+}
+
+.link5:link {
+	color: #666666
+}
+
+.link5:visited {
+	color: #666666
+}
+
+.link5:hover {
+	color: #CC0000
+}
+
+/* Titles */
+.whiteTitle {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	/*font-weight: bold;*/
+	vertical-align: bottom;
+	color: #FFFFFF
+}
+
+.grayTitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #848284
+}
+
+.blackTitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #000000
+}
+
+/* Subtitles */
+.whiteSubtitle {
+	font-family: Helvetica;
+	font-size: 16px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: right;
+}
+
+.blueSubtitle {
+	font-family: Helvetica;
+	font-size: 13px;
+	font-weight: bold;
+	color: #01319e;
+	text-align: right;
+}
+
+.graySubtitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #848284
+}
+
+.blackSubtitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000
+}
+
+.redSubtitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF0000
+}
+
+.yellowSubtitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFCC00
+}
+
+.greenSubtitle {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #00CC00
+}
+
+/* Texts */
+.whiteText {
+	font-family: Helvetica;
+	font-size: 12px;
+	text-align: center;
+	color: #FFFFFF
+}
+
+.grayText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #848284
+}
+
+.grayText2 {
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	/*text-align:right;*/
+	color: #333333
+}
+
+.blackText {
+	font-family: Helvetica;
+	font-size: 12px;
+	color: #000000
+}
+
+.blackText1 {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	color: #000000
+}
+
+.blackText2 {
+	font-family: Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000
+}
+
+.blackSmallText {
+	font-family: Trebuchet MS;
+	font-size: 11px;
+	color: #000000
+}
+
+.redText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #CC0000
+}
+
+.blueText {
+	font-family: Helvetica;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	vertical-align: top;
+	color: #01319e
+}
+
+.greenText {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #009900
+}
+
+/* Messages */
+.message {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #CC0000
+}
+
+/*Tamaño combos*/
+.combo_140 {
+	COLOR: black;
+	WIDTH: 135px;
+}
+
+.combo_200 {
+	COLOR: black;
+	WIDTH: 200px;
+}
+
+.combo_200 {
+	COLOR: black;
+	WIDTH: 200px;
+}
+
+.combo_100 {
+	COLOR: black;
+	WIDTH: 100px;
+}
+
+.combo_80 {
+	COLOR: black;
+	WIDTH: 80px;
+}
+
+.combo_20 {
+	COLOR: black;
+	WIDTH: 20px;
+}
+
+.combo_40 {
+	COLOR: black;
+	WIDTH: 40px;
+}
+
+.combo_60 {
+	COLOR: black;
+	WIDTH: 60px;
+}
+
+.mayus {
+	text-transform: uppercase;
+}
+
+.lista_200 {
+	BORDER-RIGHT: #6699cc 1pt ridge;
+	BORDER-TOP: #6699cc 1pt ridge;
+	FONT-SIZE: 10px;
+	BACKGROUND: #f6f6f6;
+	BORDER-LEFT: #6699cc 1pt ridge;
+	WIDTH: 200px;
+	COLOR: black;
+	BORDER-BOTTOM: #6699cc 1pt inset;
+	FONT-FAMILY: verdana;
+	FONT-DECORATION: bold;
+	BORDERCOLOR: navy
+}

@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+<script language="javascript" src="../js/funciones.js"></script>
+<script language="JavaScript" src="../js/funcGol.js"></script>
+<script language="JavaScript" src="../js/golVal.js"></script>
+
+
+
+
+<script>
+ seguridad();
+</script>
+
+<script >
+    $(document).ready(function s(){
+
+        autollenado();
+
+        autoLlenadoRadios();
+
+        
+
+    });
+</script>
+
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+</style></head>
+    <body onload="actualizarPagina();MM_preloadImages('../images/acceso/activos_add.png','../images/acceso/activos_exit.png','../images/acceso/activos_guardar.png','../images/buscar_activo.png','../images/acceso/activos_salir.png','../images/acceso/inactivo-blanco_salir.png','../images/accesos_down/aplicacion-2_41.png','../images/accesos_down/aplicacion-2_36.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_28.png')" >
+<form id="sico" name="sico" method="post" action="../ProcesadorServlet" onsubmit="return validate_form(this)">
+
+ <center>
+<div id="contenedor">
+                    <div id="encabezado">
+                        <div id="borde_iz"></div>
+                        <div id="logo">
+                        </div>
+                        <div id="relleno">
+                            <div id="capa_enc">
+                               
+                            </div>
+                        </div>
+	<div id="borde_der"></div>
+	<div id="contenido">
+
+	
+	<table width="851" border="0" align="center" cellpadding="0" cellspacing="0">  
+  <tr>
+    <td height="7" colspan="14">
+	<table width="841" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	<fieldset><table width="838" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="841"><fieldset><legend class="blackText1" style="font-weight:bold">Qué tan de acuerdo está con las siguientes afirmaciones</legend>
+        <table width="841" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <table width="841" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="833" colspan="8" align="left" valign="top" class="blackText1"><table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" id="tdP1"><span class="blackText1"><strong>1.</strong> Cuando no le ponen atenci&oacute;n, se debe gritar para que le   oigan</span> </td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP1" id="cliGolP1" type="radio" value="1" /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP1" id="cliGolP1" type="radio" value="2" /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP1" id="cliGolP1" type="radio" value="3" /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP1" id="cliGolP1" type="radio" value="4" /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP2"><strong>2.</strong>Me gusta participar en las fiestas que organizan mis amigos</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP2" id="cliGolP2" type="radio" value="1" /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP2" id="cliGolP2" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP2" id="cliGolP2" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP2" id="cliGolP2" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP3"><strong>3.</strong> Es molesto trabajar horas extras</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP3" id="cliGolP3" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP3" id="cliGolP3" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP3" id="cliGolP3" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP3" id="cliGolP3" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP4"><strong>4.</strong> Se debe ayudar a una persona honrada que tiene un problema</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP4" id="cliGolP4" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP4" id="cliGolP4" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP4" id="cliGolP4" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP4" id="cliGolP4" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP5"><strong>5.</strong> Cuando voy de pasajero en un microb&uacute;s, y el microbusero se le cierra a un coche y le grita, yo tambi&eacute;n le grito al del coche</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP5" id="cliGolP5" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP5" id="cliGolP5" type="radio" value="2" /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP5" id="cliGolP5" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP5" id="cliGolP5" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP6"><strong>6.</strong> Es natural reclamar a una persona que dice su opini&oacute;n sobre 
+algo sucedido en la comunidad</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP6" id="cliGolP6" type="radio" value="1" /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP6" id="cliGolP6" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP6" id="cliGolP6" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP6" id="cliGolP6" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP7"><strong>7.</strong> Cada quien tiene lo que merece</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP7" id="cliGolP7" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP7" id="cliGolP7" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP7" id="cliGolP7" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP7" id="cliGolP7" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP8"><strong>8.</strong> Es normal darle una nalgada a un ni&ntilde;o cuando hace algo mal </td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP8" id="cliGolP8" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP8" id="cliGolP8" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP8" id="cliGolP8" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP8" id="cliGolP8" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP9"><strong>9.</strong> Yo deber&iacute;a tener mejores oportunidades de trabajo</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP9" id="cliGolP9" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP9" id="cliGolP9" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP9" id="cliGolP9" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP9" id="cliGolP9" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP10"><strong>10.</strong> En la comunidad, se ayudan entre todos cuando tienen alg&uacute;n problema</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP10" id="cliGolP10" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP10" id="cliGolP10" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP10" id="cliGolP10" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP10" id="cliGolP10" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP11"><strong>11.</strong> Si alguien pierde su fortuna, se lo merece</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP11" id="cliGolP11" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP11" id="cliGolP11" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP11" id="cliGolP11" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP11" id="cliGolP11" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table>
+            <table width="841" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="831" align="left" valign="top"><fieldset>
+                <table width="841" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="8" align="left" valign="middle" class="blackText1" id="tdP12"><strong>12.</strong> Se obedecen las leyes porque son justas</td>
+                  </tr>
+                  <tr>
+                    <td width="28" align="right" valign="middle"><input name="cliGolP12" id="cliGolP12" type="radio" value="1"  /></td>
+                    <td width="154" align="left" valign="bottom" class="blackText1">Muy de acuerdo</td>
+                    <td width="29" align="right" valign="middle"><input name="cliGolP12" id="cliGolP12" type="radio" value="2"  /></td>
+                    <td width="142" align="left" valign="bottom" class="blackText1">De acuerdo </td>
+                    <td width="26" align="right" valign="middle"><input name="cliGolP12" id="cliGolP12" type="radio" value="3"  /></td>
+                    <td width="153" align="left" valign="bottom" class="blackText1">En desacuerdo</td>
+                    <td width="33" align="right" valign="middle"><input name="cliGolP12" id="cliGolP12" type="radio" value="4"  /></td>
+                    <td width="276" align="left" valign="bottom" class="blackText1">Muy en desacuerdo</td>
+                  </tr>
+                </table>
+                </fieldset> </td>
+      </tr>
+            </table></td>
+          </tr>
+      </table>
+    </fieldset> </td>
+    </tr>
+  
+  
+</table>
+	</fieldset></td>
+    </tr>
+  <tr>
+    <td height="7" colspan="3">&nbsp;</td>
+    <td width="55" align="center"></td>
+    <td width="12" height="7">&nbsp;</td>
+    <td width="44" align="center"></td>
+    <td width="8" height="7">&nbsp;</td>
+    <td width="47" align="center"></td>
+    <td width="6" height="7">&nbsp;</td>
+    <td width="97" align="center"><a
+			href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image8','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="Image8"
+			width="32" height="32" border="0" id="Image8" /></a></td>
+    <td width="10" height="7">&nbsp;</td>
+    <td width="47" align="center"><a  onclick="window.location.href='historiagol.html'" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','../images/accesos_down/aplicacion-2_36.png',1)"><img src="../images/accesos_down/aplicacion-23_36.png" name="Image6" width="32" height="32" border="0" id="Image6" /></a></td>
+    <td width="5" height="7">&nbsp;</td>
+    <td width="66" align="center"><a  onclick="validacionPagina('psicogol')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','../images/accesos_down/aplicacion-2_41.png',1)"><img src="../images/accesos_down/aplicacion-23_41.png" name="Image12" width="31" height="32" border="0" id="Image12" /></a></td>
+  </tr>
+  <tr>
+    <td width="18" height="7">&nbsp;</td>
+    <td width="11" height="7">&nbsp;</td>
+    <td width="458" height="7">&nbsp;</td>
+    <td align="center" class="blueText" valign="top"></td>
+    <td height="7">&nbsp;</td>
+    <td align="center" class="blueText" valign="top"></td>
+    <td height="7">&nbsp;</td>
+    <td align="center" class="blueText" valign="top"></td>
+    <td height="7">&nbsp;</td>
+    <td align="center" class="blueText" valign="top">Salir </td>
+    <td height="7">&nbsp;</td>
+    <td align="center" valign="top" class="blueText">Anterior</td>
+    <td height="7">&nbsp;</td>
+    <td class="blueText" align="center" valign="top">Siguiente</td>
+  </tr>
+</table>
+    
+	</div>
+	<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+</form>
+</body>
+
+</html>

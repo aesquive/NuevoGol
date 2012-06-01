@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Originaci&oacute;n de Cliente</title>
+
+<link href="../css/main2.css" rel="stylesheet" type="text/css" />
+<link href="../css/textos.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="../js/funciones.js"></script>
+<script language="JavaScript" src="../js/funcGol.js"></script>
+
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script language="JavaScript" src="../js/golVal.js"></script>
+
+<script type="text/javascript" src="../js/nuevogol.js"></script>
+<script type="text/javascript" src="../js/jStorage.js"></script>
+
+<script>
+   seguridad();
+</script>
+
+<script >
+    $(document).ready(function s(){
+
+        cargaCombos();
+
+        autollenado();
+
+        autoLlenadoRadios();
+
+    });
+</script>
+<script language="JavaScript">
+javascript:window.history.forward(1);
+//javascript:window.history.back(1);
+</script>
+
+
+<link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+</head>
+<body
+    onload="actualizarPagina();cargaInfogol2();MM_preloadImages('../images/acceso/activos_add.png','../images/acceso/activos_exit.png','../images/acceso/activos_guardar.png','../images/buscar_activo.png','../images/acceso/activos_salir.png','../images/acceso/inactivo-blanco_salir.png','../images/acceso/activos_left.png','../images/acceso/activos_right.png','../images/accesos_down/aplicacion-2_41.png','../images/accesos_down/aplicacion-2_38.png','../images/accesos_down/aplicacion-2_36.png','../images/accesos_down/aplicacion-2_34.png','../images/accesos_down/aplicacion-2_30.png','../images/accesos_down/aplicacion-2_28.png','../images/accesos_down/aplicacion-2_26.png','../images/accesos_down/aplicacion-2_24.png','../images/accesos_down/aplicacion-2_22.png')">
+<form id="Infogol_2" name="Infogol_2" method="post" action="../ProcesadorServlet" onsubmit="return validate_form(this)">
+
+
+<center>
+<div id="contenedor">
+<div id="encabezado">
+<div id="borde_iz"></div>
+<div id="logo"></div>
+<div id="relleno">
+<div id="capa_enc">
+</div>
+</div>
+<div id="borde_der"></div>
+<div id="contenido">
+
+<table width="851" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td height="7" colspan="10">
+		<fieldset>
+		<table width="844" height="432" border="0" align="left"
+			cellpadding="0" cellspacing="0">
+			<tr>
+				<td colspan="6"> </td>
+			</tr>
+			<tr>
+				<td colspan="4" rowspan="2" valign="top">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Religi&oacute;n</legend>
+				<table width="487" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="113" align="left" class="blackText1">&iquest;Cu&aacute;l
+						es la religi&oacute;n<br />
+						de su familia? *</td>
+						<td width="33" rowspan="5">&nbsp;</td>
+						<td width="144" align="left" class="blackText1">Si otra,
+						&iquest;cu&aacute;l?</td>
+						<td width="24" rowspan="5">&nbsp;</td>
+						<td width="221" align="left" class="blackText1">&iquest;Con
+						qu&eacute; frecuencia acude su familia a<br />
+						celebraciones religiosas?*</td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left"><select
+							name="relFam"  id="relFamId"  onchange="relFamiliaOtra();">
+							<option value="-1">-Seleccione-</option>
+                             
+						</select></td>
+						<td class="blackText1" align="left"><input type="text" 
+                                                       id="cliGolRelFamOtr" name="cliGolRelFamOtr" maxlength="20" value="" disabled
+							onkeypress="aceptaMayusculasSinCaracteres()"
+							class="mayus"/></td>
+						<td class="blackText1" align="left"><select
+							id="freRelId" name="freRel">
+							<option value="-1">-Seleccione-</option>
+
+						</select></td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left">&nbsp;</td>
+						<td class="blackText1" align="left">&nbsp;</td>
+						<td class="blackText1" align="left">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left">&iquest;Cu&aacute;l es su
+						religi&oacute;n?*</td>
+						<td class="blackText1" align="left">Si otra,
+						&iquest;cu&aacute;l?</td>
+						<td class="blackText1" align="left">&iquest;C&oacute;mo
+						afecta su religi&oacute;n en<br />
+						la toma de decisiones?*</td>
+					</tr>
+					<tr>
+						<td class="blackText1" align="left">
+                                                    <select name="rel" id="relId" 
+									onchange="relOtra();">
+								<option value="-1">-Seleccione-</option>
+							</select>
+						</td>
+						<td class="blackText1" align="left"><input type="text"
+							id="cliGolRelOtr" maxlength="20" name="cliGolRelOtr" value="" disabled
+							onkeypress="aceptaMayusculasSinCaracteres();"
+							class="mayus"/></td>
+						<td class="blackText1" align="left"><input type="text"
+							id="cliGolRelDec" name="cliGolRelDec" value=""
+							onkeypress="aceptaMayusculasSinCaracteres();"
+							class="mayus"/></td>
+					</tr>
+				</table>
+				</fieldset>
+				</td>
+				<td width="4" rowspan="2" valign="top">&nbsp;</td>
+				<td valign="top">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="318" valign="top">
+				<fieldset>
+				<table width="306" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="306" align="left" class="blackText1">&iquest;Por
+						qu&eacute; raz&oacute;n quiere cambiarse de casa?*</td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1"><input name="cliGolMotCas" id="cliGolMotCas"
+							class="mayus" maxlength="30"
+                                                        onkeypress="aceptaMayusculasSinCaracteres()"
+							type="text" size="50" value="" /></td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1">&iquest;Cu&aacute;l es la
+						principal motivaci&oacute;n para cambiarse a este
+						fraccionamiento?*</td>
+					</tr>
+					<tr>
+						<td align="left" class="blackText1"><input name="cliGolMotCam" id="cliGolMotCam"
+							class="mayus" maxlength="30"
+                                                        onkeypress="aceptaMayusculasSinCaracteres()"
+							type="text" size="50" value="" /></td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td colspan="6"></td>
+			</tr>
+			<tr>
+				<td colspan="6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="6"></td>
+			</tr>
+
+			<tr>
+				<td width="179" align="left" valign="top" class="blackText1"></td>
+				<td width="3" align="left" valign="top" class="blackText1"></td>
+				<td width="336" rowspan="38" align="left" valign="top"
+					class="blackText1">
+				<fieldset><legend class="blackText1"
+					style="font-weight: bold">Ocupación</legend>
+				<table width="317" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="114" valign="top" align="left" class="blackText1">Tipo
+						de Actividad*</td>
+						<td width="9">&nbsp;</td>
+						<td width="168" valign="top" align="center" class="blackText1">Descripci&oacute;n
+						de la ocupaci&oacute;n*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">
+							<select id="tipEmpId" name="cliTipoAct"
+									onchange="filtrarSector(this)">
+								<option value="-1">-Seleccione-</option>
+                                                              
+							</select>
+						</td>
+						<td>&nbsp;</td>
+						<td valign="top" align="left" class="blackText1"><textarea
+							name="cliOcupacion" maxlength="50"
+                                                        id="cliOcupacion"
+							onkeypress="aceptaMayusculasSinCaracteres()"
+                                                        class="mayus"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">Sector*</td>
+						<td rowspan="2">&nbsp;</td>
+						<td rowspan="2" align="center" valign="top" class="blackText1">En
+						el trabajo que desempe&ntilde;a, &iquest;cu&aacute;l es su rol en
+						la organizaci&oacute;n?*</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">
+							<select class="combo_140" id="srvId"
+									name="cliSector" onchange="filtrarSector(this)">
+								<option value="-1">-Seleccione-</option>
+           							</select>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&nbsp;</td>
+						<td>&nbsp;</td>
+						<td valign="top" align="center" class="blackText1">
+							<select
+                                                            name="cliRol" onchange="" id="rolId" >
+							<option value="-1">-Seleccione-</option>
+
+
+						</select></td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">Subsector*</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<select class="combo_140" id="ocpId" name="cliSubsector">
+								<option value="-1">-Seleccione-</option>
+
+     </select>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="2" valign="top" align="left" class="blackText1">&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="3" valign="top" align="center" class="blackText1">&iquest;Hace
+						cu&aacute;nto labora en su empleo actual? *</td>
+					</tr>
+					<tr>
+						<td colspan="3" valign="top" align="center" class="blackText1">
+						<input type="text" name="cliGolEmpAct" maxlength="2" id="cliGolEmpAct"
+							value=""
+                                                        
+							onkeypress="AceptaNumerico();"
+							onblur="validEdad('cliGolEmpAct')"
+							maxlength="2"/> A&ntilde;os</td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+				<td width="4" rowspan="38" align="left" valign="top"
+					class="blackText1">&nbsp;</td>
+				<td colspan="2" rowspan="38" align="center" valign="top"
+					class="blackText1">
+				<fieldset>
+				<div align="left"><legend class="blackText1"
+					style="font-weight: bold">Escolaridad</legend></div>
+				<table width="284" border="0" cellspacing="0" cellpadding="0">
+
+					<tr align="left" valign="top" class="blackText1">
+						<td colspan="3" align="left" valign="top" class="blackText1">&iquest;Estudia
+						actualmente?*</td>
+					</tr>
+					<tr align="left" valign="top" class="blackText1">
+						<td colspan="3" align="left" valign="top" class="blackText1">
+						<select name="setEstId" id="estId">
+							<option value="-1">-Seleccione-</option>
+
+							
+						</select></td>
+					</tr>
+					<tr>
+						<td width="176" align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td width="22" align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td width="116" align="left" valign="top" class="blackText1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="left" valign="top" class="blackText1">&iquest;Hasta
+						qu&eacute; grado estudi&oacute;?*</td>
+						<td align="left" valign="top" class="blackText1">&nbsp;</td>
+						<td align="left" valign="top" class="blackText1">A&ntilde;os
+						aprobados*</td>
+					</tr>
+					<tr>
+                                            <td align="left"><select name="nivEst"  onchange="habilitarEstudio('nivEstId','cliGolEstCli');" id="nivEstId">
+							<option value="-1">-Seleccione-</option>
+                                                         
+						</select></td>
+						<td>&nbsp;</td>
+						<td align="left"><input name="cliGolEstCli" maxlength="2" id="cliGolEstCli" type="text"
+                                                                        size="8" value="" disabled onkeypress="AceptaNumerico();"
+                                                        onblur="valNest('cliGolEstCli');"
+							maxlength="2" /></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&iquest;Hasta
+						qu&eacute; grado<br />
+						estudi&oacute; su pap&aacute;?*</td>
+						<td>&nbsp;</td>
+						<td valign="middle" align="left" class="blackText1">A&ntilde;os
+						aprobados*</td>
+					</tr>
+					<tr>
+                                            <td align="left"><select name="nivEstPap"  onchange="habilitarEstudio('nivEstPapId', 'cliGolEstPad');"  id="nivEstPapId">
+							<option value="-1">-Seleccione-</option>
+                                                        
+                                                
+						</select></td>
+						<td>&nbsp;</td>
+                                                <td align="left"><input disabled name="cliGolEstPad" maxlength="2" id="cliGolEstPad" type="text"
+							size="8" value=""
+                                                        onblur="valNest('cliGolEstPad');"
+							onkeypress="AceptaNumerico();" maxlength="2" /></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="top" align="left" class="blackText1">&iquest;Hasta
+						qu&eacute; grado<br />
+						estudi&oacute; su mam&aacute;?*</td>
+						<td>&nbsp;</td>
+						<td valign="middle" align="left" class="blackText1">A&ntilde;os
+						aprobados*</td>
+					</tr>
+					<tr>
+                                            <td align="left"><select onchange="habilitarEstudio('nivEstMamId','cliGolEstMad')" name="nivEstMam" id="nivEstMamId">
+							<option value="-1">-Seleccione-</option>
+                                                   
+						</select></td>
+						<td>&nbsp;</td>
+                                                <td align="left"><input disabled name="cliGolEstMad" maxlength="2" id="cliGolEstMad" type="text"
+							size="8" value=""
+                                                        onblur="valNest('cliGolEstMad');"
+							onkeypress="AceptaNumerico();" maxlength="2" /></td>
+					</tr>
+				</table>
+				</fieldset>
+				 </td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1">&iquest;Hace
+				cu&aacute;nto habita<br />
+				en su vivienda actual?*</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"><input
+					name="cliGolResAct"  maxlength="2" type="text" size="8" id="cliGolResAct"
+					value="" onkeypress="AceptaNumerico();"
+					onblur="validEdad('cliGolResAct');"
+					maxlength="2" /> A&ntilde;os</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"></td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1">&iquest;Cu&aacute;l
+				fue su actividad principal<br />
+				durante el &uacute;ltimo mes?*</td>
+			</tr>
+			<tr>
+				<td valign="top" align="left" class="blackText1"><select
+					class="combo_140" name="actUlt" id="actUltId" onchange="habilitarNoTrabajo();">
+					<option value="-1">-Seleccione-</option>
+                         
+				</select></td>
+			</tr>
+
+			<tr>
+				<td valign="top" align="left" class="blackText1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="19" align="left" valign="top" class="blackText1">Si
+				no trabaj&oacute;, &iquest;por qu&eacute;?</td>
+			</tr>
+			<tr>
+				<td height="90" align="left" valign="top" class="blackText1"><textarea
+					name="cliGolActPor" maxlength="30"
+                                        onkeypress="aceptaMayusculasSinCaracteres()"
+                                        id="cliGolActPor" disabled
+					class="mayus"></textarea></td>
+			</tr>
+
+			<tr>
+				<td colspan="6" valign="top"></td>
+			</tr>
+		</table>
+		</fieldset>
+		</td>
+	</tr>
+
+	<tr>
+		<td width="555"></td>
+		<td width="48" align="center"></td>
+		<td width="22">&nbsp;</td>
+		<td width="44" align="center"></td>
+		<td width="18">&nbsp;</td>
+		<td width="45" align="center"><a
+			href="#"
+			onclick="salirGol();"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('salir2','','../images/accesos_down/aplicacion-2_34.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_34.png" name="salir2"
+			width="32" height="32" border="0" id="salir2" /></a></td>
+		<td width="26">&nbsp;</td>
+		<td width="46" align="center"><a
+			onclick="window.location.href='infogol.html'"
+			
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('Image14','','../images/accesos_down/aplicacion-2_36.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_36.png" name="Image14"
+			width="32" height="32" border="0" id="Image14" /></a><a href="#"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('derecha','','../images/accesos_down/aplicacion-2_38.png',1)"></a></td>
+		<td width="9">&nbsp;</td>
+		<td width="52" align="center"><a
+			
+                        onclick="validacionPagina('infogol_2')"
+			onmouseout="MM_swapImgRestore()"
+			onmouseover="MM_swapImage('siguiente','','../images/accesos_down/aplicacion-2_41.png',1)"><img
+			src="../images/accesos_down/aplicacion-23_41.png" name="siguiente"
+			width="31" height="32" border="0" id="siguiente" /></a></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class="blueText" align="center"></td>
+		<td>&nbsp;</td>
+		<td class="blueText" align="center"></td>
+		<td>&nbsp;</td>
+		<td class="blueText" align="center">Salir</td>
+		<td>&nbsp;</td>
+		<td align="center" class="blueText">Anterior</td>
+		<td>&nbsp;</td>
+		<td class="blueText" align="center">Siguiente</td>
+	</tr>
+</table>
+</div>
+<div id="pie_pag"></div>
+</div>
+</div>
+</center>
+
+<script type="text/javascript">
+
+</script>
+
+</form>
+</body>
+
+</html>
