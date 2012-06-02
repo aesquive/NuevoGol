@@ -208,7 +208,6 @@ function calcular_edad() {
 	}
 	var edad = parseInt(hoy.getFullYear() - ano - 1);
         
-        alert(hoy.getFullYear()+" "+ano);
 
 	if (parseInt(hoy.getMonth() + 1 - mes) < 0) {
 

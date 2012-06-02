@@ -11,6 +11,7 @@ function sacarAtributoUrl( name ){
 
 
 function cargarSesion(){
+    
     var id=sacarAtributoUrl("id");
     llamadaGuardadoServlet(id);
 }
@@ -18,10 +19,15 @@ function cargarSesion(){
 
 function llamadaGuardadoServlet(id){
     if(id!=""){
-        $.jStorage.set("idUsuario",id);
-        window.location="./gol/golindex.html";
         
-    }else{
+        $.ajax({
+          url: '../NuevoGolServlet?comando=login&idUsuario='+id,
+          async: false,
+          cache: false
+         });
+    }
+        
+    else{
         window.location="http://localhost:8084/Calculadoras";
     }
 }

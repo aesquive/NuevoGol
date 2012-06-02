@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/06/2012 02:12:05 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="objetos.ArbMta" table="arb_mta" catalog="nuevogol">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="usuId" type="java.lang.Integer">
+            <column name="UsuId" />
+        </property>
+        <property name="cliId" type="java.lang.Integer">
+            <column name="CliId" />
+        </property>
+        <property name="cve" type="string">
+            <column name="Cve" />
+        </property>
+        <property name="fec" type="timestamp">
+            <column name="Fec" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

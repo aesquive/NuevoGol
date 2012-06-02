@@ -246,7 +246,7 @@ public class Dao {
     public static void main(String[] args) {
 
         Dao dao = new Dao();
-        System.out.println(dao.getCliGol(1));
+        List l=dao.getCriteria(ArbGolAu.class);
         
     }
 
@@ -455,6 +455,24 @@ public class Dao {
         String q = expandeDes(vals, excluye);
         List<Object[]> l = sesion.createQuery(q).list();
         return l.get(0);
+    }
+
+    private List getCriteria(Class<ArbGolAu> aClass) {
+        return sesion.createCriteria(aClass).list();
+    }
+
+    public List getTabla(Class aClass) {
+        return sesion.createCriteria(aClass).list();
+    }
+
+    public void cerrarSesion() {
+        sesion=null;
+    }
+
+    public void guardar(Object o) {
+        Transaction tran=sesion.beginTransaction();
+        sesion.save(o);
+        tran.commit();
     }
   
     

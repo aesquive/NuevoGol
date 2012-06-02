@@ -5,6 +5,7 @@ package servlet;
  * and open the template in the editor.
  */
 
+import arbitreadores.verificador.VerificadorArbitrajeGol;
 import dao.Dao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import java.util.Enumeration;
@@ -36,6 +38,8 @@ public class NuevoGolServlet extends HttpServlet {
     private CliBur bur;
     private Cli cli;
     private Dao dao=new Dao();
+    private int idUsuario;
+    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -48,6 +52,15 @@ public class NuevoGolServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+            
+            if(request.getParameter("comando")!=null &&
+                request.getParameter("comando").equals("login")
+                ){
+                request.getSession().setAttribute("idUsuario", request.getParameter("idUsuario"));
+                System.out.println("el idUsuario "+request.getSession().getAttribute("idUsuario"));
+                return;
+            }
+            
             guarda(request, response);
         }
 
@@ -99,10 +112,12 @@ public class NuevoGolServlet extends HttpServlet {
         this.cli=new Cli();
         this.gol=new CliGol();
         this.bur=new CliBur();
-
+        this.idUsuario=-1;
+        
+        System.out.println("inyectando al cliente");
         inyectarGol( request,  response);
 
-        //guardarFecha(request,response);
+        guardarFecha(request,response);
 
         guardarGol(request,response);
 
@@ -113,6 +128,7 @@ public class NuevoGolServlet extends HttpServlet {
 
     private void inyectarGol(HttpServletRequest request, HttpServletResponse response) {
 
+          
             Enumeration<String> variables=request.getParameterNames();
 
             while(variables.hasMoreElements()){
@@ -173,6 +189,12 @@ public class NuevoGolServlet extends HttpServlet {
             bur.setCliId((Integer) cliGuardado);
             dao.save(gol);
             dao.save(bur);
+            System.out.println("el cliente en guardar gol es "+cli.getCliId());
+            cli=dao.getCli(cli.getCliId());
+            String clave = cli.getCliApePat().substring(0, 1) + cli.getCliApeMat().substring(0, 1)+ cli.getCliNom().substring(0, 1) + 
+                    cli.getCliFecNac().getDate() + cli.getCliFecNac().getMonth() + cli.getCliFecNac().getYear();
+            guardarArbitraje((Integer) cliGuardado, request.getSession().getAttribute("idUsuario").toString(), clave);
+
 
             System.out.println("Guardado cliente cliId "+gol.getCliId());
         
@@ -405,8 +427,10 @@ public class NuevoGolServlet extends HttpServlet {
 
         if(dia!=null && mes!=null && anio!=null){
             try {
-                SimpleDateFormat dt = new SimpleDateFormat("dd-mm-aaaa");
-                Date dte = dt.parse(dia + "-" + mes + "-" + anio);
+                SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy");
+                String cad=dia+"-"+mes+"-"+anio;
+                Date dte = dt.parse(cad);
+                System.out.println(dte);
                 cli.setCliFecNac(dte);
             } catch (ParseException ex) {
                 Logger.getLogger(NuevoGolServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -415,6 +439,11 @@ public class NuevoGolServlet extends HttpServlet {
 
     }
 
+    private void guardarArbitraje(int idPrima, String idUsu, String clave) {
+        ArbGolInf arb = new ArbGolInf(Integer.parseInt(idUsu), idPrima, clave.toUpperCase(), Calendar.getInstance().getTime());
+        VerificadorArbitrajeGol verificador = new VerificadorArbitrajeGol(arb);
+        verificador.guardarVerificar();
+    }
 
 
 }

@@ -140,5 +140,9 @@
     <mapping resource="objetos/RelAfe.hbm.xml"/>
     <mapping resource="objetos/Gpo.hbm.xml"/>
     <mapping resource="objetos/Rol.hbm.xml"/>
+    <mapping resource="objetos/ArbGolAu.hbm.xml"/>
+   
+    <mapping resource="objetos/ArbGolInf.hbm.xml"/>
+    <mapping resource="objetos/ArbMta.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

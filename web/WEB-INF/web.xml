@@ -24,6 +24,10 @@
         <servlet-name>BusquedaServlet</servlet-name>
         <servlet-class>servlet.BusquedaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servlet.Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NuevoGolServlet</servlet-name>
         <url-pattern>/NuevoGolServlet</url-pattern>
@@ -76,12 +80,16 @@
         <servlet-name>BusquedaServlet</servlet-name>
         <url-pattern>/BusquedaServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 </web-app>
