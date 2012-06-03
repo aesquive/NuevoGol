@@ -28,6 +28,6 @@ function llamadaGuardadoServlet(id){
     }
         
     else{
-        window.location="http://localhost:8084/Calculadoras";
+        window.location="http://50.112.124.249:8080/Calculadoras";
     }
 }
