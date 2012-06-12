@@ -1,10 +1,9 @@
 package servlet;
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * To change this template, choose Tools | Templates and open the template in
+ * the editor.
  */
-
 import arbitreadores.verificador.VerificadorArbitrajeGol;
 import dao.Dao;
 import java.io.IOException;
@@ -33,46 +32,56 @@ import objetos.*;
  */
 public class NuevoGolServlet extends HttpServlet {
 
-
     private CliGol gol;
     private CliBur bur;
     private Cli cli;
-    private Dao dao=new Dao();
+    private Dao dao = new Dao();
     private int idUsuario;
-    
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+
+    /**
+     * Processes requests for both HTTP
+     * <code>GET</code> and
+     * <code>POST</code> methods.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            
-            if(request.getParameter("comando")!=null &&
-                request.getParameter("comando").equals("login")
-                ){
+
+            if (request.getParameter("comando") != null
+                    && request.getParameter("comando").equals("login")) {
+                Object atr = request.getSession().getAttribute("idUsuario");
+                if (atr != null) {
+                    response.getWriter().write("t");
+                    return;
+                }
+                if(request.getParameter("idUsuario")==null || request.getParameter("idUsuario").equals("")){
+                    response.getWriter().write("f");
+                    return;
+                }
                 request.getSession().setAttribute("idUsuario", request.getParameter("idUsuario"));
-                System.out.println("el idUsuario "+request.getSession().getAttribute("idUsuario"));
+                System.out.println("el idUsuario " + request.getSession().getAttribute("idUsuario"));
+                response.getWriter().write("t");
                 return;
             }
-            
-            guarda(request, response);
-        }
 
-        finally {
+            guarda(request, response);
+        } finally {
             out.close();
         }
-    } 
-
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
+    /**
+     * Handles the HTTP
+     * <code>GET</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -80,12 +89,14 @@ public class NuevoGolServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
-    } 
+    }
 
-    /** 
-     * Handles the HTTP <code>POST</code> method.
+    /**
+     * Handles the HTTP
+     * <code>POST</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -93,12 +104,13 @@ public class NuevoGolServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /** 
+    /**
      * Returns a short description of the servlet.
+     *
      * @return a String containing servlet description
      */
     @Override
@@ -106,105 +118,100 @@ public class NuevoGolServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private void guarda(HttpServletRequest request, HttpServletResponse response) {
 
-    private void guarda(HttpServletRequest request, HttpServletResponse response){
+        this.cli = new Cli();
+        this.gol = new CliGol();
+        this.bur = new CliBur();
+        this.idUsuario = -1;
 
-        this.cli=new Cli();
-        this.gol=new CliGol();
-        this.bur=new CliBur();
-        this.idUsuario=-1;
-        
         System.out.println("inyectando al cliente");
-        inyectarGol( request,  response);
+        inyectarGol(request, response);
 
-        guardarFecha(request,response);
+        guardarFecha(request, response);
 
-        guardarGol(request,response);
+        guardarGol(request, response);
 
-        cli=null;
-        gol=null;
-        bur=null;
+        cli = null;
+        gol = null;
+        bur = null;
     }
 
     private void inyectarGol(HttpServletRequest request, HttpServletResponse response) {
 
-          
-            Enumeration<String> variables=request.getParameterNames();
 
-            while(variables.hasMoreElements()){
+        Enumeration<String> variables = request.getParameterNames();
 
-
-
-                String varActual = variables.nextElement();
-
-                Object valor = request.getParameter(varActual);
-                
-
-                //en 0=tipoCliente , 1=metodoSet , 2=tipoDeValor
-
-                Object[] attr = buscarAtributos(varActual);
-
-                System.out.println("var Actual = " + varActual);
-                
-                System.out.println("valor = "+valor);
-
-                if(attr!=null){
-
-                            Object cliente = attr[0];
+        while (variables.hasMoreElements()) {
 
 
-                        Method metodo = (Method) attr[1];
 
-                        
-                        Class regreso = (Class) attr[2];
+            String varActual = variables.nextElement();
 
-                        
-                        Object args=regresarTipoArgumento(regreso,valor);
+            Object valor = request.getParameter(varActual);
 
-                        if(args!=null){
 
-                            invocar(cliente,metodo,args);
+            //en 0=tipoCliente , 1=metodoSet , 2=tipoDeValor
 
-                        }
+            Object[] attr = buscarAtributos(varActual);
 
-                   
+            System.out.println("var Actual = " + varActual);
+
+            System.out.println("valor = " + valor);
+
+            if (attr != null) {
+
+                Object cliente = attr[0];
+
+
+                Method metodo = (Method) attr[1];
+
+
+                Class regreso = (Class) attr[2];
+
+
+                Object args = regresarTipoArgumento(regreso, valor);
+
+                if (args != null) {
+
+                    invocar(cliente, metodo, args);
+
                 }
 
 
             }
 
 
+        }
+
+
     }
 
+    private void guardarGol(HttpServletRequest request, HttpServletResponse response) {
+
+        //por default
+        cli.setCalId(4);
+        asignacionesEspeciales(request);
+        Serializable cliGuardado = dao.save(cli);
+        gol.setCliId((Integer) cliGuardado);
+        bur.setCliId((Integer) cliGuardado);
+        dao.save(gol);
+        dao.save(bur);
+        System.out.println("el cliente en guardar gol es " + cli.getCliId());
+        cli = dao.getCli(cli.getCliId());
+        String clave = cli.getCliApePat().substring(0, 1) + cli.getCliApeMat().substring(0, 1) + cli.getCliNom().substring(0, 1)
+                + cli.getCliFecNac().getDate() + cli.getCliFecNac().getMonth() + cli.getCliFecNac().getYear();
+        guardarArbitraje((Integer) cliGuardado, request.getSession().getAttribute("idUsuario").toString(), clave);
 
 
+        System.out.println("Guardado cliente cliId " + gol.getCliId());
 
-    private void guardarGol(HttpServletRequest request , HttpServletResponse response) {
-        
-            //por default
-            cli.setCalId(4);
-            asignacionesEspeciales(request);
-            Serializable cliGuardado = dao.save(cli);
-            gol.setCliId((Integer) cliGuardado);
-            bur.setCliId((Integer) cliGuardado);
-            dao.save(gol);
-            dao.save(bur);
-            System.out.println("el cliente en guardar gol es "+cli.getCliId());
-            cli=dao.getCli(cli.getCliId());
-            String clave = cli.getCliApePat().substring(0, 1) + cli.getCliApeMat().substring(0, 1)+ cli.getCliNom().substring(0, 1) + 
-                    cli.getCliFecNac().getDate() + cli.getCliFecNac().getMonth() + cli.getCliFecNac().getYear();
-            guardarArbitraje((Integer) cliGuardado, request.getSession().getAttribute("idUsuario").toString(), clave);
-
-
-            System.out.println("Guardado cliente cliId "+gol.getCliId());
-        
     }
-
 
     /**
      * para los campos que se repiten en las tablas
      */
-    private void asignacionesEspeciales(HttpServletRequest request){
+    private void asignacionesEspeciales(HttpServletRequest request) {
 
         //tip emp=tipoact
         gol.setTipEmpId(Integer.parseInt(cli.getCliTipoAct()));
@@ -223,121 +230,115 @@ public class NuevoGolServlet extends HttpServlet {
 
         //burUso se guarda en bur , pero con los ids de bur entonces debemos asignarle su respectivo valor en gol %11
 
-        
-            Integer uso= bur.getBurUsoId();
 
-            if(uso!=null){
+        Integer uso = bur.getBurUsoId();
 
-                     gol.setBurUso(uso%11);
-            }
+        if (uso != null) {
 
-           
+            gol.setBurUso(uso % 11);
+        }
 
-        
-        
+
+
+
+
         //caso muy muy especial
         gol.setEstId(Integer.parseInt(request.getParameter("setEstId")));
     }
 
-
-
-
     //0=tipocliente , 1=metodoSet ,2=tipoDeValorDeRegreso
     private Object[] buscarAtributos(String varActual) {
 
-        Class golCl=gol.getClass();
-        Class cliCl=cli.getClass();
-        Class burCl=bur.getClass();
+        Class golCl = gol.getClass();
+        Class cliCl = cli.getClass();
+        Class burCl = bur.getClass();
 
 
 
-        if(varActual.equals("dinExt") || varActual.equals("relFam")
-                || varActual.equals("freRel") || varActual.equals("rel")){
+        if (varActual.equals("dinExt") || varActual.equals("relFam")
+                || varActual.equals("freRel") || varActual.equals("rel")) {
             return parche(varActual);
         }
 
-       Object[] arreglo=buscarEnClase(golCl,varActual);
+        Object[] arreglo = buscarEnClase(golCl, varActual);
 
 
-            if(arreglo!=null){
+        if (arreglo != null) {
 
-                    return arreglo;
-            }
+            return arreglo;
+        }
 
-            arreglo=buscarEnClase(cliCl,varActual);
+        arreglo = buscarEnClase(cliCl, varActual);
 
-             if(arreglo!=null){
+        if (arreglo != null) {
 
-                    return arreglo;
-            }
+            return arreglo;
+        }
 
-            arreglo=buscarEnClase(burCl,varActual);
+        arreglo = buscarEnClase(burCl, varActual);
 
-             if(arreglo!=null){
+        if (arreglo != null) {
 
-                    return arreglo;
-            }
-            else{
-                    return null;
-            }
+            return arreglo;
+        } else {
+            return null;
+        }
 
 
     }
 
-        //0=tipocliente , 1=metodoSet ,2=tipoDeValorDeRegreso
+    //0=tipocliente , 1=metodoSet ,2=tipoDeValorDeRegreso
     private Object[] buscarEnClase(Class clase, String varActual) {
 
-            Object[] array=new Object[3];
+        Object[] array = new Object[3];
 
-            Method metodo=null;
+        Method metodo = null;
 
-            Method get=null;
+        Method get = null;
 
-          //var actual=sex -----> Sex
-          String variable=varActual.substring(0,1).toUpperCase()+varActual.substring(1, varActual.length());
+        //var actual=sex -----> Sex
+        String variable = varActual.substring(0, 1).toUpperCase() + varActual.substring(1, varActual.length());
 
-          for( Method m : clase.getMethods() ){
+        for (Method m : clase.getMethods()) {
 
-                if(m.getName().contains(variable) && m.getName().contains("set")){
-                    metodo=m;
-                }
-                if(m.getName().contains(variable) && m.getName().contains("get")){
-                    get=m;
-                }
-                if(metodo!=null){
-                    break;
-                }
-          }
+            if (m.getName().contains(variable) && m.getName().contains("set")) {
+                metodo = m;
+            }
+            if (m.getName().contains(variable) && m.getName().contains("get")) {
+                get = m;
+            }
+            if (metodo != null) {
+                break;
+            }
+        }
 
-          if(metodo==null){
-              return null;
-          }
+        if (metodo == null) {
+            return null;
+        }
 
-          //buscamos el tipo de regreso del metodo
-          Class regreso=get==null ?String.class : get.getReturnType();
-
-           
-
-          if(gol.getClass()==clase){
-                array[0]=gol;
-          }
-          else if(cli.getClass()==clase){
-              array[0]=cli;
-          }
-          else if(bur.getClass()==clase){
-              array[0]=bur;
-          }
+        //buscamos el tipo de regreso del metodo
+        Class regreso = get == null ? String.class : get.getReturnType();
 
 
-           array[1]=metodo;
-           array[2]=regreso;
 
-          return array;
+        if (gol.getClass() == clase) {
+            array[0] = gol;
+        } else if (cli.getClass() == clase) {
+            array[0] = cli;
+        } else if (bur.getClass() == clase) {
+            array[0] = bur;
+        }
+
+
+        array[1] = metodo;
+        array[2] = regreso;
+
+        return array;
     }
 
     private Object regresarTipoArgumento(Class tipoDeRegreso, Object valorVariable) {
         try {
-            
+
             boolean esCaracter = tipoDeRegreso.equals(Character.class);
             Object valor = esCaracter ? valorVariable.toString().charAt(0) : valorVariable.toString().toUpperCase();
             Class clase = esCaracter ? char.class : String.class;
@@ -358,7 +359,7 @@ public class NuevoGolServlet extends HttpServlet {
             Logger.getLogger(NuevoGolServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-           return null;
+        return null;
 
     }
 
@@ -372,44 +373,41 @@ public class NuevoGolServlet extends HttpServlet {
             return;
         } catch (InvocationTargetException ex) {
             return;
-        }finally{
+        } finally {
 
-             return;
+            return;
         }
     }
 
     private Object[] parche(String varActual) {
-          Object[] array=new Object[3];
+        Object[] array = new Object[3];
 
-          array[0]=gol;
+        array[0] = gol;
 
-          array[1]=metodoParche(varActual);
+        array[1] = metodoParche(varActual);
 
-          array[2]=Integer.class;
+        array[2] = Integer.class;
 
-          return array;
+        return array;
     }
 
     private Method metodoParche(String varActual) {
 
         try {
 
-        Class clase=gol.getClass();
+            Class clase = gol.getClass();
 
-        String nombre="";
+            String nombre = "";
 
-        if(varActual.equals("dinExt"))
-
-            nombre="setDinExtId";
-        else if(varActual.equals("relFam")) {
-            nombre="setRelFamId";
-        }
-        else if(varActual.equals("rel")){
-            nombre="setRelId";
-        }
-        else if(varActual.equals("freRel")){
-            nombre="setFreRelId";
-        }
+            if (varActual.equals("dinExt")) {
+                nombre = "setDinExtId";
+            } else if (varActual.equals("relFam")) {
+                nombre = "setRelFamId";
+            } else if (varActual.equals("rel")) {
+                nombre = "setRelId";
+            } else if (varActual.equals("freRel")) {
+                nombre = "setFreRelId";
+            }
 
             return clase.getMethod(nombre, Integer.class);
         } catch (NoSuchMethodException ex) {
@@ -421,14 +419,14 @@ public class NuevoGolServlet extends HttpServlet {
     }
 
     private void guardarFecha(HttpServletRequest request, HttpServletResponse response) {
-        String dia=request.getParameter("dia");
-        String mes=request.getParameter("mes");
-        String anio=request.getParameter("anio");
+        String dia = request.getParameter("dia");
+        String mes = request.getParameter("mes");
+        String anio = request.getParameter("anio");
 
-        if(dia!=null && mes!=null && anio!=null){
+        if (dia != null && mes != null && anio != null) {
             try {
                 SimpleDateFormat dt = new SimpleDateFormat("dd-MM-yyyy");
-                String cad=dia+"-"+mes+"-"+anio;
+                String cad = dia + "-" + mes + "-" + anio;
                 Date dte = dt.parse(cad);
                 System.out.println(dte);
                 cli.setCliFecNac(dte);
@@ -444,6 +442,4 @@ public class NuevoGolServlet extends HttpServlet {
         VerificadorArbitrajeGol verificador = new VerificadorArbitrajeGol(arb);
         verificador.guardarVerificar();
     }
-
-
 }

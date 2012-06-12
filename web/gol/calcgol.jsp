@@ -42,7 +42,7 @@ function MM_preloadImages() { //v3.0
 <script>
         $(document).ready(function (){
 
-        cargarClientesGol();
+        cargarClientesGolCalculo();
 
         cargarJStorage();
         })

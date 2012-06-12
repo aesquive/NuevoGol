@@ -21,15 +21,15 @@
         <script language="javascript" type ="text/javascript" src="../js/funciones.js"></script>
         <script language="javascript" type ="text/javascript" src="../js/funcGol.js"></script>
         <script language="javascript" type ="text/javascript" src="../js/nuevogol.js"></script>
-        
+
         <script type="text/javascript" src="../js/sesion.js"></script>
         <script language="javascript" src="../js/funciones.js"></script>
         <script type="text/javascript" src="../js/jStorage.js"></script>
 
         <script>
         
-        $.jStorage.flush();
-        cargarSesion();
+            $.jStorage.flush();
+            cargarSesion();
             cargarClientesGol();
             
         </script>
@@ -149,19 +149,7 @@
                                         <td colspan="6" valign="top">&nbsp;</td>
                                     </tr>
 
-                                    <tr>
-                                        <td width="20" align="left" valign="middle" class="blackText1">
-                                            <input 	type="checkbox" id="cRfc" name="cRfc" value="0" 
-                                                    onclick="if(document.getElementById('cRfc').checked == true){document.getElementById('rfc').disabled=false;document.getElementById('rfc').focus();}else{document.getElementById('rfc').disabled=true;}"/>
-                                        </td>
-                                        <td width="131" align="left" valign="middle" class="blackText1">por
-                                            RFC</td>
-                                        <td colspan="4" align="" valign="top">
-                                            <div align="justify">
-                                                <input id="rfc" name="rfc" type="text" size="50" disabled="disabled" maxlength="15"/>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td colspan="2" align="left" valign="top">&nbsp;</td>
                                         <td colspan="4" align="" valign="top">&nbsp;</td>
@@ -190,7 +178,7 @@
 
                                         </td>
                                         <td align="" valign="top">
-                                            <div align="center"><a href="javascript:buscar();" onmouseout="MM_swapImgRestore()"
+                                            <div align="center"><a onclick="buscarGol()" onmouseout="MM_swapImgRestore()"
                                                                    onmouseover="MM_swapImage('buscar','','../images/buscar_activo.png',1)"><img
                                                         src="../images/buscar_inactivo.png" name="buscar" width="32"
                                                         height="32" border="0" class="textarea" id="buscar" /></a></div>
@@ -198,7 +186,7 @@
                                         <td align="" valign="top">&nbsp;</td>
                                         <td align="" valign="top">
                                             <div align="center"><a
-                                                    href="javascript:buscarTodos();"
+                                                    onclick="cargarClientesGol()"
                                                     onmouseout="MM_swapImgRestore()"
                                                     onmouseover="MM_swapImage('todo','','../images/todo_activo.png',1)"><img
                                                         src="../images/todo_inactivo.png" name="todo" width="32" height="32"

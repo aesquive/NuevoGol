@@ -2,9 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package servlet;
-
 
 import calculo.Calculador;
 import calculo.CalculadoraAu;
@@ -28,44 +26,56 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import objetos.Cli;
 import objetos.CliGol;
+import org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID;
 import utilerias.Conversor;
+
 /**
  *
  * @author Quants
  */
 public class AccionesServlet extends HttpServlet {
+    
+    private Dao dao = new Dao();
 
-    private Dao dao=new Dao();
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Processes requests for both HTTP
+     * <code>GET</code> and
+     * <code>POST</code> methods.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-
-            String accion=request.getParameter("accion");
-
-            if(accion.equals("lista")){
-
-                lista(response);
+            
+            String accion = request.getParameter("accion");
+            
+            if (accion.equals("lista")) {
+                
+                lista(request,response);
             }
-            if(accion.equals("calcularGol")){
-
-                calcular(request,response);
-
+            if(accion.equals("listaCalculo")){
+                listaCalculo(request ,response);
+            }
+            if (accion.equals("calcularGol")) {
+                
+                calcular(request, response);
+                
+            }
+            if (accion.equals("buscar")) {
+                buscar(request, response);
             }
             //lo unico que hace es limpiar la sesion para que la grafica no se vea llena
-            if(accion.equals("irCalcular")){
+            if (accion.equals("irCalcular")) {
                 limpiarSesion(request);
             }
-
-
+            
+            
         } finally {
             out.close();
         }
@@ -73,7 +83,9 @@ public class AccionesServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP
+     * <code>GET</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -81,12 +93,14 @@ public class AccionesServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP
+     * <code>POST</code> method.
+     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -94,12 +108,13 @@ public class AccionesServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
         processRequest(request, response);
     }
 
     /**
      * Returns a short description of the servlet.
+     *
      * @return a String containing servlet description
      */
     @Override
@@ -107,20 +122,20 @@ public class AccionesServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-
     /**
      * metodo que regresa la lista de clientesGol
+     *
      * @param response
      */
-    private void lista(HttpServletResponse response) {
+    private void lista(HttpServletRequest request,HttpServletResponse response) {
         try {
             System.out.println("generandoLista");
-
+            request.removeAttribute("clientes");
             response.getWriter().print(getLista());
         } catch (IOException ex) {
             Logger.getLogger(AccionesServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 
     /**
@@ -129,24 +144,48 @@ public class AccionesServlet extends HttpServlet {
      * @param regs registros de gol
      * @return
      */
-    public String getLista(){
+    public String getLista() {
         
         List<Object[]> gols = dao.obtenClis();
         JsonArray lista = new JsonArray();
         
         
         for (Object[] gol : gols) {
-        
             
-            JsonObject cli = new JsonObject();            
+            
+            JsonObject cli = new JsonObject();
             cli.add("idGol", new JsonPrimitive(String.valueOf(gol[0])));
             String nombre = String.valueOf(gol[1]) + " " + String.valueOf(gol[2]) + " " + String.valueOf(gol[3]);
             cli.add("nombre", new JsonPrimitive(nombre));
             lista.add(cli);
-        }               
+        }
         return lista.toString();
- }
-
+    }
+    
+    public String getListaBusqueda(String nombreBusqueda) {
+        
+        
+        List<Object[]> gols = dao.obtenClis();
+        JsonArray lista = new JsonArray();
+        
+        
+        for (Object[] gol : gols) {
+            
+            
+            String nombre = String.valueOf(gol[1]) + " " + String.valueOf(gol[2]) + " " + String.valueOf(gol[3]);
+            
+            if (nombre.toUpperCase().contains(nombreBusqueda.toUpperCase())) {
+                
+                
+                JsonObject cli = new JsonObject();
+                cli.add("idGol", new JsonPrimitive(String.valueOf(gol[0])));
+                cli.add("nombre", new JsonPrimitive(nombre));
+                lista.add(cli);
+            }
+            
+        }
+        return lista.toString();
+    }
 
     /**
      * metodo que convierte a json
@@ -157,125 +196,146 @@ public class AccionesServlet extends HttpServlet {
      * @return
      */
     private String gol2json(CliGol gol) {
-
+        
         Gson gson = new Gson();
         JsonObject el = new JsonObject();
-
-
-        StringBuilder builder=new StringBuilder("{");
-        String comillas="\"";
+        
+        
+        StringBuilder builder = new StringBuilder("{");
+        String comillas = "\"";
 
         //sacamos el id del cligol
-        Integer idG=gol.getCliGolId();
+        Integer idG = gol.getCliGolId();
 
         //sacamos el id del cli
-        Integer idCli=gol.getCliId();
+        Integer idCli = gol.getCliId();
 
         //buscamos al cliente
-        Cli cli=dao.getCli(idCli);
+        Cli cli = dao.getCli(idCli);
 
         //sacamos su nombre
-        String nombre=cli.getCliApePat()+" "+cli.getCliApeMat()+" "+cli.getCliNom();
+        String nombre = cli.getCliApePat() + " " + cli.getCliApeMat() + " " + cli.getCliNom();
 
         //convertimos a json
-        builder.append(comillas+"nombre"+comillas+":"+comillas+nombre+comillas+","+
-                        comillas+"idGol"+comillas+":"+comillas+idG+comillas);
-
+        builder.append(comillas + "nombre" + comillas + ":" + comillas + nombre + comillas + ","
+                + comillas + "idGol" + comillas + ":" + comillas + idG + comillas);
+        
         builder.append("}");
-
+        
         return builder.toString();
-
+        
     }
-
+    
     private void calcular(HttpServletRequest request, HttpServletResponse response) {
-
-            String idGol=request.getParameter("idG");
-
-            Calculador calculador=new Calculador();
-
-
-            String xmlSalida=calculador.calcula(idGol);
-
-             String nombre=calculador.obtenerNombre(xmlSalida);
-
-            String respuesta=valoresCalculo(request,calculador,nombre);
-
-            System.out.println(respuesta);
-
-            regresarCalculo(respuesta, response);
-
+        
+        String idGol = request.getParameter("idG");
+        
+        Calculador calculador = new Calculador();
+        
+        
+        String xmlSalida = calculador.calcula(idGol);
+        
+        String nombre = calculador.obtenerNombre(xmlSalida);
+        
+        String respuesta = valoresCalculo(request, calculador, nombre);
+        
+        System.out.println(respuesta);
+        
+        regresarCalculo(respuesta, response);
+        
     }
-
-    private String valoresCalculo(HttpServletRequest request,Calculador calculador,String nombre ) {
-
-        List<String> vars=calculador.getNotasCalculo();
-
-        StringBuilder builder=new StringBuilder("{");
-
-        String comillas="\"";
-
-        for(int t=0;t<vars.size();t++){
-                System.out.println(t+" "+vars.get(t));
-            meterEnSesion(request,vars.get(t),t);
-
-            builder.append(comillas+t+comillas+":"+comillas+vars.get(t)+comillas+",");
+    
+    private String valoresCalculo(HttpServletRequest request, Calculador calculador, String nombre) {
+        
+        List<String> vars = calculador.getNotasCalculo();
+        
+        StringBuilder builder = new StringBuilder("{");
+        
+        String comillas = "\"";
+        
+        for (int t = 0; t < vars.size(); t++) {
+            System.out.println(t + " " + vars.get(t));
+            meterEnSesion(request, vars.get(t), t);
+            
+            builder.append(comillas + t + comillas + ":" + comillas + vars.get(t) + comillas + ",");
         }
-
-
-        builder.append(comillas+vars.size()+comillas+":"+comillas+nombre+comillas+"}");
-
+        
+        
+        builder.append(comillas + vars.size() + comillas + ":" + comillas + nombre + comillas + "}");
+        
         return builder.toString();
-
+        
     }
-
-
+    
     private void regresarCalculo(String jsonCalculo, HttpServletResponse response) {
         try {
-
-
+            
+            
             response.getWriter().print(jsonCalculo);
         } catch (IOException ex) {
             Logger.getLogger(AccionesServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    private void meterEnSesion(HttpServletRequest request,String valor, int t) {
+    
+    private void meterEnSesion(HttpServletRequest request, String valor, int t) {
         //t=2 genero
         //t=3 comportamiento
         //t=4 arraigo
         //t=5 aspectos diferenciadores
 
-
-
-        if(t==2){
+        
+        
+        if (t == 2) {
             request.getSession().setAttribute("genero", valor);
         }
-        if(t==3){
+        if (t == 3) {
             request.getSession().setAttribute("comportamiento", valor);
         }
-        if(t==4){
+        if (t == 4) {
             request.getSession().setAttribute("arraigo", valor);
         }
-        if(t==5){
+        if (t == 5) {
             request.getSession().setAttribute("aspectos", valor);
         }
         
-
-
+        
+        
     }
-
+    
     private void limpiarSesion(HttpServletRequest request) {
-
-        HttpSession sesion=request.getSession();
-
+        
+        HttpSession sesion = request.getSession();
+        
         sesion.removeAttribute("comportamiento");
         sesion.removeAttribute("genero");
         sesion.removeAttribute("arraigo");
         sesion.removeAttribute("aspectos");
-
-
+        
+        
+    }
+    
+    private void buscar(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            System.out.println("generandoLista busqueda");
+            String listaBusqueda = getListaBusqueda(request.getParameter("nombre"));
+            request.getSession().setAttribute("clientes",listaBusqueda);
+            response.getWriter().print(listaBusqueda);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AccionesServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-
-
+    private void listaCalculo(HttpServletRequest request, HttpServletResponse response) {
+        Object attribute = request.getSession().getAttribute("clientes");
+        if(attribute==null){
+            lista(request, response);
+        }else{
+            try {
+                response.getWriter().print(attribute);
+            } catch (IOException ex) {
+                Logger.getLogger(AccionesServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 }

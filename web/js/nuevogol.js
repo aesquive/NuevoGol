@@ -5,9 +5,9 @@
 function actualizarPagina(){
 
        
-        var nombres=new Array();
+    var nombres=new Array();
     
-      nombres=$(":input").toArray()
+    nombres=$(":input").toArray()
 
         
 
@@ -15,20 +15,20 @@ function actualizarPagina(){
 
         tipo=val.type;
 
-          if(tipo=="text" ||tipo=="select-one"){
+        if(tipo=="text" ||tipo=="select-one"){
                 
-              llenarTextBox(val);
-          }
+            llenarTextBox(val);
+        }
 
-          if(tipo=="textarea"){
+        if(tipo=="textarea"){
 
 
-              llenarTextArea(val);
-          }
-          if(tipo=="radio" || tipo=="checkbox"){
+            llenarTextArea(val);
+        }
+        if(tipo=="radio" || tipo=="checkbox"){
 
-              llenarRadios(val);
-          }
+            llenarRadios(val);
+        }
             
 
     })
@@ -39,18 +39,18 @@ function actualizarPagina(){
  */
 function llenarTextBox(val){
 
-            var nombre = val.name;
+    var nombre = val.name;
 
 
 
-            var valor=$.jStorage.get(nombre);
+    var valor=$.jStorage.get(nombre);
 
 
-                 //si existe el valor en el json entonces
-                if(valor!=null && valor!="null" && valor!="NULL"){
+    //si existe el valor en el json entonces
+    if(valor!=null && valor!="null" && valor!="NULL"){
 
-                    val.value=valor;
-                }
+        val.value=valor;
+    }
 
 
 }
@@ -61,19 +61,19 @@ function llenarTextBox(val){
  */
 function llenarTextArea(val){
 
-             nombre = val.name;
+    nombre = val.name;
 
 
 
-            var valor=$.jStorage.get(nombre);
+    var valor=$.jStorage.get(nombre);
 
           
 
-                 //si existe el valor en el json entonces
-                if(valor){
+    //si existe el valor en el json entonces
+    if(valor){
 
-                    val.value=valor;
-                }
+        val.value=valor;
+    }
 
 
 }
@@ -86,13 +86,13 @@ function llenarTextArea(val){
  */
 function llenarRadios(val){
 
-        var valor= $.jStorage.get(val.name,"") ;
+    var valor= $.jStorage.get(val.name,"") ;
 
-        if(valor){
+    if(valor){
 
-             val.checked = $.jStorage.get(val.name,"") == val.value;
+        val.checked = $.jStorage.get(val.name,"") == val.value;
 
-        }
+    }
 
 }
 
@@ -110,21 +110,21 @@ function crearJson(){
     var seguridad=$.jStorage.get("seguridad");
 
 
-        if(seguridad!="true"){
+    if(seguridad!="true"){
 
-             $.jStorage.flush();
+        $.jStorage.flush();
 
-             $.jStorage.set("seguridad", "true");
+        $.jStorage.set("seguridad", "true");
 
-        }
+    }
 
 
-          //variable para manejar la seguridad
+    //variable para manejar la seguridad
 
 
     if(accion!="add" && seguridad!="true"){
 
-          obtenerJsonDelServlet();
+        obtenerJsonDelServlet();
 
     }
 
@@ -140,24 +140,24 @@ function crearJson(){
  */
 function obtenerJsonDelServlet(){
 
-             $.ajax({
-                  url: 'otro.json',
-                  dataType: 'json',
-                  async:false,
-                  success: function(json) {
+    $.ajax({
+        url: 'otro.json',
+        dataType: 'json',
+        async:false,
+        success: function(json) {
 
                     
 
-                       $.each(json, function llenado(i , val){
+            $.each(json, function llenado(i , val){
 
-                            $.jStorage.set(i, val);
+                $.jStorage.set(i, val);
 
-                       })
+            })
 
                        
-                  },
-                  cache: false
-               });
+        },
+        cache: false
+    });
 
 
 }
@@ -178,7 +178,7 @@ function autollenado(){
 
         if(tipo=="select-one" || tipo=="text"){
 
-             llenarCampoTexto(this);
+            llenarCampoTexto(this);
         }
 
         if(tipo=="textarea"){
@@ -271,7 +271,7 @@ function autoLlenadoCheckBox(){
 
 function llenarCampoRadio(name , valor){
 
-        var gol=$.jStorage.set(name,valor);
+    var gol=$.jStorage.set(name,valor);
 
        
            
@@ -283,11 +283,11 @@ function llenarCampoRadio(name , valor){
 
 function mandarJsonAlServlet(){
 
-        //arreglo con todas las variables
-        var variables=pasarAJson();
+    //arreglo con todas las variables
+    var variables=pasarAJson();
 
-        //hacemos todo lo del servlet
-        guardarServlet(variables);
+    //hacemos todo lo del servlet
+    guardarServlet(variables);
 
         
 }
@@ -295,15 +295,15 @@ function mandarJsonAlServlet(){
 
 function guardarServlet(variables){
 
-     $.ajax({
-          url: '../NuevoGolServlet',
-          async: false,
-          data:  variables,
-          cache: false,
-          success:function(){
-              window.location="golindex.html";
-          }
-         });
+    $.ajax({
+        url: '../NuevoGolServlet',
+        async: false,
+        data:  variables,
+        cache: false,
+        success:function(){
+            window.location="golindex.html";
+        }
+    });
 
 
 }
@@ -322,7 +322,7 @@ function pasarAJson(){
 
     for(t=0;t<variables.length;t++){
 
-         regreso[variables[t]]=$.jStorage.get(variables[t]);
+        regreso[variables[t]]=$.jStorage.get(variables[t]);
 
 
     }
@@ -338,12 +338,12 @@ function elegida(campo){
 
     radios = document.getElementsByName(campo);
 
-	for (  i = 0; i < radios.length; i++) {
-		if (radios[i].checked) {
-			return i+1;
-		}
-	}
-	return -1;
+    for (  i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            return i+1;
+        }
+    }
+    return -1;
 
 }
 
@@ -362,11 +362,11 @@ function cargaCombo(id, valores) {
     if(opciones!=undefined){
 
 
-            $.each(valores, function(ind, val){
+        $.each(valores, function(ind, val){
 
-               opciones[opciones.length]=new Option(ind,val);
+            opciones[opciones.length]=new Option(ind,val);
 
-            });
+        });
 
 
     }
@@ -379,24 +379,24 @@ function cargaCombo(id, valores) {
 
 function cargaCombos(){
 
-        var selects=$("select").toArray();
+    var selects=$("select").toArray();
 
     $.each(selects, function(){
 
-            if(esCampoServicio(this)){
+        if(esCampoServicio(this)){
         
-                llenarComboServicio(this,null,null);
-                return;
-            }
+            llenarComboServicio(this,null,null);
+            return;
+        }
 
-            var filtrado= filtrarNombre(this.id);
+        var filtrado= filtrarNombre(this.id);
 
-                if(filtrado!=null){
+        if(filtrado!=null){
 
 
-                    var lista=obtenLista(this.id,filtrado);
+            var lista=obtenLista(this.id,filtrado);
 
-                }
+        }
     });
 }
 
@@ -421,16 +421,16 @@ function obtenLista(id,filtrado) {
     var cal=obtenerCal(filtrado);
 
 
-$.ajax({
-                  url: '../CargaCombos?combo='+filtrado+"&cal="+cal,
-                  dataType: 'json',
-                  async:false,
-                  success: function(json) {
-                            cargaCombo(id, json);
+    $.ajax({
+        url: '../CargaCombos?combo='+filtrado+"&cal="+cal,
+        dataType: 'json',
+        async:false,
+        success: function(json) {
+            cargaCombo(id, json);
 
-                  },
-                  cache: true
-               });
+        },
+        cache: true
+    });
 
 
 }
@@ -442,15 +442,15 @@ function obtenerCal(variable){
     var cal;
 
     $.ajax({
-                  url: "../recursos/cals.json",
-                  dataType: 'json',
-                  async:false,
-                  success: function(json) {
-                           cal= buscarCal(variable,json);
-                  },
-                  cache: true
-               });
-     return cal;
+        url: "../recursos/cals.json",
+        dataType: 'json',
+        async:false,
+        success: function(json) {
+            cal= buscarCal(variable,json);
+        },
+        cache: true
+    });
+    return cal;
 
 }
 
@@ -486,24 +486,24 @@ function llenarComboServicio(campo,inferior,superior){
 
     if(superior==null && inferior==null){
 
-      inferior=obtenerInferior(campo);
+        inferior=obtenerInferior(campo);
 
-      superior=obtenerSuperior(campo);
+        superior=obtenerSuperior(campo);
 
     }
 
    
     $.ajax({
-                  url: '../ComboServicio?limInf='+inferior+"&limSup="+superior+"&nom="+campo.name,
-                  dataType: 'json',
-                  async:false,
-                  success: function(json) {
+        url: '../ComboServicio?limInf='+inferior+"&limSup="+superior+"&nom="+campo.name,
+        dataType: 'json',
+        async:false,
+        success: function(json) {
                         
-                            cargaComboServ(campo, json);
+            cargaComboServ(campo, json);
 
-                  },
-                  cache: true
-               });
+        },
+        cache: true
+    });
 
 
 
@@ -520,12 +520,12 @@ function cargaComboServ(campo, valores){
     if(opciones!=undefined ){
 
 
-            $.each(valores, function(ind, val){
+        $.each(valores, function(ind, val){
 
 
-               opciones[opciones.length]=new Option(ind,val);
+            opciones[opciones.length]=new Option(ind,val);
 
-            });
+        });
 
 
     }
@@ -592,21 +592,21 @@ function filtrarSrv(campo){
 
     var superior=obtenerSuperiorTipEmp(tipEmpSeleccionado);
 
-   //VACIAMOS EL COMBO     
-        borrarCombo(cliSector);
+    //VACIAMOS EL COMBO     
+    borrarCombo(cliSector);
 
-        //agregamos el option de seleccione
-        cliSector.options[0]=new Option("-Seleccione-","-1");
+    //agregamos el option de seleccione
+    cliSector.options[0]=new Option("-Seleccione-","-1");
 
-        if(inferior!=-1 && superior!=-1){
+    if(inferior!=-1 && superior!=-1){
 
-            //llenamos el combo por si hubo un cambio de opcion
-            llenarComboServicio(cliSector,inferior,superior);
-            bloquearCampo(cliSector.id, "false");
+        //llenamos el combo por si hubo un cambio de opcion
+        llenarComboServicio(cliSector,inferior,superior);
+        bloquearCampo(cliSector.id, "false");
 
-            return;
+        return;
 
-        }
+    }
 
     cliSector.options[1]=new Option("-Seleccione-","2");
 
@@ -614,12 +614,12 @@ function filtrarSrv(campo){
     cliSector.value="2";
 
     
-   document.getElementById("ocpId").options[1]=new Option("-Seleccione-","2");
+    document.getElementById("ocpId").options[1]=new Option("-Seleccione-","2");
 
 
     $("#ocpId").attr("value","2");
 
-bloquearCampo("ocpId", "true");
+    bloquearCampo("ocpId", "true");
 
 
 }
@@ -659,12 +659,12 @@ function borrarCombo(campo){
 
     var opciones=campo.options;
 
-var index=0;
+    var index=0;
 
-while(opciones[index]!=null){
+    while(opciones[index]!=null){
 
-    opciones[index]=null;
-}
+        opciones[index]=null;
+    }
 
 }
 
@@ -688,24 +688,24 @@ function filtrarOcp(campo){
 
     var superior=obtenerSuperiorOcp(srvSeleccionado);
 
-   //VACIAMOS EL COMBO
-        borrarCombo(cliSubsector);
+    //VACIAMOS EL COMBO
+    borrarCombo(cliSubsector);
 
-        //agregamos el option de seleccione
-        cliSubsector.options[0]=new Option("-Seleccione-","-1");
+    //agregamos el option de seleccione
+    cliSubsector.options[0]=new Option("-Seleccione-","-1");
 
-        if(inferior!=-1 && superior!=-1){
+    if(inferior!=-1 && superior!=-1){
 
-            //llenamos el combo por si hubo un cambio de opcion
-            llenarComboServicio(cliSubsector,inferior,superior);
-            bloquearCampo(cliSubsector.id, "false");
+        //llenamos el combo por si hubo un cambio de opcion
+        llenarComboServicio(cliSubsector,inferior,superior);
+        bloquearCampo(cliSubsector.id, "false");
 
-            return;
+        return;
 
-        }
+    }
 
 
-        cliSubsector.options[1]=new Option("-Seleccione-","2");
+    cliSubsector.options[1]=new Option("-Seleccione-","2");
 
     //si se eligio no remunerado o sin ocupacion bloqueamos cliSector y cliSubsector
     cliSubsector.value="2";
@@ -789,12 +789,12 @@ function obtenerSuperiorOcp(valorSrv){
 function cargaCp(codpos){
 
 
-        var valor=codpos.value;
+    var valor=codpos.value;
 
     mandarCodPos(valor,codpos);
         
     
-        return;
+    return;
 
     
 
@@ -805,16 +805,16 @@ function cargaCp(codpos){
 
 function mandarCodPos(valor,codpos){
 
-      $.ajax({
-                  url: '../ComboCodPos?cp='+valor,
-                  dataType: 'json',
-                  async:false,
-                  success: function(json) {
-                            ponerCp(json,codpos);
+    $.ajax({
+        url: '../ComboCodPos?cp='+valor,
+        dataType: 'json',
+        async:false,
+        success: function(json) {
+            ponerCp(json,codpos);
 
-                  },
-                  cache: true
-               });
+        },
+        cache: true
+    });
 
 
 
@@ -838,41 +838,96 @@ function ponerCp(json,codpos){
     pintarCampoNombre(codpos.id, "white");
     $("#cliMun").attr("value",json.mun);
 
-     $("#cliEdo").attr("value",json.edo);
+    $("#cliEdo").attr("value",json.edo);
 
-     $.jStorage.set("cliMun",json.mun);
+    $.jStorage.set("cliMun",json.mun);
 
-     $.jStorage.set("cliEdo",json.edo);
+    $.jStorage.set("cliEdo",json.edo);
+}
+
+function buscarGol(){
+    var nombre=$("#persona").attr("value");
+    if(nombre==null || nombre==""){
+        alert("Favor de escribir el nombre de busqueda");
+        return;
+    }
+    
+    
+    borrarListaClientes();
+    
+    $.ajax({
+        url: "../AccionesServlet?accion=buscar&nombre="+nombre,
+        dataType: 'json',
+        async:true,
+        success: function(json) {
+                                
+            llenaLista( json);
+
+        },
+        cache: false
+    });
 }
 
 
+function cargarClientesGolCalculo(){
+    
+    borrarListaClientes();
+
+    $.ajax({
+        url: "../AccionesServlet?accion=listaCalculo",
+        dataType: 'json',
+        async:true,
+        success: function(json) {
+                                
+
+            llenaLista( json);
+
+        },
+        cache: false
+    });
+
+
+}
 
 
 //cargarClientes
 function cargarClientesGol(){
 
-
+    borrarListaClientes();
 
     $.ajax({
-                  url: "../AccionesServlet?accion=lista",
-                  dataType: 'json',
-                  async:true,
-                  success: function(json) {
+        url: "../AccionesServlet?accion=lista",
+        dataType: 'json',
+        async:true,
+        success: function(json) {
                                 
-                            llenaLista( json);
 
-                  },
-                  cache: false
-               });
+            llenaLista( json);
+
+        },
+        cache: false
+    });
 
 
 }
 
 
+function borrarListaClientes(){
+    
+    var opt = $("#listaG").attr('options');
+    if(opt==undefined){
+        return;
+    }
+    var cuantos=opt.length;
+    for(var t=0;t<cuantos;t++){
+        opt[0]=null;
+    }
+    
+}
+
 function llenaLista(json) {
 
-
-   for(var index in json){
+    for(var index in json){
 
         var opt = $("#listaG").attr('options');
 
@@ -887,42 +942,42 @@ function llenaLista(json) {
 
 function mandarCalcular(){
     $.ajax({
-          url: '../AccionesServlet?accion=irCalcular',
-          async: false,
-          cache: false,
-          success:function(){
-              window.location="calcgol.jsp";
-          }
-         });
+        url: '../AccionesServlet?accion=irCalcular',
+        async: false,
+        cache: false,
+        success:function(){
+            window.location="calcgol.jsp";
+        }
+    });
 
 }
 
 
 
 function calcularGol(campo) {
-	var idG=campo.value.toString();
+    var idG=campo.value.toString();
 
-	if (idG == "") {
-		alert("No ha seleccionado un registro para calcular.");
-	} else {
+    if (idG == "") {
+        alert("No ha seleccionado un registro para calcular.");
+    } else {
 
-            traerCalculo(idG)
-            return;
-	}
+        traerCalculo(idG)
+        return;
+    }
 }
 
 
 function traerCalculo(idG){
 
-            $.ajax({
-          url: '../AccionesServlet?accion=calcularGol&idG='+idG,
-          async: false,
-          cache: true,
-          dataType:"json",
-          success:function(json){
-              pintarGrafica(json);
-          }
-         });
+    $.ajax({
+        url: '../AccionesServlet?accion=calcularGol&idG='+idG,
+        async: false,
+        cache: true,
+        dataType:"json",
+        success:function(json){
+            pintarGrafica(json);
+        }
+    });
 
 
 }
@@ -931,22 +986,22 @@ function pintarGrafica(json){
 
 
     var varsCalculo=["desGenero","desComportamiento","desArraigo","desAspectos","desGeneroClase1",
-                    "desGeneroClase2","desCompTex1","desCompTex2","desArrTex1","desArrTex2","desAspTex1","noUtilizado","resultado"
-                    ,"score","nombre"];
+    "desGeneroClase2","desCompTex1","desCompTex2","desArrTex1","desArrTex2","desAspTex1","noUtilizado","resultado"
+    ,"score","nombre"];
 
 
-                    var indexLista=2;
+    var indexLista=2;
 
-     $.each(varsCalculo, function(index){
+    $.each(varsCalculo, function(index){
 
         $.jStorage.set(varsCalculo[index],json[indexLista]);
 
-         indexLista++;
+        indexLista++;
 
-     })
+    })
 
 
-window.location="calcgol.jsp";
+    window.location="calcgol.jsp";
      
 }
 

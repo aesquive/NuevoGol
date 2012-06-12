@@ -18,16 +18,25 @@ function cargarSesion(){
 
 
 function llamadaGuardadoServlet(id){
-    if(id!=""){
-        
+    
+              
         $.ajax({
           url: '../NuevoGolServlet?comando=login&idUsuario='+id,
           async: false,
-          cache: false
+          cache: false,
+          success: function(text){
+              if(text=="t"){
+                    return;
+              }else{
+                      
+                    window.location="http://50.112.124.249:8080/Calculadoras";
+    
+              }
+          }
          });
-    }
-        
-    else{
-        window.location="http://50.112.124.249:8080/Calculadoras";
-    }
+    
 }
+
+/**
+ * 
+ */
